@@ -20,13 +20,16 @@ Read these documents before making significant product or architectural changes:
 - Current MVP boundaries:
   `docs/product/mvp-scope.md`
 
-Future authoritative documents will include:
+Current authoritative product, domain, and design documents also include:
 
 - `docs/product/learning-goals.md`
 - `docs/product/user-flows.md`
 - `docs/domain/domain-model.md`
 - `docs/domain/simulation-model.md`
 - `docs/design/ui-ux-spec.md`
+
+Current architecture proposal (Status: Proposed; subject to review):
+
 - `docs/architecture/system-architecture.md`
 
 Do not invent missing product requirements when they affect domain semantics or educational behavior.

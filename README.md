@@ -35,7 +35,7 @@ Current MVP scope:
 
 `docs/product/mvp-scope.md`
 
-Planned documentation:
+Current product, domain, and design documentation:
 
 ```text
 docs/product/learning-goals.md
@@ -43,8 +43,13 @@ docs/product/user-flows.md
 docs/domain/domain-model.md
 docs/domain/simulation-model.md
 docs/design/ui-ux-spec.md
-docs/architecture/system-architecture.md
 ```
+
+Proposed system architecture (awaiting review):
+
+`docs/architecture/system-architecture.md`
+
+Architecture decision records are planned after review; see `docs/adr/README.md`.
 
 ## First MVP
 
