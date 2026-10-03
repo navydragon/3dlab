@@ -1,0 +1,943 @@
+{
+  "stage": "04 primary detailing",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": {
+    "models/xe215c/stage_03/checkpoints/articulated_workgroup_three_quarter.png": "82a0e7aee35c3c10eda23a5e9a1d0757743cc0cf2f38ce0c5135299c1cc43229",
+    "models/xe215c/stage_03/checkpoints/neutral_three_quarter.png": "13921c25387b00039b625cb1f3bee6061ae9dfb43e9d3768ba3b4a19e4de3b61",
+    "models/xe215c/stage_03/checkpoints/slew_test_three_quarter.png": "56177d49a916d63caa37aa21c6e4631568b542f88ec17afe37a2536b4f8e7735",
+    "models/xe215c/stage_03/inspection.json": "7354f824919f10f357c5774b76c4f5e17a71385e49b7023651102c077b4dd86f",
+    "models/xe215c/stage_03/README.md": "c91e636227c40e95c1f36f71dd7080b133bc966be0848305bbcf189aa1c348b6",
+    "models/xe215c/stage_03/xe215c_stage_03.blend": "0be75b86cd4f6682af49096aeaba29824ecc62b93443a440f9397503b50d5a2b",
+    "scripts/blender/check_stage_03.py": "4ecb605af7da99f0b9274b07387a1dc779a1ae0420807e51d1f7ad4fd2b6ccc9",
+    "scripts/blender/stage_03_hierarchy_kinematics.py": "2fdbe7bbbc47138ea6b5de61cf7298db3b0bfd60b24c911ffc6813472e007877"
+  },
+  "checks": {
+    "five_node_chain": {
+      "pass": true
+    },
+    "immutable_stage03_source": {
+      "pass": true
+    },
+    "canonical_rotation_axes": {
+      "pass": true
+    },
+    "neutral_node_rotations": {
+      "pass": true
+    },
+    "accepted_node_transforms": {
+      "pass": true
+    },
+    "accepted_pivots": {
+      "pass": true
+    },
+    "base_mesh_unchanged_central_x_frame": {
+      "pass": true
+    },
+    "base_mesh_unchanged_slew_support": {
+      "pass": true
+    },
+    "base_mesh_unchanged_left_track_blockout": {
+      "pass": true
+    },
+    "base_mesh_unchanged_left_crawler_frame": {
+      "pass": true
+    },
+    "base_mesh_unchanged_right_track_blockout": {
+      "pass": true
+    },
+    "base_mesh_unchanged_right_crawler_frame": {
+      "pass": true
+    },
+    "base_mesh_unchanged_cab": {
+      "pass": true
+    },
+    "base_mesh_unchanged_engine_body": {
+      "pass": true
+    },
+    "base_mesh_unchanged_main_upper_platform": {
+      "pass": true
+    },
+    "base_mesh_unchanged_counterweight": {
+      "pass": true
+    },
+    "base_mesh_unchanged_boom_mounting_base": {
+      "pass": true
+    },
+    "base_mesh_unchanged_boom": {
+      "pass": true
+    },
+    "base_mesh_unchanged_stick": {
+      "pass": true
+    },
+    "base_mesh_unchanged_bucket": {
+      "pass": true
+    },
+    "base_mesh_unchanged_bucket_left_cheek": {
+      "pass": true
+    },
+    "base_mesh_unchanged_bucket_right_cheek": {
+      "pass": true
+    },
+    "base_mesh_unchanged_bucket_cutting_edge": {
+      "pass": true
+    },
+    "accepted_world_geometry": {
+      "pass": true,
+      "max_error_m": 0
+    },
+    "metric_identity_scales": {
+      "pass": true
+    },
+    "no_actions_armature_constraints_drivers": {
+      "pass": true
+    },
+    "no_materials_textures_logos": {
+      "pass": true
+    },
+    "no_subdivision_modifiers": {
+      "pass": true
+    },
+    "overall_length": {
+      "pass": true,
+      "actual_m": 9.624999761581421,
+      "target_m": 9.625
+    },
+    "overall_width": {
+      "pass": true,
+      "actual_m": 2.990000009536743,
+      "target_m": 2.99
+    },
+    "overall_height": {
+      "pass": true,
+      "actual_m": 3.0999999046325684,
+      "target_m": 3.1
+    },
+    "ground_plane": {
+      "pass": true,
+      "actual_m": 0.0,
+      "target_m": 0
+    },
+    "track_gauge": {
+      "pass": true,
+      "actual_m": 2.390000104904175,
+      "target_m": 2.39
+    },
+    "left_shoe_width": {
+      "pass": true,
+      "actual_m": 0.6000000238418579,
+      "target_m": 0.6
+    },
+    "left_detailed_crawler_length": {
+      "pass": true,
+      "actual_m": 4.255000114440918,
+      "target_m": 4.255
+    },
+    "left_ground_contact": {
+      "pass": true,
+      "actual_m": 3.4619998931884766,
+      "target_m": 3.462
+    },
+    "right_shoe_width": {
+      "pass": true,
+      "actual_m": 0.6000000238418579,
+      "target_m": 0.6
+    },
+    "right_detailed_crawler_length": {
+      "pass": true,
+      "actual_m": 4.255000114440918,
+      "target_m": 4.255
+    },
+    "right_ground_contact": {
+      "pass": true,
+      "actual_m": 3.4619998931884766,
+      "target_m": 3.462
+    },
+    "platform_width": {
+      "pass": true,
+      "actual_m": 2.8299999237060547,
+      "target_m": 2.83
+    },
+    "counterweight_clearance": {
+      "pass": true,
+      "actual_m": 1.0499999523162842,
+      "target_m": 1.05
+    },
+    "x_frame_ground_clearance": {
+      "pass": true,
+      "actual_m": 0.48500001430511475,
+      "target_m": 0.485
+    },
+    "tail_radius": {
+      "pass": true,
+      "actual_m": 2.8900001111064166,
+      "target_m": 2.89
+    },
+    "boom_pin_distance": {
+      "pass": true,
+      "actual_m": 5.680000064387707,
+      "target_m": 5.68
+    },
+    "stick_pin_distance": {
+      "pass": true,
+      "actual_m": 2.909999633261405,
+      "target_m": 2.91
+    },
+    "major_detail_meshes_exist": {
+      "pass": true
+    },
+    "simplified_rollers_exist": {
+      "pass": true
+    },
+    "detail_canonical_ownership": {
+      "pass": true
+    },
+    "bucket_independent": {
+      "pass": true
+    },
+    "boom_cylinder_parts_anchors": {
+      "pass": true
+    },
+    "boom_cylinder_ownership": {
+      "pass": true
+    },
+    "boom_neutral_cylinder_alignment": {
+      "pass": true
+    },
+    "stick_cylinder_parts_anchors": {
+      "pass": true
+    },
+    "stick_cylinder_ownership": {
+      "pass": true
+    },
+    "stick_neutral_cylinder_alignment": {
+      "pass": true
+    },
+    "bucket_cylinder_parts_anchors": {
+      "pass": true
+    },
+    "bucket_cylinder_ownership": {
+      "pass": true
+    },
+    "bucket_neutral_cylinder_alignment": {
+      "pass": true
+    },
+    "linkage_separate": {
+      "pass": true
+    },
+    "linkage_anchor_markers": {
+      "pass": true
+    },
+    "linkage_anchor_ownership": {
+      "pass": true
+    },
+    "finite_vertices": {
+      "pass": true
+    },
+    "visible_neutral_auxiliaries": {
+      "pass": true
+    },
+    "new_primary_detail_follows_nodes": {
+      "pass": true,
+      "max_error_m": 1.1920928955078125e-06
+    },
+    "reset_primary_detail": {
+      "pass": true
+    }
+  },
+  "neutral_bbox_m": {
+    "min": [
+      -2.890000104904175,
+      -1.4950000047683716,
+      0.0
+    ],
+    "max": [
+      6.734999656677246,
+      1.4950000047683716,
+      3.0999999046325684
+    ]
+  },
+  "mesh_count": 101,
+  "new_mesh_count": 84,
+  "vertex_count": 3818,
+  "triangle_count": 7004,
+  "cylinders": {
+    "boom": {
+      "parts": [
+        "boom_cylinder_barrel",
+        "boom_cylinder_rod",
+        "boom_cylinder_gland",
+        "boom_cylinder_end_base",
+        "boom_cylinder_end_rod"
+      ],
+      "base_anchor": "ANCHOR_BOOM_CYL_BASE",
+      "rod_anchor": "ANCHOR_BOOM_CYL_ROD",
+      "neutral_endpoints_m": [
+        [
+          1.1200000047683716,
+          -0.4300000071525574,
+          1.4199999570846558
+        ],
+        [
+          2.2300000190734863,
+          -0.4300000071525574,
+          2.390000104904175
+        ]
+      ],
+      "coupling": "STATIC; deferred to Stage 6"
+    },
+    "stick": {
+      "parts": [
+        "stick_cylinder_barrel",
+        "stick_cylinder_rod",
+        "stick_cylinder_gland",
+        "stick_cylinder_end_base",
+        "stick_cylinder_end_rod"
+      ],
+      "base_anchor": "ANCHOR_STICK_CYL_BASE",
+      "rod_anchor": "ANCHOR_STICK_CYL_ROD",
+      "neutral_endpoints_m": [
+        [
+          2.5999999046325684,
+          0.0,
+          2.9100000858306885
+        ],
+        [
+          6.337320327758789,
+          0.0,
+          1.6259100437164307
+        ]
+      ],
+      "coupling": "STATIC; deferred to Stage 6"
+    },
+    "bucket": {
+      "parts": [
+        "bucket_cylinder_barrel",
+        "bucket_cylinder_rod",
+        "bucket_cylinder_gland",
+        "bucket_cylinder_end_base",
+        "bucket_cylinder_end_rod"
+      ],
+      "base_anchor": "ANCHOR_BUCKET_CYL_BASE",
+      "rod_anchor": "ANCHOR_BUCKET_CYL_ROD",
+      "neutral_endpoints_m": [
+        [
+          5.89654016494751,
+          0.0,
+          1.5579949617385864
+        ],
+        [
+          4.265719890594482,
+          0.0,
+          1.973718285560608
+        ]
+      ],
+      "coupling": "STATIC; deferred to Stage 6"
+    }
+  },
+  "articulation_test_angles_deg": {
+    "NODE_BOOM": -35,
+    "NODE_STICK": -40,
+    "NODE_BUCKET": 75
+  },
+  "articulation_render_note": "Static uncoupled hydraulic/linkage proxies hidden ONLY in articulated checkpoint, restored in neutral blend.",
+  "anchors": [
+    {
+      "name": "ANCHOR_BOOM_CYL_BASE",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "world_m": [
+        1.1200000047683716,
+        -0.4300000071525574,
+        1.4199999570846558
+      ]
+    },
+    {
+      "name": "ANCHOR_BOOM_CYL_ROD",
+      "parent": "NODE_BOOM",
+      "world_m": [
+        2.2300000190734863,
+        -0.4300000071525574,
+        2.390000104904175
+      ]
+    },
+    {
+      "name": "ANCHOR_STICK_CYL_BASE",
+      "parent": "NODE_BOOM",
+      "world_m": [
+        2.5999999046325684,
+        0.0,
+        2.9100000858306885
+      ]
+    },
+    {
+      "name": "ANCHOR_STICK_CYL_ROD",
+      "parent": "NODE_STICK",
+      "world_m": [
+        6.337320327758789,
+        0.0,
+        1.6259100437164307
+      ]
+    },
+    {
+      "name": "ANCHOR_BUCKET_CYL_BASE",
+      "parent": "NODE_STICK",
+      "world_m": [
+        5.89654016494751,
+        0.0,
+        1.5579949617385864
+      ]
+    },
+    {
+      "name": "ANCHOR_BUCKET_CYL_ROD",
+      "parent": "NODE_STICK",
+      "world_m": [
+        4.265719890594482,
+        0.0,
+        1.973718285560608
+      ]
+    },
+    {
+      "name": "ANCHOR_LINKAGE_ROCKER_PIVOT",
+      "parent": "NODE_STICK",
+      "world_m": [
+        4.027743816375732,
+        0.0,
+        1.795484185218811
+      ]
+    },
+    {
+      "name": "ANCHOR_LINKAGE_CYL_PIN",
+      "parent": "NODE_STICK",
+      "world_m": [
+        4.265719890594482,
+        0.0,
+        1.973718285560608
+      ]
+    },
+    {
+      "name": "ANCHOR_LINKAGE_LINK_PIN",
+      "parent": "NODE_STICK",
+      "world_m": [
+        3.766432523727417,
+        0.0,
+        2.1309187412261963
+      ]
+    },
+    {
+      "name": "ANCHOR_LINKAGE_BUCKET_PIN",
+      "parent": "NODE_BUCKET",
+      "world_m": [
+        4.021473407745361,
+        0.0,
+        1.5499999523162842
+      ]
+    }
+  ],
+  "geometry_ownership": [
+    {
+      "name": "boom",
+      "node": "NODE_BOOM",
+      "static_auxiliary": false
+    },
+    {
+      "name": "boom_cylinder_barrel",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": true
+    },
+    {
+      "name": "boom_cylinder_end_base",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": true
+    },
+    {
+      "name": "boom_cylinder_end_rod",
+      "node": "NODE_BOOM",
+      "static_auxiliary": true
+    },
+    {
+      "name": "boom_cylinder_gland",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": true
+    },
+    {
+      "name": "boom_cylinder_rod",
+      "node": "NODE_BOOM",
+      "static_auxiliary": true
+    },
+    {
+      "name": "boom_left_side_plate",
+      "node": "NODE_BOOM",
+      "static_auxiliary": false
+    },
+    {
+      "name": "boom_mounting_base",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "boom_right_side_plate",
+      "node": "NODE_BOOM",
+      "static_auxiliary": false
+    },
+    {
+      "name": "boom_root_pin_boss",
+      "node": "NODE_BOOM",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_cutting_edge",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_cylinder_barrel",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_cylinder_end_base",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_cylinder_end_rod",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_cylinder_gland",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_cylinder_rod",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_left_cheek",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_left_mount_ear",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_left_wear_rib",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_linkage_connecting_link",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_linkage_rocker",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "bucket_right_cheek",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_right_mount_ear",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_right_wear_rib",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_root_pin_boss",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_tooth_01",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_tooth_02",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_tooth_03",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_tooth_04",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "bucket_tooth_05",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_front_upper_glazing",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_front_windshield",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_left_main_window",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_left_rear_window",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_lower_sill",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_right_main_window",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_right_rear_window",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "cab_roof_cap",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "central_x_frame",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "counterweight",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "engine_body",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "engine_left_service_panel",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "engine_right_service_panel",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "engine_top_access_panel",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_carrier_roller_01",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_carrier_roller_02",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_crawler_beam_cap",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_crawler_frame",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_idler_hub",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_idler_wheel",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_01",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_02",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_03",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_04",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_05",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_06",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_road_roller_07",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_sprocket_hub",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_sprocket_wheel",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_track_blockout",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "left_track_treads",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "linkage_bucket_pin_boss",
+      "node": "NODE_BUCKET",
+      "static_auxiliary": true
+    },
+    {
+      "name": "linkage_input_pin_boss",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "linkage_link_pin_boss",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "linkage_rocker_pin_boss",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "main_upper_platform",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_carrier_roller_01",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_carrier_roller_02",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_crawler_beam_cap",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_crawler_frame",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_idler_hub",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_idler_wheel",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_01",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_02",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_03",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_04",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_05",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_06",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_road_roller_07",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_sprocket_hub",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_sprocket_wheel",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_track_blockout",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "right_track_treads",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "service_front_right_panel",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "slew_bearing_ring",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "slew_support",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "stick",
+      "node": "NODE_STICK",
+      "static_auxiliary": false
+    },
+    {
+      "name": "stick_cylinder_barrel",
+      "node": "NODE_BOOM",
+      "static_auxiliary": true
+    },
+    {
+      "name": "stick_cylinder_end_base",
+      "node": "NODE_BOOM",
+      "static_auxiliary": true
+    },
+    {
+      "name": "stick_cylinder_end_rod",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "stick_cylinder_gland",
+      "node": "NODE_BOOM",
+      "static_auxiliary": true
+    },
+    {
+      "name": "stick_cylinder_rod",
+      "node": "NODE_STICK",
+      "static_auxiliary": true
+    },
+    {
+      "name": "stick_left_side_plate",
+      "node": "NODE_STICK",
+      "static_auxiliary": false
+    },
+    {
+      "name": "stick_right_side_plate",
+      "node": "NODE_STICK",
+      "static_auxiliary": false
+    },
+    {
+      "name": "stick_root_pin_boss",
+      "node": "NODE_STICK",
+      "static_auxiliary": false
+    },
+    {
+      "name": "tower_pin_support_left",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "tower_pin_support_right",
+      "node": "NODE_UPPERSTRUCTURE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "x_frame_left_gusset",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    },
+    {
+      "name": "x_frame_right_gusset",
+      "node": "NODE_UNDERCARRIAGE",
+      "static_auxiliary": false
+    }
+  ],
+  "reconstruction": "Added sections, roller representation, teeth, linkage and hydraulic anchors are visual estimates, not certified XE215C coordinates."
+}
