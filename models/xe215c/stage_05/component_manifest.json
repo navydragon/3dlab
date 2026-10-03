@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "stage": "05",
+  "machine_id": "excavator",
+  "membership_authority": "Blender object custom properties; no export or application mapping",
+  "components": [
+    {
+      "id": "undercarriage",
+      "blender_objects": [
+        "central_x_frame",
+        "left_carrier_roller_01",
+        "left_carrier_roller_02",
+        "left_crawler_beam_cap",
+        "left_crawler_frame",
+        "left_idler_hub",
+        "left_idler_wheel",
+        "left_road_roller_01",
+        "left_road_roller_02",
+        "left_road_roller_03",
+        "left_road_roller_04",
+        "left_road_roller_05",
+        "left_road_roller_06",
+        "left_road_roller_07",
+        "left_sprocket_hub",
+        "left_sprocket_wheel",
+        "left_track_blockout",
+        "left_track_treads",
+        "right_carrier_roller_01",
+        "right_carrier_roller_02",
+        "right_crawler_beam_cap",
+        "right_crawler_frame",
+        "right_idler_hub",
+        "right_idler_wheel",
+        "right_road_roller_01",
+        "right_road_roller_02",
+        "right_road_roller_03",
+        "right_road_roller_04",
+        "right_road_roller_05",
+        "right_road_roller_06",
+        "right_road_roller_07",
+        "right_sprocket_hub",
+        "right_sprocket_wheel",
+        "right_track_blockout",
+        "right_track_treads",
+        "slew_bearing_ring",
+        "slew_support",
+        "x_frame_left_gusset",
+        "x_frame_right_gusset"
+      ],
+      "geometry_objects": [
+        "central_x_frame",
+        "left_carrier_roller_01",
+        "left_carrier_roller_02",
+        "left_crawler_beam_cap",
+        "left_crawler_frame",
+        "left_idler_hub",
+        "left_idler_wheel",
+        "left_road_roller_01",
+        "left_road_roller_02",
+        "left_road_roller_03",
+        "left_road_roller_04",
+        "left_road_roller_05",
+        "left_road_roller_06",
+        "left_road_roller_07",
+        "left_sprocket_hub",
+        "left_sprocket_wheel",
+        "left_track_blockout",
+        "left_track_treads",
+        "right_carrier_roller_01",
+        "right_carrier_roller_02",
+        "right_crawler_beam_cap",
+        "right_crawler_frame",
+        "right_idler_hub",
+        "right_idler_wheel",
+        "right_road_roller_01",
+        "right_road_roller_02",
+        "right_road_roller_03",
+        "right_road_roller_04",
+        "right_road_roller_05",
+        "right_road_roller_06",
+        "right_road_roller_07",
+        "right_sprocket_hub",
+        "right_sprocket_wheel",
+        "right_track_blockout",
+        "right_track_treads",
+        "slew_bearing_ring",
+        "slew_support",
+        "x_frame_left_gusset",
+        "x_frame_right_gusset"
+      ],
+      "technical_anchors": [],
+      "object_count": 39,
+      "mesh_count": 39,
+      "vertex_count": 1980,
+      "triangle_count": 3520,
+      "controlling_nodes": [
+        "NODE_UNDERCARRIAGE"
+      ],
+      "object_control": {
+        "central_x_frame": "NODE_UNDERCARRIAGE",
+        "left_carrier_roller_01": "NODE_UNDERCARRIAGE",
+        "left_carrier_roller_02": "NODE_UNDERCARRIAGE",
+        "left_crawler_beam_cap": "NODE_UNDERCARRIAGE",
+        "left_crawler_frame": "NODE_UNDERCARRIAGE",
+        "left_idler_hub": "NODE_UNDERCARRIAGE",
+        "left_idler_wheel": "NODE_UNDERCARRIAGE",
+        "left_road_roller_01": "NODE_UNDERCARRIAGE",
+        "left_road_roller_02": "NODE_UNDERCARRIAGE",
+        "left_road_roller_03": "NODE_UNDERCARRIAGE",
+        "left_road_roller_04": "NODE_UNDERCARRIAGE",
+        "left_road_roller_05": "NODE_UNDERCARRIAGE",
+        "left_road_roller_06": "NODE_UNDERCARRIAGE",
+        "left_road_roller_07": "NODE_UNDERCARRIAGE",
+        "left_sprocket_hub": "NODE_UNDERCARRIAGE",
+        "left_sprocket_wheel": "NODE_UNDERCARRIAGE",
+        "left_track_blockout": "NODE_UNDERCARRIAGE",
+        "left_track_treads": "NODE_UNDERCARRIAGE",
+        "right_carrier_roller_01": "NODE_UNDERCARRIAGE",
+        "right_carrier_roller_02": "NODE_UNDERCARRIAGE",
+        "right_crawler_beam_cap": "NODE_UNDERCARRIAGE",
+        "right_crawler_frame": "NODE_UNDERCARRIAGE",
+        "right_idler_hub": "NODE_UNDERCARRIAGE",
+        "right_idler_wheel": "NODE_UNDERCARRIAGE",
+        "right_road_roller_01": "NODE_UNDERCARRIAGE",
+        "right_road_roller_02": "NODE_UNDERCARRIAGE",
+        "right_road_roller_03": "NODE_UNDERCARRIAGE",
+        "right_road_roller_04": "NODE_UNDERCARRIAGE",
+        "right_road_roller_05": "NODE_UNDERCARRIAGE",
+        "right_road_roller_06": "NODE_UNDERCARRIAGE",
+        "right_road_roller_07": "NODE_UNDERCARRIAGE",
+        "right_sprocket_hub": "NODE_UNDERCARRIAGE",
+        "right_sprocket_wheel": "NODE_UNDERCARRIAGE",
+        "right_track_blockout": "NODE_UNDERCARRIAGE",
+        "right_track_treads": "NODE_UNDERCARRIAGE",
+        "slew_bearing_ring": "NODE_UNDERCARRIAGE",
+        "slew_support": "NODE_UNDERCARRIAGE",
+        "x_frame_left_gusset": "NODE_UNDERCARRIAGE",
+        "x_frame_right_gusset": "NODE_UNDERCARRIAGE"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "upperstructure",
+      "blender_objects": [
+        "boom_mounting_base",
+        "cab",
+        "cab_front_upper_glazing",
+        "cab_front_windshield",
+        "cab_left_main_window",
+        "cab_left_rear_window",
+        "cab_lower_sill",
+        "cab_right_main_window",
+        "cab_right_rear_window",
+        "cab_roof_cap",
+        "counterweight",
+        "main_upper_platform",
+        "tower_pin_support_left",
+        "tower_pin_support_right"
+      ],
+      "geometry_objects": [
+        "boom_mounting_base",
+        "cab",
+        "cab_front_upper_glazing",
+        "cab_front_windshield",
+        "cab_left_main_window",
+        "cab_left_rear_window",
+        "cab_lower_sill",
+        "cab_right_main_window",
+        "cab_right_rear_window",
+        "cab_roof_cap",
+        "counterweight",
+        "main_upper_platform",
+        "tower_pin_support_left",
+        "tower_pin_support_right"
+      ],
+      "technical_anchors": [],
+      "object_count": 14,
+      "mesh_count": 14,
+      "vertex_count": 325,
+      "triangle_count": 598,
+      "controlling_nodes": [
+        "NODE_UPPERSTRUCTURE"
+      ],
+      "object_control": {
+        "boom_mounting_base": "NODE_UPPERSTRUCTURE",
+        "cab": "NODE_UPPERSTRUCTURE",
+        "cab_front_upper_glazing": "NODE_UPPERSTRUCTURE",
+        "cab_front_windshield": "NODE_UPPERSTRUCTURE",
+        "cab_left_main_window": "NODE_UPPERSTRUCTURE",
+        "cab_left_rear_window": "NODE_UPPERSTRUCTURE",
+        "cab_lower_sill": "NODE_UPPERSTRUCTURE",
+        "cab_right_main_window": "NODE_UPPERSTRUCTURE",
+        "cab_right_rear_window": "NODE_UPPERSTRUCTURE",
+        "cab_roof_cap": "NODE_UPPERSTRUCTURE",
+        "counterweight": "NODE_UPPERSTRUCTURE",
+        "main_upper_platform": "NODE_UPPERSTRUCTURE",
+        "tower_pin_support_left": "NODE_UPPERSTRUCTURE",
+        "tower_pin_support_right": "NODE_UPPERSTRUCTURE"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "power-unit",
+      "blender_objects": [
+        "engine_body",
+        "engine_left_service_panel",
+        "engine_right_service_panel",
+        "engine_top_access_panel",
+        "service_front_right_panel"
+      ],
+      "geometry_objects": [
+        "engine_body",
+        "engine_left_service_panel",
+        "engine_right_service_panel",
+        "engine_top_access_panel",
+        "service_front_right_panel"
+      ],
+      "technical_anchors": [],
+      "object_count": 5,
+      "mesh_count": 5,
+      "vertex_count": 63,
+      "triangle_count": 106,
+      "controlling_nodes": [
+        "NODE_UPPERSTRUCTURE"
+      ],
+      "object_control": {
+        "engine_body": "NODE_UPPERSTRUCTURE",
+        "engine_left_service_panel": "NODE_UPPERSTRUCTURE",
+        "engine_right_service_panel": "NODE_UPPERSTRUCTURE",
+        "engine_top_access_panel": "NODE_UPPERSTRUCTURE",
+        "service_front_right_panel": "NODE_UPPERSTRUCTURE"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "boom",
+      "blender_objects": [
+        "boom",
+        "boom_left_side_plate",
+        "boom_right_side_plate",
+        "boom_root_pin_boss"
+      ],
+      "geometry_objects": [
+        "boom",
+        "boom_left_side_plate",
+        "boom_right_side_plate",
+        "boom_root_pin_boss"
+      ],
+      "technical_anchors": [],
+      "object_count": 4,
+      "mesh_count": 4,
+      "vertex_count": 168,
+      "triangle_count": 324,
+      "controlling_nodes": [
+        "NODE_BOOM"
+      ],
+      "object_control": {
+        "boom": "NODE_BOOM",
+        "boom_left_side_plate": "NODE_BOOM",
+        "boom_right_side_plate": "NODE_BOOM",
+        "boom_root_pin_boss": "NODE_BOOM"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "stick",
+      "blender_objects": [
+        "stick",
+        "stick_left_side_plate",
+        "stick_right_side_plate",
+        "stick_root_pin_boss"
+      ],
+      "geometry_objects": [
+        "stick",
+        "stick_left_side_plate",
+        "stick_right_side_plate",
+        "stick_root_pin_boss"
+      ],
+      "technical_anchors": [],
+      "object_count": 4,
+      "mesh_count": 4,
+      "vertex_count": 124,
+      "triangle_count": 236,
+      "controlling_nodes": [
+        "NODE_STICK"
+      ],
+      "object_control": {
+        "stick": "NODE_STICK",
+        "stick_left_side_plate": "NODE_STICK",
+        "stick_right_side_plate": "NODE_STICK",
+        "stick_root_pin_boss": "NODE_STICK"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "bucket",
+      "blender_objects": [
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_left_mount_ear",
+        "bucket_left_wear_rib",
+        "bucket_right_cheek",
+        "bucket_right_mount_ear",
+        "bucket_right_wear_rib",
+        "bucket_root_pin_boss",
+        "bucket_tooth_01",
+        "bucket_tooth_02",
+        "bucket_tooth_03",
+        "bucket_tooth_04",
+        "bucket_tooth_05"
+      ],
+      "geometry_objects": [
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_left_mount_ear",
+        "bucket_left_wear_rib",
+        "bucket_right_cheek",
+        "bucket_right_mount_ear",
+        "bucket_right_wear_rib",
+        "bucket_root_pin_boss",
+        "bucket_tooth_01",
+        "bucket_tooth_02",
+        "bucket_tooth_03",
+        "bucket_tooth_04",
+        "bucket_tooth_05"
+      ],
+      "technical_anchors": [],
+      "object_count": 14,
+      "mesh_count": 14,
+      "vertex_count": 224,
+      "triangle_count": 396,
+      "controlling_nodes": [
+        "NODE_BUCKET"
+      ],
+      "object_control": {
+        "bucket": "NODE_BUCKET",
+        "bucket_cutting_edge": "NODE_BUCKET",
+        "bucket_left_cheek": "NODE_BUCKET",
+        "bucket_left_mount_ear": "NODE_BUCKET",
+        "bucket_left_wear_rib": "NODE_BUCKET",
+        "bucket_right_cheek": "NODE_BUCKET",
+        "bucket_right_mount_ear": "NODE_BUCKET",
+        "bucket_right_wear_rib": "NODE_BUCKET",
+        "bucket_root_pin_boss": "NODE_BUCKET",
+        "bucket_tooth_01": "NODE_BUCKET",
+        "bucket_tooth_02": "NODE_BUCKET",
+        "bucket_tooth_03": "NODE_BUCKET",
+        "bucket_tooth_04": "NODE_BUCKET",
+        "bucket_tooth_05": "NODE_BUCKET"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "boom-cylinder",
+      "blender_objects": [
+        "ANCHOR_BOOM_CYL_BASE",
+        "ANCHOR_BOOM_CYL_ROD",
+        "boom_cylinder_barrel",
+        "boom_cylinder_end_base",
+        "boom_cylinder_end_rod",
+        "boom_cylinder_gland",
+        "boom_cylinder_rod"
+      ],
+      "geometry_objects": [
+        "boom_cylinder_barrel",
+        "boom_cylinder_end_base",
+        "boom_cylinder_end_rod",
+        "boom_cylinder_gland",
+        "boom_cylinder_rod"
+      ],
+      "technical_anchors": [
+        "ANCHOR_BOOM_CYL_BASE",
+        "ANCHOR_BOOM_CYL_ROD"
+      ],
+      "object_count": 7,
+      "mesh_count": 5,
+      "vertex_count": 220,
+      "triangle_count": 428,
+      "controlling_nodes": [
+        "NODE_BOOM",
+        "NODE_UPPERSTRUCTURE"
+      ],
+      "object_control": {
+        "ANCHOR_BOOM_CYL_BASE": "NODE_UPPERSTRUCTURE",
+        "ANCHOR_BOOM_CYL_ROD": "NODE_BOOM",
+        "boom_cylinder_barrel": "NODE_UPPERSTRUCTURE",
+        "boom_cylinder_end_base": "NODE_UPPERSTRUCTURE",
+        "boom_cylinder_end_rod": "NODE_BOOM",
+        "boom_cylinder_gland": "NODE_UPPERSTRUCTURE",
+        "boom_cylinder_rod": "NODE_BOOM"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "stick-cylinder",
+      "blender_objects": [
+        "ANCHOR_STICK_CYL_BASE",
+        "ANCHOR_STICK_CYL_ROD",
+        "stick_cylinder_barrel",
+        "stick_cylinder_end_base",
+        "stick_cylinder_end_rod",
+        "stick_cylinder_gland",
+        "stick_cylinder_rod"
+      ],
+      "geometry_objects": [
+        "stick_cylinder_barrel",
+        "stick_cylinder_end_base",
+        "stick_cylinder_end_rod",
+        "stick_cylinder_gland",
+        "stick_cylinder_rod"
+      ],
+      "technical_anchors": [
+        "ANCHOR_STICK_CYL_BASE",
+        "ANCHOR_STICK_CYL_ROD"
+      ],
+      "object_count": 7,
+      "mesh_count": 5,
+      "vertex_count": 220,
+      "triangle_count": 428,
+      "controlling_nodes": [
+        "NODE_BOOM",
+        "NODE_STICK"
+      ],
+      "object_control": {
+        "ANCHOR_STICK_CYL_BASE": "NODE_BOOM",
+        "ANCHOR_STICK_CYL_ROD": "NODE_STICK",
+        "stick_cylinder_barrel": "NODE_BOOM",
+        "stick_cylinder_end_base": "NODE_BOOM",
+        "stick_cylinder_end_rod": "NODE_STICK",
+        "stick_cylinder_gland": "NODE_BOOM",
+        "stick_cylinder_rod": "NODE_STICK"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    },
+    {
+      "id": "bucket-cylinder",
+      "blender_objects": [
+        "ANCHOR_BUCKET_CYL_BASE",
+        "ANCHOR_BUCKET_CYL_ROD",
+        "bucket_cylinder_barrel",
+        "bucket_cylinder_end_base",
+        "bucket_cylinder_end_rod",
+        "bucket_cylinder_gland",
+        "bucket_cylinder_rod"
+      ],
+      "geometry_objects": [
+        "bucket_cylinder_barrel",
+        "bucket_cylinder_end_base",
+        "bucket_cylinder_end_rod",
+        "bucket_cylinder_gland",
+        "bucket_cylinder_rod"
+      ],
+      "technical_anchors": [
+        "ANCHOR_BUCKET_CYL_BASE",
+        "ANCHOR_BUCKET_CYL_ROD"
+      ],
+      "object_count": 7,
+      "mesh_count": 5,
+      "vertex_count": 220,
+      "triangle_count": 428,
+      "controlling_nodes": [
+        "NODE_STICK"
+      ],
+      "object_control": {
+        "ANCHOR_BUCKET_CYL_BASE": "NODE_STICK",
+        "ANCHOR_BUCKET_CYL_ROD": "NODE_STICK",
+        "bucket_cylinder_barrel": "NODE_STICK",
+        "bucket_cylinder_end_base": "NODE_STICK",
+        "bucket_cylinder_end_rod": "NODE_STICK",
+        "bucket_cylinder_gland": "NODE_STICK",
+        "bucket_cylinder_rod": "NODE_STICK"
+      },
+      "selectable": true,
+      "renderable": true,
+      "technical_anchors_selectable": false
+    }
+  ],
+  "auxiliary_subsystems": [
+    {
+      "id": "bucket-linkage",
+      "blender_objects": [
+        "ANCHOR_LINKAGE_BUCKET_PIN",
+        "ANCHOR_LINKAGE_CYL_PIN",
+        "ANCHOR_LINKAGE_LINK_PIN",
+        "ANCHOR_LINKAGE_ROCKER_PIVOT",
+        "bucket_linkage_connecting_link",
+        "bucket_linkage_rocker",
+        "linkage_bucket_pin_boss",
+        "linkage_input_pin_boss",
+        "linkage_link_pin_boss",
+        "linkage_rocker_pin_boss"
+      ],
+      "object_count": 10,
+      "mesh_count": 6,
+      "vertex_count": 274,
+      "triangle_count": 540,
+      "geometry_objects": [
+        "bucket_linkage_connecting_link",
+        "bucket_linkage_rocker",
+        "linkage_bucket_pin_boss",
+        "linkage_input_pin_boss",
+        "linkage_link_pin_boss",
+        "linkage_rocker_pin_boss"
+      ],
+      "technical_anchors": [
+        "ANCHOR_LINKAGE_BUCKET_PIN",
+        "ANCHOR_LINKAGE_CYL_PIN",
+        "ANCHOR_LINKAGE_LINK_PIN",
+        "ANCHOR_LINKAGE_ROCKER_PIVOT"
+      ],
+      "controlling_nodes": [
+        "NODE_BUCKET",
+        "NODE_STICK"
+      ],
+      "canonical_component": false,
+      "selectable_educational_geometry": false
+    }
+  ],
+  "technical_objects": [
+    "ANCHOR_BOOM_CYL_BASE",
+    "ANCHOR_BOOM_CYL_ROD",
+    "ANCHOR_BUCKET_CYL_BASE",
+    "ANCHOR_BUCKET_CYL_ROD",
+    "ANCHOR_LINKAGE_BUCKET_PIN",
+    "ANCHOR_LINKAGE_CYL_PIN",
+    "ANCHOR_LINKAGE_LINK_PIN",
+    "ANCHOR_LINKAGE_ROCKER_PIVOT",
+    "ANCHOR_STICK_CYL_BASE",
+    "ANCHOR_STICK_CYL_ROD",
+    "CAM_front",
+    "CAM_left",
+    "CAM_rear",
+    "CAM_right",
+    "CAM_three_quarter_front",
+    "CAM_three_quarter_rear",
+    "CAM_top",
+    "DIM_contact_length_3.462m",
+    "DIM_crawler_length_4.255m",
+    "DIM_overall_height_3.100m",
+    "DIM_overall_width_2.990m",
+    "DIM_platform_width_2.830m",
+    "DIM_tail_radius_2.890m",
+    "DIM_transport_length_9.625m",
+    "GUIDE_boom_pin_centers",
+    "GUIDE_left_track_centerline",
+    "GUIDE_right_track_centerline",
+    "GUIDE_stick_pin_centers",
+    "NODE_BOOM",
+    "NODE_BUCKET",
+    "NODE_STICK",
+    "NODE_UNDERCARRIAGE",
+    "NODE_UPPERSTRUCTURE",
+    "PIVOT_BOOM",
+    "PIVOT_BUCKET",
+    "PIVOT_SLEW",
+    "PIVOT_STICK"
+  ],
+  "scene_geometry_counts": {
+    "object_count": 101,
+    "mesh_count": 101,
+    "vertex_count": 3818,
+    "triangle_count": 7004
+  },
+  "limitations": "Static uncoupled cylinders/linkage inherited; power-unit is an external service compartment, not engine internals."
+}
