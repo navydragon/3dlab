@@ -145,3 +145,11 @@ Six JSON collections live under `content/domain/`: machines, machine components,
 Processes own ordered stage IDs; stages own their operation and participant role references; roles own eligible machine IDs. Where-used queries derive these relationships. Roles have no singular operation constraint, and related machines are not persisted as duplicated process data. The repository returns shared frozen records, `undefined` for missing IDs, and explicit invalid-content results. UI pages consume application queries without importing production JSON or schemas; composition loads the local adapter. Contextual return checks process/stage existence, ownership and machine eligibility without stored history.
 
 React 19.3.0 is compatible with the published Fiber 9.8.1 React peer range (`>=19 <19.4`), checked during bootstrap against the registry and [Fiber guidance](https://r3f.docs.pmnd.rs/getting-started/introduction). Neither Fiber nor Three.js is installed; recheck peer compatibility when implementing the viewer. TypeScript 6.0.3 is selected within the current TypeScript ESLint parser's supported range (`>=4.8.4 <6.1.0`), rather than the incompatible latest TypeScript major.
+
+## 3D asset pipeline
+
+Approved binaries will live under `public/assets/3d/`; one JSON metadata record per asset will live under `content/3d/` (nested folders supported). Both currently contain only gitkeep: there is no approved production excavator model, node/clip mapping or connected viewer.
+
+See [3D asset specification](docs/3d/3d-asset-spec.md) and [Blender export guide](docs/3d/blender-export-guide.md). Renderer-neutral contracts belong to `src/domain/asset3d.ts`; content schemas validate shapes and machine/component ownership. `npm run content:validate` automatically validates all 3D metadata JSON alongside domain content; zero metadata files is valid. Metadata validation does not inspect binary topology.
+
+Asset URIs use `assets/3d/...glb` or `.gltf`, resolved against the application base by the future asset adapter. Re-export/version changes preserve Machine/component IDs. Actual node/clip inspection, licensed asset delivery and the viewer remain a later task; no Three.js/Fiber dependencies were added.

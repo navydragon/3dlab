@@ -8,6 +8,11 @@ export type LearningSectionId = Id<'LearningSection'>;
 export type MachineComponentId = Id<'MachineComponent'>;
 export type OperationId = Id<'Operation'>;
 export type MachineRoleId = Id<'MachineRole'>;
+export type Asset3DId = Id<'Asset3D'>;
+
+export function isAsset3DId(value: unknown): value is Asset3DId {
+  return isStableId(value);
+}
 
 // Structural identity only: these guards do not establish content existence.
 export function isStableId(value: unknown): value is string {

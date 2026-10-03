@@ -98,6 +98,12 @@ describe('architectural import restrictions', () => {
   });
   it.each([
     ['src/domain/ids.ts', 'react'],
+    ['src/domain/asset3d.ts', 'react'],
+    ['src/domain/asset3d.ts', 'three'],
+    ['src/domain/asset3d.ts', '@react-three/fiber'],
+    ['src/domain/asset3d.ts', 'zod'],
+    ['src/content/schemas/asset3d.ts', 'three'],
+    ['src/content/schemas/asset3d.ts', '@react-three/fiber'],
     ['src/domain/ids.ts', 'react/jsx-runtime'],
     ['src/domain/ids.ts', 'react-router'],
     ['src/domain/ids.ts', 'zod'],

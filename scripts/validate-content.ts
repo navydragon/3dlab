@@ -1,6 +1,8 @@
 import { readFile } from 'node:fs/promises';
 import { domainFiles } from '../src/content/adapters/local/manifest.ts';
 import { validateDomainContent } from '../src/content/validation.ts';
+import { validateAsset3DCollection } from '../src/content/asset3d-validation.ts';
+import { readAssetMetadataFiles } from './asset-metadata-files.ts';
 
 try {
   const collections = await Promise.all(
@@ -22,6 +24,26 @@ try {
       );
     process.exitCode = 1;
   } else {
+    const files = await readAssetMetadataFiles(
+      new URL('../content/3d/', import.meta.url),
+    );
+    const assets = validateAsset3DCollection(
+      files.map((file) => file.data),
+      validation.graph,
+    );
+    if (assets.status === 'invalid') {
+      for (const issue of assets.issues) {
+        const index = issue.path[0];
+        const file = typeof index === 'number' ? files[index]?.file : undefined;
+        console.error(
+          `${file ?? '3d'} ${issue.phase}:${issue.code} ${issue.path.slice(1).join('.')} — ${issue.message}`,
+        );
+      }
+      process.exitCode = 1;
+    } else
+      console.log(
+        `3D metadata valid: ${assets.assets.length} assets (topology not inspected).`,
+      );
     console.log(
       `Domain content valid: ${Object.entries(validation.graph)
         .map(([name, records]) => `${records.length} ${name}`)
