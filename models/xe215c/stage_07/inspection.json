@@ -1,0 +1,1163 @@
+{
+  "stage": "07 compact PBR and real-time audit",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": {
+    "models/xe215c/stage_01/checkpoints/front.png": "f6579f63a8e0532fab02677bd9bac14cc866488fa4145321c3c160e2ef91bb53",
+    "models/xe215c/stage_01/checkpoints/left.png": "43263fed4e98ade107f5cce93f60ab3f0053c9a17141b9abfd5e3721aa378b95",
+    "models/xe215c/stage_01/checkpoints/rear.png": "324e980223bf150f0e2af0d9fec26480fc03099c998f73ddf8fe1a8df3907d39",
+    "models/xe215c/stage_01/checkpoints/right.png": "f60ec60cd2cd5977729ff2ebde1ca7981211a15991493f40ad28b39a5faf40cd",
+    "models/xe215c/stage_01/checkpoints/three_quarter_front.png": "64dee6e42e7c314bec904dcc47fd3aef462fffcdbe18993f74612a811c908f48",
+    "models/xe215c/stage_01/checkpoints/three_quarter_rear.png": "34235a4c5a2548faf7e13a9dcc6924a26c0e2a2a077329c2d9eb8d7c62aa69e5",
+    "models/xe215c/stage_01/checkpoints/top.png": "9d7d361720b30a3812b7cf0db995e1decf89f5efb9909734fc3c06b09939db78",
+    "models/xe215c/stage_01/inspection.json": "ced1c45454ef1c5f910147af111e488728e089d82e1cd833091e4e45bdd2b4e9",
+    "models/xe215c/stage_01/README.md": "e6d8e0572ed9c5f3e991a8c2e49f925c09e1b806d8f9563769c71e35bb6f62eb",
+    "models/xe215c/stage_01/xe215c_stage_01.blend": "6d6ee94475a1fca10ba584ab06efe106b090c01e8056d100286f1f387379b4c1",
+    "models/xe215c/stage_02/checkpoints/front.png": "140e56a899652858138ec5f652b3d2f168b35adc3fa44d57487123b9a31ab9e5",
+    "models/xe215c/stage_02/checkpoints/left.png": "4267f1fa736e8fc986b2ef669ba3a50af1628e08ec2fb74745200e5019532fc4",
+    "models/xe215c/stage_02/checkpoints/rear.png": "6e64b7a404ad659ee5f070baebee8fea87f61f18a2b1bb6c3a08cb098965f642",
+    "models/xe215c/stage_02/checkpoints/right.png": "e4db040f8eeab2ee857885392862478a2f778f275bd0a1ce84f50cc4af60a136",
+    "models/xe215c/stage_02/checkpoints/three_quarter_front.png": "f18ccf853bcdb753e703244d49458305d1e84b485eef414395e44892bb5a0fcf",
+    "models/xe215c/stage_02/checkpoints/three_quarter_rear.png": "6ca1576c5d767b12bc5b3a21ac58ae79008b9a89712c716544fb9f9406d768ba",
+    "models/xe215c/stage_02/checkpoints/top.png": "14462ce8404fe9c84e164960d915098ad19f8a051770a6a06eed49e9d24e9c81",
+    "models/xe215c/stage_02/comparison_stage_01_vs_02.png": "94906a130ed0169d5de8d066cfddf5e92274d95eb9aa80b9c1a771a5d01e1c19",
+    "models/xe215c/stage_02/inspection.json": "203d8bfc971520538217a9659e6257127af79d99a2de3f8c497f0d47ec9cb72b",
+    "models/xe215c/stage_02/README.md": "e55d9477c7d2927cccaa68026e0e93f3bdc4bafdaf7f65ba804b53393c9243e2",
+    "models/xe215c/stage_02/xe215c_stage_02.blend": "1b954f3dfe9af4e2c705bd0a176a3061a89385100afc41ced6c2b514b83b1d57",
+    "models/xe215c/stage_03/checkpoints/articulated_workgroup_three_quarter.png": "82a0e7aee35c3c10eda23a5e9a1d0757743cc0cf2f38ce0c5135299c1cc43229",
+    "models/xe215c/stage_03/checkpoints/neutral_three_quarter.png": "13921c25387b00039b625cb1f3bee6061ae9dfb43e9d3768ba3b4a19e4de3b61",
+    "models/xe215c/stage_03/checkpoints/slew_test_three_quarter.png": "56177d49a916d63caa37aa21c6e4631568b542f88ec17afe37a2536b4f8e7735",
+    "models/xe215c/stage_03/inspection.json": "7354f824919f10f357c5774b76c4f5e17a71385e49b7023651102c077b4dd86f",
+    "models/xe215c/stage_03/README.md": "c91e636227c40e95c1f36f71dd7080b133bc966be0848305bbcf189aa1c348b6",
+    "models/xe215c/stage_03/xe215c_stage_03.blend": "0be75b86cd4f6682af49096aeaba29824ecc62b93443a440f9397503b50d5a2b",
+    "models/xe215c/stage_04/checkpoints/articulated_primary_geometry.png": "c5e960d11a3cf1f780696fc6398c5711842c11ff4fe39045e7988f0e862ea510",
+    "models/xe215c/stage_04/checkpoints/front.png": "47768375e4b0ebfcb45cd2b361067bca99d1dbb4ba1454e488b04da0664e579e",
+    "models/xe215c/stage_04/checkpoints/left.png": "272e23e556731b591fca85d9b768cc88475c1f1d28cc4ca8c87c858c8f9a6cbe",
+    "models/xe215c/stage_04/checkpoints/rear.png": "ef2e2e3ab63b6db18dc552c7409516e9e27f6d2bd2192734ea225fb25ab94b18",
+    "models/xe215c/stage_04/checkpoints/right.png": "5c221d476a90a3a7b83efaa9e8a924a7af1920065f15e6a7b58b42178cc0d42f",
+    "models/xe215c/stage_04/checkpoints/three_quarter_front.png": "2e250c38d001bfde2749c686a4bcd53e1eda13839f047e0badcd60f1c632428c",
+    "models/xe215c/stage_04/checkpoints/three_quarter_rear.png": "16398f97afda16577bd95fc875f4e3429e63c0461ff2a86c2c992fd9d5448c21",
+    "models/xe215c/stage_04/checkpoints/top.png": "840c228c65d07ccf27d22ef7f01914ac83293cdfdabd9f89dbbf1f5ba0de0113",
+    "models/xe215c/stage_04/inspection.json": "8a911fca601fd69ad83f278175093d4f5bc237a9cbad3b4ebd48ac70b503d537",
+    "models/xe215c/stage_04/README.md": "671616c9aa342a6fa26e38cc7c0812b2c57640fb7d123518a94b92ffda847e77",
+    "models/xe215c/stage_04/xe215c_stage_04.blend": "8dd82d6ef7b00a99a88ad40f46dd3d816bde8dcd3ed07856db20240b91f9c722",
+    "models/xe215c/stage_05/checkpoints/boom-cylinder.png": "ef4817dee8801b606bb69463f93699fe11e84a2024be124ea422d3cc11fad8d5",
+    "models/xe215c/stage_05/checkpoints/boom.png": "0a2bd004a96baf6493311f7c6a37e657560b5133b9d75e27ae92f2d67bfd4544",
+    "models/xe215c/stage_05/checkpoints/bucket-cylinder.png": "062af26a414ba767ab9aac4dbfcd3c9b8c90a61e56f702c632ffab8f54b7da32",
+    "models/xe215c/stage_05/checkpoints/bucket.png": "c9110a367909afd34c3d2d0d276c1561b493128c1d9b5f492203898c87e12feb",
+    "models/xe215c/stage_05/checkpoints/neutral_overview.png": "6f6d88877c6a3fcbe1a4186e72588bc5954fe1321604d4fe10e9e6056c045b2e",
+    "models/xe215c/stage_05/checkpoints/power-unit.png": "97f521d6360e4c5401554469bac4910f1752b443d5175aa34a6ee5baefefdfe1",
+    "models/xe215c/stage_05/checkpoints/stick-cylinder.png": "cb9e07e7cc9a759bf9169f76dbbc4fc00f95fd066e9e3376a991faa33fa600ba",
+    "models/xe215c/stage_05/checkpoints/stick.png": "966ff6979db13bd49309dd3c061f480bf73c1276a50c6e5f01a16c0e99f1b0e0",
+    "models/xe215c/stage_05/checkpoints/undercarriage.png": "7d233553876f33348ce723ea936302a048378697aeeb7d5582d43858806e44b5",
+    "models/xe215c/stage_05/checkpoints/upperstructure.png": "8c5638980b69668b44a37fa4cacb25d62e51c7ef28713c41d511d184d4b90ca5",
+    "models/xe215c/stage_05/component_manifest.json": "e4553df15622845526b5c1f37b4e8d895cde9feb878f5f5fc717254d3d0f0a61",
+    "models/xe215c/stage_05/inspection.json": "c7ec793dea75e054d9503e64c90f7c6b554a7a7d0eeb5a914321744074aa0dd1",
+    "models/xe215c/stage_05/README.md": "36471fc3506293f38ae8fcbcc4c3d296a35cc78c551744454f66fbca322ef496",
+    "models/xe215c/stage_05/xe215c_stage_05.blend": "406f3011680f058ef4fffb236f77683176dff5152824808061e7254425aa36c9",
+    "models/xe215c/stage_06/checkpoints/digging.png": "751bf22e04e1587bd2cfbb3ea1d496a4d11b246c132ed30ec428894b8db14b5e",
+    "models/xe215c/stage_06/checkpoints/dump.png": "50ad97d1d322798cffa9cfc77642d9d6f1e6b585f3db90ed3a32c771e5e5089b",
+    "models/xe215c/stage_06/checkpoints/filled.png": "e2e25ccf862ca17fe55729648180c95e988ed875fad614f51d6d278436452e15",
+    "models/xe215c/stage_06/checkpoints/lifted.png": "6099bb54ac0e74c630d39a4930ab3f2bd9f2913ca5ca03a6c80c24aa42e9f38a",
+    "models/xe215c/stage_06/checkpoints/neutral.png": "701c4704cf029ccbd2b25e96da961937c354652b8c21cdd8480945fa2cc2551e",
+    "models/xe215c/stage_06/checkpoints/returned.png": "83a3afd2630614f2b9ede89ec039a071a5f586e1c2fe454bf493287cc06b6f41",
+    "models/xe215c/stage_06/checkpoints/slewed.png": "dae8b8796c5dd1169a962346e23f6002a41afeea6ec890ea8aa294b9d5242191",
+    "models/xe215c/stage_06/inspection.json": "28394149c7d927dc3f51607ffa8bdaafd34c007f695b40dac68df0090fbd3c4a",
+    "models/xe215c/stage_06/README.md": "7e390ab9b8ec1f46bc78735728649b609ed3d3ee17e6ad01225e989b31744a16",
+    "models/xe215c/stage_06/work_cycle_contact_sheet.png": "e01c778ef453bc82f1e5a313f2941826ddb0451aecd73d2d4d69df99924f665a",
+    "models/xe215c/stage_06/xe215c_stage_06.blend": "6c2e234f2513b44aff86276792500e0d28c493600dc3ddf2ce1ae35e1be218fd",
+    "scripts/blender/check_stage_01.py": "2bd44824c285bddcab7fd3ef90e0825272aa201be6afd8c31e8ba7608cefafd9",
+    "scripts/blender/check_stage_02.py": "aa2281a85fef6382a638b3a2b181d1001308644f37b9e3dacfd6c59539468501",
+    "scripts/blender/check_stage_03.py": "4ecb605af7da99f0b9274b07387a1dc779a1ae0420807e51d1f7ad4fd2b6ccc9",
+    "scripts/blender/check_stage_04.py": "391a353997cb72fed46f2b2ef375249d3fd59b70ca61ff1272be51f583e7f44c",
+    "scripts/blender/check_stage_05.py": "a708c1fc6ce69ae536a68260b11a969beb1163c23ecd8fc84f30673b4ccd9f1e",
+    "scripts/blender/check_stage_06.py": "f897775a9f4f3adc9fa5fc8a0a712085d4292e83755acec47da7ea44fac64bfb",
+    "scripts/blender/stage_01_blockout.py": "473b6e8be076c06d3385536923e4fb573570bdfafece4fc177597434898e2059",
+    "scripts/blender/stage_02_contact_sheet.py": "00158381e0527faa827608c22e94b91510b1eebbd25cad87d9e13fa046b8a28f",
+    "scripts/blender/stage_02_proportions.py": "1ae9afe8a5c9742fa19ae7f88de0ed2d04ba9536254786f64a98f23b822be44f",
+    "scripts/blender/stage_03_hierarchy_kinematics.py": "2fdbe7bbbc47138ea6b5de61cf7298db3b0bfd60b24c911ffc6813472e007877",
+    "scripts/blender/stage_04_detailing.py": "ea1b35470a94d9501e2bc459e34ded038ce09693ef80aa9fe16807fdba81ccc1",
+    "scripts/blender/stage_05_segmentation.py": "417eb8eb8edbc022e1a7484ca6f82b9b8d79c81ef58bfd98027c57ee9e785c76",
+    "scripts/blender/stage_06_kinematics_animation.py": "a4d02b7fd1e08b6610c8a4a447d90aeb063a4102693186b329a4f64888702eae"
+  },
+  "checks": {
+    "stages01_to06_immutable": {
+      "pass": true,
+      "source_file_count": 76
+    },
+    "101_meshes_exact_inventory": {
+      "pass": true
+    },
+    "geometry_central_x_frame": {
+      "pass": true
+    },
+    "geometry_slew_support": {
+      "pass": true
+    },
+    "geometry_left_track_blockout": {
+      "pass": true
+    },
+    "geometry_left_crawler_frame": {
+      "pass": true
+    },
+    "geometry_right_track_blockout": {
+      "pass": true
+    },
+    "geometry_right_crawler_frame": {
+      "pass": true
+    },
+    "geometry_left_idler_wheel": {
+      "pass": true
+    },
+    "geometry_left_idler_hub": {
+      "pass": true
+    },
+    "geometry_left_sprocket_wheel": {
+      "pass": true
+    },
+    "geometry_left_sprocket_hub": {
+      "pass": true
+    },
+    "geometry_left_road_roller_01": {
+      "pass": true
+    },
+    "geometry_left_road_roller_02": {
+      "pass": true
+    },
+    "geometry_left_road_roller_03": {
+      "pass": true
+    },
+    "geometry_left_road_roller_04": {
+      "pass": true
+    },
+    "geometry_left_road_roller_05": {
+      "pass": true
+    },
+    "geometry_left_road_roller_06": {
+      "pass": true
+    },
+    "geometry_left_road_roller_07": {
+      "pass": true
+    },
+    "geometry_left_carrier_roller_01": {
+      "pass": true
+    },
+    "geometry_left_carrier_roller_02": {
+      "pass": true
+    },
+    "geometry_left_track_treads": {
+      "pass": true
+    },
+    "geometry_left_crawler_beam_cap": {
+      "pass": true
+    },
+    "geometry_right_idler_wheel": {
+      "pass": true
+    },
+    "geometry_right_idler_hub": {
+      "pass": true
+    },
+    "geometry_right_sprocket_wheel": {
+      "pass": true
+    },
+    "geometry_right_sprocket_hub": {
+      "pass": true
+    },
+    "geometry_right_road_roller_01": {
+      "pass": true
+    },
+    "geometry_right_road_roller_02": {
+      "pass": true
+    },
+    "geometry_right_road_roller_03": {
+      "pass": true
+    },
+    "geometry_right_road_roller_04": {
+      "pass": true
+    },
+    "geometry_right_road_roller_05": {
+      "pass": true
+    },
+    "geometry_right_road_roller_06": {
+      "pass": true
+    },
+    "geometry_right_road_roller_07": {
+      "pass": true
+    },
+    "geometry_right_carrier_roller_01": {
+      "pass": true
+    },
+    "geometry_right_carrier_roller_02": {
+      "pass": true
+    },
+    "geometry_right_track_treads": {
+      "pass": true
+    },
+    "geometry_right_crawler_beam_cap": {
+      "pass": true
+    },
+    "geometry_slew_bearing_ring": {
+      "pass": true
+    },
+    "geometry_x_frame_left_gusset": {
+      "pass": true
+    },
+    "geometry_x_frame_right_gusset": {
+      "pass": true
+    },
+    "geometry_cab": {
+      "pass": true
+    },
+    "geometry_engine_body": {
+      "pass": true
+    },
+    "geometry_main_upper_platform": {
+      "pass": true
+    },
+    "geometry_counterweight": {
+      "pass": true
+    },
+    "geometry_boom_mounting_base": {
+      "pass": true
+    },
+    "geometry_cab_left_main_window": {
+      "pass": true
+    },
+    "geometry_cab_left_rear_window": {
+      "pass": true
+    },
+    "geometry_cab_right_main_window": {
+      "pass": true
+    },
+    "geometry_cab_right_rear_window": {
+      "pass": true
+    },
+    "geometry_cab_front_windshield": {
+      "pass": true
+    },
+    "geometry_cab_front_upper_glazing": {
+      "pass": true
+    },
+    "geometry_cab_roof_cap": {
+      "pass": true
+    },
+    "geometry_cab_lower_sill": {
+      "pass": true
+    },
+    "geometry_engine_right_service_panel": {
+      "pass": true
+    },
+    "geometry_engine_left_service_panel": {
+      "pass": true
+    },
+    "geometry_service_front_right_panel": {
+      "pass": true
+    },
+    "geometry_engine_top_access_panel": {
+      "pass": true
+    },
+    "geometry_tower_pin_support_right": {
+      "pass": true
+    },
+    "geometry_tower_pin_support_left": {
+      "pass": true
+    },
+    "geometry_boom_cylinder_barrel": {
+      "pass": true
+    },
+    "geometry_boom_cylinder_gland": {
+      "pass": true
+    },
+    "geometry_boom_cylinder_end_base": {
+      "pass": true
+    },
+    "geometry_boom": {
+      "pass": true
+    },
+    "geometry_stick": {
+      "pass": true
+    },
+    "geometry_bucket": {
+      "pass": true
+    },
+    "geometry_bucket_left_cheek": {
+      "pass": true
+    },
+    "geometry_bucket_right_cheek": {
+      "pass": true
+    },
+    "geometry_bucket_cutting_edge": {
+      "pass": true
+    },
+    "geometry_boom_right_side_plate": {
+      "pass": true
+    },
+    "geometry_boom_left_side_plate": {
+      "pass": true
+    },
+    "geometry_stick_right_side_plate": {
+      "pass": true
+    },
+    "geometry_stick_left_side_plate": {
+      "pass": true
+    },
+    "geometry_boom_root_pin_boss": {
+      "pass": true
+    },
+    "geometry_stick_root_pin_boss": {
+      "pass": true
+    },
+    "geometry_bucket_root_pin_boss": {
+      "pass": true
+    },
+    "geometry_bucket_tooth_01": {
+      "pass": true
+    },
+    "geometry_bucket_tooth_02": {
+      "pass": true
+    },
+    "geometry_bucket_tooth_03": {
+      "pass": true
+    },
+    "geometry_bucket_tooth_04": {
+      "pass": true
+    },
+    "geometry_bucket_tooth_05": {
+      "pass": true
+    },
+    "geometry_bucket_left_wear_rib": {
+      "pass": true
+    },
+    "geometry_bucket_right_wear_rib": {
+      "pass": true
+    },
+    "geometry_bucket_left_mount_ear": {
+      "pass": true
+    },
+    "geometry_bucket_right_mount_ear": {
+      "pass": true
+    },
+    "geometry_boom_cylinder_rod": {
+      "pass": true
+    },
+    "geometry_boom_cylinder_end_rod": {
+      "pass": true
+    },
+    "geometry_stick_cylinder_barrel": {
+      "pass": true
+    },
+    "geometry_stick_cylinder_rod": {
+      "pass": true
+    },
+    "geometry_stick_cylinder_gland": {
+      "pass": true
+    },
+    "geometry_stick_cylinder_end_base": {
+      "pass": true
+    },
+    "geometry_stick_cylinder_end_rod": {
+      "pass": true
+    },
+    "geometry_bucket_cylinder_barrel": {
+      "pass": true
+    },
+    "geometry_bucket_cylinder_rod": {
+      "pass": true
+    },
+    "geometry_bucket_cylinder_gland": {
+      "pass": true
+    },
+    "geometry_bucket_cylinder_end_base": {
+      "pass": true
+    },
+    "geometry_bucket_cylinder_end_rod": {
+      "pass": true
+    },
+    "geometry_bucket_linkage_rocker": {
+      "pass": true
+    },
+    "geometry_bucket_linkage_connecting_link": {
+      "pass": true
+    },
+    "geometry_linkage_rocker_pin_boss": {
+      "pass": true
+    },
+    "geometry_linkage_input_pin_boss": {
+      "pass": true
+    },
+    "geometry_linkage_link_pin_boss": {
+      "pass": true
+    },
+    "geometry_linkage_bucket_pin_boss": {
+      "pass": true
+    },
+    "7004_triangles": {
+      "pass": true
+    },
+    "finite_geometry": {
+      "pass": true
+    },
+    "no_zero_area_triangles": {
+      "pass": true,
+      "count": 0
+    },
+    "unchanged_parents_and_metadata": {
+      "pass": true
+    },
+    "exact_nine_ids": {
+      "pass": true
+    },
+    "no_unclassified_major_meshes": {
+      "pass": true,
+      "count": 0
+    },
+    "complete_rig_frozen": {
+      "pass": true
+    },
+    "linkage_cylinder_constants_frozen": {
+      "pass": true
+    },
+    "authored_action_keys_handles_slots_frozen": {
+      "pass": true
+    },
+    "clip_1_281_24fps": {
+      "pass": true
+    },
+    "sampled_motion_identical_to_stage06": {
+      "pass": true,
+      "max_world_vertex_error_m": 0,
+      "frames": [
+        0,
+        1,
+        13,
+        27,
+        41,
+        59,
+        81,
+        103,
+        131,
+        148,
+        166,
+        191,
+        209,
+        236,
+        253,
+        281
+      ]
+    },
+    "first_last_transform_match": {
+      "pass": true
+    },
+    "rest_frame0_and_original_pivots_anchors": {
+      "pass": true
+    },
+    "drivers_constraints_valid": {
+      "pass": true
+    },
+    "identity_metric_no_armature_modifiers": {
+      "pass": true
+    },
+    "only_technical_preview_lights_added": {
+      "pass": true
+    },
+    "seven_production_materials": {
+      "pass": true
+    },
+    "no_unused_production_materials": {
+      "pass": true
+    },
+    "one_expected_slot_per_mesh": {
+      "pass": true
+    },
+    "simple_opaque_PBR_cab_glass_dark": {
+      "pass": true
+    },
+    "simple_opaque_PBR_cutting_edge_steel": {
+      "pass": true
+    },
+    "simple_opaque_PBR_dark_chassis": {
+      "pass": true
+    },
+    "simple_opaque_PBR_hydraulic_dark": {
+      "pass": true
+    },
+    "simple_opaque_PBR_hydraulic_rod_metal": {
+      "pass": true
+    },
+    "simple_opaque_PBR_industrial_body_yellow": {
+      "pass": true
+    },
+    "simple_opaque_PBR_track_dark": {
+      "pass": true
+    },
+    "no_external_images_or_missing_paths": {
+      "pass": true,
+      "external_image_count": 0
+    },
+    "stage05_select_highlight_hide_isolate": {
+      "pass": true
+    },
+    "solid_object_highlight_and_palette": {
+      "pass": true
+    },
+    "eevee_preview_and_visible_rest": {
+      "pass": true
+    }
+  },
+  "mesh_count": 101,
+  "vertex_count": 3818,
+  "triangle_count": 7004,
+  "production_material_count": 7,
+  "materials": [
+    {
+      "name": "cab_glass_dark",
+      "base_color_linear_rgba": [
+        0.005422868765890598,
+        0.010816383175551891,
+        0.015325203537940979,
+        1.0
+      ],
+      "metallic": 0.05000000074505806,
+      "roughness": 0.2199999988079071,
+      "mesh_count": 6,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "cutting_edge_steel",
+      "base_color_linear_rgba": [
+        0.08353512734174728,
+        0.10048151016235352,
+        0.11280478537082672,
+        1.0
+      ],
+      "metallic": 0.75,
+      "roughness": 0.550000011920929,
+      "mesh_count": 8,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "dark_chassis",
+      "base_color_linear_rgba": [
+        0.021980946883559227,
+        0.027211781591176987,
+        0.0300741046667099,
+        1.0
+      ],
+      "metallic": 0.3499999940395355,
+      "roughness": 0.6200000047683716,
+      "mesh_count": 35,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "hydraulic_dark",
+      "base_color_linear_rgba": [
+        0.03968190774321556,
+        0.04696420207619667,
+        0.05087608844041824,
+        1.0
+      ],
+      "metallic": 0.550000011920929,
+      "roughness": 0.41999998688697815,
+      "mesh_count": 23,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "hydraulic_rod_metal",
+      "base_color_linear_rgba": [
+        0.47699978947639465,
+        0.5225215554237366,
+        0.5704815983772278,
+        1.0
+      ],
+      "metallic": 1.0,
+      "roughness": 0.23000000417232513,
+      "mesh_count": 3,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "industrial_body_yellow",
+      "base_color_linear_rgba": [
+        0.868899405002594,
+        0.4064483046531677,
+        0.007194409146904945,
+        1.0
+      ],
+      "metallic": 0.10000000149011612,
+      "roughness": 0.4300000071525574,
+      "mesh_count": 22,
+      "opaque": true,
+      "nodes": 2
+    },
+    {
+      "name": "track_dark",
+      "base_color_linear_rgba": [
+        0.010816383175551891,
+        0.0134117491543293,
+        0.015325203537940979,
+        1.0
+      ],
+      "metallic": 0.4000000059604645,
+      "roughness": 0.7799999713897705,
+      "mesh_count": 4,
+      "opaque": true,
+      "nodes": 2
+    }
+  ],
+  "external_image_textures": 0,
+  "geometry_edits": [],
+  "smooth_face_changes": {
+    "left_idler_wheel": 20,
+    "left_idler_hub": 32,
+    "left_sprocket_wheel": 20,
+    "left_sprocket_hub": 32,
+    "left_road_roller_01": 14,
+    "left_road_roller_02": 14,
+    "left_road_roller_03": 14,
+    "left_road_roller_04": 14,
+    "left_road_roller_05": 14,
+    "left_road_roller_06": 14,
+    "left_road_roller_07": 14,
+    "left_carrier_roller_01": 12,
+    "left_carrier_roller_02": 12,
+    "right_idler_wheel": 20,
+    "right_idler_hub": 32,
+    "right_sprocket_wheel": 20,
+    "right_sprocket_hub": 32,
+    "right_road_roller_01": 14,
+    "right_road_roller_02": 14,
+    "right_road_roller_03": 14,
+    "right_road_roller_04": 14,
+    "right_road_roller_05": 14,
+    "right_road_roller_06": 14,
+    "right_road_roller_07": 14,
+    "right_carrier_roller_01": 12,
+    "right_carrier_roller_02": 12,
+    "slew_bearing_ring": 64,
+    "tower_pin_support_right": 32,
+    "tower_pin_support_left": 32,
+    "boom_cylinder_barrel": 16,
+    "boom_cylinder_gland": 16,
+    "boom_cylinder_end_base": 32,
+    "boom_root_pin_boss": 32,
+    "stick_root_pin_boss": 32,
+    "bucket_root_pin_boss": 32,
+    "boom_cylinder_rod": 14,
+    "boom_cylinder_end_rod": 32,
+    "stick_cylinder_barrel": 16,
+    "stick_cylinder_rod": 14,
+    "stick_cylinder_gland": 16,
+    "stick_cylinder_end_base": 32,
+    "stick_cylinder_end_rod": 32,
+    "bucket_cylinder_barrel": 16,
+    "bucket_cylinder_rod": 14,
+    "bucket_cylinder_gland": 16,
+    "bucket_cylinder_end_base": 32,
+    "bucket_cylinder_end_rod": 32,
+    "linkage_rocker_pin_boss": 32,
+    "linkage_input_pin_boss": 32,
+    "linkage_link_pin_boss": 32,
+    "linkage_bucket_pin_boss": 32
+  },
+  "unclassified_major_meshes": [],
+  "zero_area_triangles": [],
+  "duplicate_geometry_datablock_groups": [],
+  "unique_mesh_datablocks": 101,
+  "geometry_material_slots": 101,
+  "baseline_mesh_material_primitives": 101,
+  "runtime_note": "Structural audit only; actual browser draw calls/fps and exported size are not measured. No export or merging.",
+  "stage06_regression": {
+    "0": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 4.308471767545033e-07,
+          "axis_error_m": 1.812804499357408e-07,
+          "length_m": 1.4741099945691687,
+          "overlap_m": 0.29482199891383387,
+          "extension_beyond_gland_m": 0.4569740983164423
+        },
+        "stick": {
+          "pin_error_m": 7.633141638737186e-07,
+          "axis_error_m": 4.768374551809798e-07,
+          "length_m": 3.9517655428681326,
+          "overlap_m": 0.7903531085736262,
+          "extension_beyond_gland_m": 1.2250473182891213
+        },
+        "bucket": {
+          "pin_error_m": 1.7192608870100114e-06,
+          "axis_error_m": 7.450580596923828e-07,
+          "length_m": 1.6829737475328705,
+          "overlap_m": 0.3365947495065742,
+          "extension_beyond_gland_m": 0.52172186173519
+        }
+      },
+      "linkage_rocker_length_m": 0.42520561153220443,
+      "linkage_connecting_length_m": 0.6344386153434455,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.2697911175684934,
+      "primary_geometry_error_m": 0
+    },
+    "1": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 8.0023536575422e-07,
+          "axis_error_m": 5.372690075822538e-07,
+          "length_m": 1.5447173628253978,
+          "overlap_m": 0.22421463065760472,
+          "extension_beyond_gland_m": 0.5275814665726715
+        },
+        "stick": {
+          "pin_error_m": 7.152563436342317e-07,
+          "axis_error_m": 4.768374551809416e-07,
+          "length_m": 3.8240980259793744,
+          "overlap_m": 0.9180206254623844,
+          "extension_beyond_gland_m": 1.097379801400363
+        },
+        "bucket": {
+          "pin_error_m": 9.53674430093081e-07,
+          "axis_error_m": 7.003545761108398e-07,
+          "length_m": 1.7373333564610027,
+          "overlap_m": 0.282235140578442,
+          "extension_beyond_gland_m": 0.5760814706633222
+        }
+      },
+      "linkage_rocker_length_m": 0.42520562193607037,
+      "linkage_connecting_length_m": 0.6344384098307633,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3463701184634311,
+      "primary_geometry_error_m": 4.915124923727108e-07
+    },
+    "13": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 3.816559456248789e-07,
+          "axis_error_m": 2.980232238769531e-07,
+          "length_m": 1.5473806152143255,
+          "overlap_m": 0.2215513782686771,
+          "extension_beyond_gland_m": 0.5302447189615991
+        },
+        "stick": {
+          "pin_error_m": 7.539509233787847e-07,
+          "axis_error_m": 6.556513085131687e-07,
+          "length_m": 3.8184846667248737,
+          "overlap_m": 0.9236339847168851,
+          "extension_beyond_gland_m": 1.0917664421458624
+        },
+        "bucket": {
+          "pin_error_m": 1.3486992327373406e-06,
+          "axis_error_m": 9.238719940185547e-07,
+          "length_m": 1.8115970195622246,
+          "overlap_m": 0.2079714774772201,
+          "extension_beyond_gland_m": 0.6503451337645441
+        }
+      },
+      "linkage_rocker_length_m": 0.42520579907553807,
+      "linkage_connecting_length_m": 0.6344392905989328,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.4130670820514022,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "27": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 7.257339752844525e-07,
+          "axis_error_m": 9.424321844817818e-08,
+          "length_m": 1.5585633659747409,
+          "overlap_m": 0.21036862750826169,
+          "extension_beyond_gland_m": 0.5414274697220145
+        },
+        "stick": {
+          "pin_error_m": 1.4502447956454968e-06,
+          "axis_error_m": 1.1921292747430928e-07,
+          "length_m": 3.8060162669797393,
+          "overlap_m": 0.9361023844620195,
+          "extension_beyond_gland_m": 1.079298042400728
+        },
+        "bucket": {
+          "pin_error_m": 1.1920961696842425e-06,
+          "axis_error_m": 1.1324882507324219e-06,
+          "length_m": 1.8773957444133298,
+          "overlap_m": 0.14217275262611495,
+          "extension_beyond_gland_m": 0.7161438586156492
+        }
+      },
+      "linkage_rocker_length_m": 0.4252057013339862,
+      "linkage_connecting_length_m": 0.6344387680099663,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.4121162332415539,
+      "primary_geometry_error_m": 5.960464477539062e-07
+    },
+    "41": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 4.308471767545033e-07,
+          "axis_error_m": 2.682209014892578e-07,
+          "length_m": 1.5806959757287093,
+          "overlap_m": 0.18823601775429322,
+          "extension_beyond_gland_m": 0.563560079475983
+        },
+        "stick": {
+          "pin_error_m": 1.507891586836567e-06,
+          "axis_error_m": 3.2782597823219525e-07,
+          "length_m": 3.7993905541028967,
+          "overlap_m": 0.9427280973388621,
+          "extension_beyond_gland_m": 1.0726723295238854
+        },
+        "bucket": {
+          "pin_error_m": 1.348702046339924e-06,
+          "axis_error_m": 7.152557373046875e-07,
+          "length_m": 1.8918350855457637,
+          "overlap_m": 0.127733411493681,
+          "extension_beyond_gland_m": 0.7305831997480832
+        }
+      },
+      "linkage_rocker_length_m": 0.42520573418829183,
+      "linkage_connecting_length_m": 0.6344392612400135,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3814472561266199,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "59": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 5.470979139413184e-07,
+          "axis_error_m": 1.8128044975322128e-07,
+          "length_m": 1.6376306547208945,
+          "overlap_m": 0.13130133876210803,
+          "extension_beyond_gland_m": 0.6204947584681682
+        },
+        "stick": {
+          "pin_error_m": 1.5993615345453674e-06,
+          "axis_error_m": 3.241006928988636e-07,
+          "length_m": 3.809493820500112,
+          "overlap_m": 0.9326248309416467,
+          "extension_beyond_gland_m": 1.0827755959211007
+        },
+        "bucket": {
+          "pin_error_m": 1.7192630941824053e-06,
+          "axis_error_m": 1.341104507446289e-06,
+          "length_m": 1.8941172196540552,
+          "overlap_m": 0.12545127738538953,
+          "extension_beyond_gland_m": 0.7328653338563746
+        }
+      },
+      "linkage_rocker_length_m": 0.4252057692328818,
+      "linkage_connecting_length_m": 0.6344382395487761,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.37065839911037346,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "81": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 5.59934801699398e-07,
+          "axis_error_m": 2.4027400451863477e-07,
+          "length_m": 1.6879336100258155,
+          "overlap_m": 0.08099838345718702,
+          "extension_beyond_gland_m": 0.6707977137730892
+        },
+        "stick": {
+          "pin_error_m": 9.536761353939188e-07,
+          "axis_error_m": 5.364420669588143e-07,
+          "length_m": 3.8240983961608483,
+          "overlap_m": 0.9180202552809105,
+          "extension_beyond_gland_m": 1.097380171581837
+        },
+        "bucket": {
+          "pin_error_m": 1.0662419268923504e-06,
+          "axis_error_m": 8.940696716308594e-07,
+          "length_m": 1.895527905883888,
+          "overlap_m": 0.12404059115555666,
+          "extension_beyond_gland_m": 0.7342760200862075
+        }
+      },
+      "linkage_rocker_length_m": 0.4252056903825504,
+      "linkage_connecting_length_m": 0.6344392847271489,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3605474998060322,
+      "primary_geometry_error_m": 6.743495761743046e-07
+    },
+    "103": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 4.951133646320149e-07,
+          "axis_error_m": 1.6049041769309353e-07,
+          "length_m": 1.6879336287854203,
+          "overlap_m": 0.08099836469758226,
+          "extension_beyond_gland_m": 0.6707977325326939
+        },
+        "stick": {
+          "pin_error_m": 1.5078914929239175e-06,
+          "axis_error_m": 2.457562461863554e-07,
+          "length_m": 3.8240983338144976,
+          "overlap_m": 0.9180203176272612,
+          "extension_beyond_gland_m": 1.0973801092354862
+        },
+        "bucket": {
+          "pin_error_m": 1.215700987241932e-06,
+          "axis_error_m": 8.623383221763544e-07,
+          "length_m": 1.895528023802179,
+          "overlap_m": 0.12404047323726575,
+          "extension_beyond_gland_m": 0.7342761380044984
+        }
+      },
+      "linkage_rocker_length_m": 0.42520573856886573,
+      "linkage_connecting_length_m": 0.6344387180997616,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.36054750347225634,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "131": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 4.76837158203125e-07,
+          "axis_error_m": 2.1747528790423905e-07,
+          "length_m": 1.6879335769206303,
+          "overlap_m": 0.08099841656237228,
+          "extension_beyond_gland_m": 0.6707976806679039
+        },
+        "stick": {
+          "pin_error_m": 9.830249847454215e-07,
+          "axis_error_m": 3.8541904557876474e-07,
+          "length_m": 3.82409795973637,
+          "overlap_m": 0.9180206917053888,
+          "extension_beyond_gland_m": 1.0973797351573586
+        },
+        "bucket": {
+          "pin_error_m": 1.2839233415447482e-06,
+          "axis_error_m": 8.845819282326597e-07,
+          "length_m": 1.8955280631082743,
+          "overlap_m": 0.12404043393117048,
+          "extension_beyond_gland_m": 0.7342761773105937
+        }
+      },
+      "linkage_rocker_length_m": 0.4252057429494396,
+      "linkage_connecting_length_m": 0.6344388384714251,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3605475115449259,
+      "primary_geometry_error_m": 7.152557373046875e-07
+    },
+    "148": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 3.5762786865234375e-07,
+          "axis_error_m": 2.0485709734063626e-07,
+          "length_m": 1.6710793527105114,
+          "overlap_m": 0.09785264077249112,
+          "extension_beyond_gland_m": 0.6539434564577851
+        },
+        "stick": {
+          "pin_error_m": 2.0230487285229133e-06,
+          "axis_error_m": 4.86061168619993e-07,
+          "length_m": 3.850721398954738,
+          "overlap_m": 0.8913972524870206,
+          "extension_beyond_gland_m": 1.1240031743757268
+        },
+        "bucket": {
+          "pin_error_m": 1.3486991523486091e-06,
+          "axis_error_m": 7.834100382384607e-07,
+          "length_m": 1.87037418681232,
+          "overlap_m": 0.1491943102271247,
+          "extension_beyond_gland_m": 0.7091223010146395
+        }
+      },
+      "linkage_rocker_length_m": 0.4252058261803342,
+      "linkage_connecting_length_m": 0.6344388325996372,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.4186288012323897,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "166": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 2.9200193199910854e-07,
+          "axis_error_m": 8.024520884654677e-08,
+          "length_m": 1.6525643113559434,
+          "overlap_m": 0.11636768212705917,
+          "extension_beyond_gland_m": 0.635428415103217
+        },
+        "stick": {
+          "pin_error_m": 1.0115243642614567e-06,
+          "axis_error_m": 8.90585946886774e-07,
+          "length_m": 3.8827509424253766,
+          "overlap_m": 0.8593677090163823,
+          "extension_beyond_gland_m": 1.1560327178463652
+        },
+        "bucket": {
+          "pin_error_m": 1.215700987241932e-06,
+          "axis_error_m": 7.86239263908441e-07,
+          "length_m": 1.737333257825149,
+          "overlap_m": 0.2822352392142957,
+          "extension_beyond_gland_m": 0.5760813720274685
+        }
+      },
+      "linkage_rocker_length_m": 0.4252058185143314,
+      "linkage_connecting_length_m": 0.634438732779234,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.34637033194792227,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "191": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 2.9200193199910854e-07,
+          "axis_error_m": 8.024520884654677e-08,
+          "length_m": 1.6525643113559434,
+          "overlap_m": 0.11636768212705917,
+          "extension_beyond_gland_m": 0.635428415103217
+        },
+        "stick": {
+          "pin_error_m": 1.0115243642614567e-06,
+          "axis_error_m": 8.90585946886774e-07,
+          "length_m": 3.8827509424253766,
+          "overlap_m": 0.8593677090163823,
+          "extension_beyond_gland_m": 1.1560327178463652
+        },
+        "bucket": {
+          "pin_error_m": 1.215700987241932e-06,
+          "axis_error_m": 7.86239263908441e-07,
+          "length_m": 1.737333257825149,
+          "overlap_m": 0.2822352392142957,
+          "extension_beyond_gland_m": 0.5760813720274685
+        }
+      },
+      "linkage_rocker_length_m": 0.4252058185143314,
+      "linkage_connecting_length_m": 0.634438732779234,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.34637033194792227,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "209": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 4.915124923727108e-07,
+          "axis_error_m": 9.8843121241194e-08,
+          "length_m": 1.6650789630841067,
+          "overlap_m": 0.10385303039889582,
+          "extension_beyond_gland_m": 0.6479430668313804
+        },
+        "stick": {
+          "pin_error_m": 1.1680077279964342e-06,
+          "axis_error_m": 7.08393116236014e-07,
+          "length_m": 3.860797760756884,
+          "overlap_m": 0.8813208906848748,
+          "extension_beyond_gland_m": 1.1340795361778726
+        },
+        "bucket": {
+          "pin_error_m": 2.10565587671467e-06,
+          "axis_error_m": 1.2439569332266061e-06,
+          "length_m": 1.8487848460154948,
+          "overlap_m": 0.17078365102395,
+          "extension_beyond_gland_m": 0.6875329602178142
+        }
+      },
+      "linkage_rocker_length_m": 0.4252057298077179,
+      "linkage_connecting_length_m": 0.6344387621381777,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.42520358522642115,
+      "primary_geometry_error_m": 7.152557373046875e-07
+    },
+    "236": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 5.59934801699398e-07,
+          "axis_error_m": 2.4027400451863477e-07,
+          "length_m": 1.6879336100258155,
+          "overlap_m": 0.08099838345718702,
+          "extension_beyond_gland_m": 0.6707977137730892
+        },
+        "stick": {
+          "pin_error_m": 9.536761353939188e-07,
+          "axis_error_m": 5.364420669588143e-07,
+          "length_m": 3.8240983961608483,
+          "overlap_m": 0.9180202552809105,
+          "extension_beyond_gland_m": 1.097380171581837
+        },
+        "bucket": {
+          "pin_error_m": 1.0662419268923504e-06,
+          "axis_error_m": 8.940696716308594e-07,
+          "length_m": 1.895527905883888,
+          "overlap_m": 0.12404059115555666,
+          "extension_beyond_gland_m": 0.7342760200862075
+        }
+      },
+      "linkage_rocker_length_m": 0.4252056903825504,
+      "linkage_connecting_length_m": 0.6344392847271489,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3605474998060322,
+      "primary_geometry_error_m": 6.743495761743046e-07
+    },
+    "253": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 7.158763497748562e-07,
+          "axis_error_m": 2.9950963328316725e-07,
+          "length_m": 1.6425223324039864,
+          "overlap_m": 0.1264096610790162,
+          "extension_beyond_gland_m": 0.62538643615126
+        },
+        "stick": {
+          "pin_error_m": 1.922192939171163e-06,
+          "axis_error_m": 2.2351935815456303e-07,
+          "length_m": 3.82409872055669,
+          "overlap_m": 0.9180199308850687,
+          "extension_beyond_gland_m": 1.0973804959776787
+        },
+        "bucket": {
+          "pin_error_m": 1.0662404016246031e-06,
+          "axis_error_m": 8.642673492431641e-07,
+          "length_m": 1.8831353444987373,
+          "overlap_m": 0.13643315254070743,
+          "extension_beyond_gland_m": 0.7218834587010567
+        }
+      },
+      "linkage_rocker_length_m": 0.42520576047173453,
+      "linkage_connecting_length_m": 0.6344388502150008,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.4038945987001852,
+      "primary_geometry_error_m": 5.331201499700045e-07
+    },
+    "281": {
+      "cylinders": {
+        "boom": {
+          "pin_error_m": 8.0023536575422e-07,
+          "axis_error_m": 5.372690075822538e-07,
+          "length_m": 1.5447173628253978,
+          "overlap_m": 0.22421463065760472,
+          "extension_beyond_gland_m": 0.5275814665726715
+        },
+        "stick": {
+          "pin_error_m": 7.152563436342317e-07,
+          "axis_error_m": 4.768374551809416e-07,
+          "length_m": 3.8240980259793744,
+          "overlap_m": 0.9180206254623844,
+          "extension_beyond_gland_m": 1.097379801400363
+        },
+        "bucket": {
+          "pin_error_m": 9.53674430093081e-07,
+          "axis_error_m": 7.003545761108398e-07,
+          "length_m": 1.7373333564610027,
+          "overlap_m": 0.282235140578442,
+          "extension_beyond_gland_m": 0.5760814706633222
+        }
+      },
+      "linkage_rocker_length_m": 0.42520562193607037,
+      "linkage_connecting_length_m": 0.6344384098307633,
+      "branch": "negative cross product",
+      "singularity_margin_h_m": 0.3463701184634311,
+      "primary_geometry_error_m": 4.915124923727108e-07
+    }
+  },
+  "clip": {
+    "name": "excavator_work_cycle_demo",
+    "frames": [
+      1,
+      281
+    ],
+    "fps": 24,
+    "rest_frame": 0
+  }
+}
