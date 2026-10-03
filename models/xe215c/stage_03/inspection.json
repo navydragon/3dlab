@@ -1,0 +1,892 @@
+{
+  "stage": "03 hierarchy and articulation ONLY",
+  "blender_version": "5.2.2 LTS",
+  "source_sha256": {
+    "models/xe215c/stage_02/checkpoints/front.png": "140e56a899652858138ec5f652b3d2f168b35adc3fa44d57487123b9a31ab9e5",
+    "models/xe215c/stage_02/checkpoints/left.png": "4267f1fa736e8fc986b2ef669ba3a50af1628e08ec2fb74745200e5019532fc4",
+    "models/xe215c/stage_02/checkpoints/rear.png": "6e64b7a404ad659ee5f070baebee8fea87f61f18a2b1bb6c3a08cb098965f642",
+    "models/xe215c/stage_02/checkpoints/right.png": "e4db040f8eeab2ee857885392862478a2f778f275bd0a1ce84f50cc4af60a136",
+    "models/xe215c/stage_02/checkpoints/three_quarter_front.png": "f18ccf853bcdb753e703244d49458305d1e84b485eef414395e44892bb5a0fcf",
+    "models/xe215c/stage_02/checkpoints/three_quarter_rear.png": "6ca1576c5d767b12bc5b3a21ac58ae79008b9a89712c716544fb9f9406d768ba",
+    "models/xe215c/stage_02/checkpoints/top.png": "14462ce8404fe9c84e164960d915098ad19f8a051770a6a06eed49e9d24e9c81",
+    "models/xe215c/stage_02/comparison_stage_01_vs_02.png": "94906a130ed0169d5de8d066cfddf5e92274d95eb9aa80b9c1a771a5d01e1c19",
+    "models/xe215c/stage_02/inspection.json": "203d8bfc971520538217a9659e6257127af79d99a2de3f8c497f0d47ec9cb72b",
+    "models/xe215c/stage_02/README.md": "e55d9477c7d2927cccaa68026e0e93f3bdc4bafdaf7f65ba804b53393c9243e2",
+    "models/xe215c/stage_02/xe215c_stage_02.blend": "1b954f3dfe9af4e2c705bd0a176a3061a89385100afc41ced6c2b514b83b1d57",
+    "scripts/blender/check_stage_02.py": "aa2281a85fef6382a638b3a2b181d1001308644f37b9e3dacfd6c59539468501",
+    "scripts/blender/stage_02_contact_sheet.py": "00158381e0527faa827608c22e94b91510b1eebbd25cad87d9e13fa046b8a28f",
+    "scripts/blender/stage_02_proportions.py": "1ae9afe8a5c9742fa19ae7f88de0ed2d04ba9536254786f64a98f23b822be44f"
+  },
+  "neutral_bbox_m": {
+    "min": [
+      -2.890000104904175,
+      -1.4950000047683716,
+      0.0
+    ],
+    "max": [
+      6.734999656677246,
+      1.4950000047683716,
+      3.0999999046325684
+    ]
+  },
+  "checks": {
+    "neutral_initial_rotations": {
+      "pass": true
+    },
+    "same_major_mesh_names": {
+      "pass": true
+    },
+    "topology_bucket": {
+      "pass": true
+    },
+    "local_mesh_unchanged_bucket": {
+      "pass": true
+    },
+    "topology_main_upper_platform": {
+      "pass": true
+    },
+    "local_mesh_unchanged_main_upper_platform": {
+      "pass": true
+    },
+    "topology_slew_support": {
+      "pass": true
+    },
+    "local_mesh_unchanged_slew_support": {
+      "pass": true
+    },
+    "topology_engine_body": {
+      "pass": true
+    },
+    "local_mesh_unchanged_engine_body": {
+      "pass": true
+    },
+    "topology_stick": {
+      "pass": true
+    },
+    "local_mesh_unchanged_stick": {
+      "pass": true
+    },
+    "topology_cab": {
+      "pass": true
+    },
+    "local_mesh_unchanged_cab": {
+      "pass": true
+    },
+    "topology_bucket_cutting_edge": {
+      "pass": true
+    },
+    "local_mesh_unchanged_bucket_cutting_edge": {
+      "pass": true
+    },
+    "topology_counterweight": {
+      "pass": true
+    },
+    "local_mesh_unchanged_counterweight": {
+      "pass": true
+    },
+    "topology_left_crawler_frame": {
+      "pass": true
+    },
+    "local_mesh_unchanged_left_crawler_frame": {
+      "pass": true
+    },
+    "topology_bucket_right_cheek": {
+      "pass": true
+    },
+    "local_mesh_unchanged_bucket_right_cheek": {
+      "pass": true
+    },
+    "topology_central_x_frame": {
+      "pass": true
+    },
+    "local_mesh_unchanged_central_x_frame": {
+      "pass": true
+    },
+    "topology_boom_mounting_base": {
+      "pass": true
+    },
+    "local_mesh_unchanged_boom_mounting_base": {
+      "pass": true
+    },
+    "topology_left_track_blockout": {
+      "pass": true
+    },
+    "local_mesh_unchanged_left_track_blockout": {
+      "pass": true
+    },
+    "topology_right_crawler_frame": {
+      "pass": true
+    },
+    "local_mesh_unchanged_right_crawler_frame": {
+      "pass": true
+    },
+    "topology_right_track_blockout": {
+      "pass": true
+    },
+    "local_mesh_unchanged_right_track_blockout": {
+      "pass": true
+    },
+    "topology_bucket_left_cheek": {
+      "pass": true
+    },
+    "local_mesh_unchanged_bucket_left_cheek": {
+      "pass": true
+    },
+    "topology_boom": {
+      "pass": true
+    },
+    "local_mesh_unchanged_boom": {
+      "pass": true
+    },
+    "neutral_world_vertices": {
+      "pass": true,
+      "max_error_m": 0.0
+    },
+    "strict_node_chain": {
+      "pass": true
+    },
+    "identity_node_scales": {
+      "pass": true
+    },
+    "identity_node_orientations": {
+      "pass": true
+    },
+    "geometry_ownership": {
+      "pass": true
+    },
+    "identity_parent_inverse": {
+      "pass": true
+    },
+    "accepted_node_pivots": {
+      "pass": true
+    },
+    "accepted_pivot_markers": {
+      "pass": true
+    },
+    "slew_axis_Z_transverse_axes_Y": {
+      "pass": true
+    },
+    "no_constraints_animation_materials_modifiers": {
+      "pass": true
+    },
+    "no_scene_animation_actions": {
+      "pass": true
+    },
+    "metric_identity_scale_all": {
+      "pass": true
+    },
+    "branch_rotation_NODE_UNDERCARRIAGE": {
+      "pass": true,
+      "max_matrix_error": 2.384185791015625e-07,
+      "outside_branch_error_m": 0.0
+    },
+    "branch_rotation_NODE_UPPERSTRUCTURE": {
+      "pass": true,
+      "max_matrix_error": 2.384185791015625e-07,
+      "outside_branch_error_m": 0.0
+    },
+    "branch_rotation_NODE_BOOM": {
+      "pass": true,
+      "max_matrix_error": 4.76837158203125e-07,
+      "outside_branch_error_m": 0.0
+    },
+    "branch_rotation_NODE_STICK": {
+      "pass": true,
+      "max_matrix_error": 4.76837158203125e-07,
+      "outside_branch_error_m": 0.0
+    },
+    "branch_rotation_NODE_BUCKET": {
+      "pass": true,
+      "max_matrix_error": 0.0,
+      "outside_branch_error_m": 0.0
+    },
+    "descendant_transforms_neutral": {
+      "pass": true,
+      "max_vertex_error_m": 0.0
+    },
+    "joint_continuity_neutral": {
+      "pass": true,
+      "max_pin_error_m": 0.0
+    },
+    "marker_follows_neutral_PIVOT_SLEW": {
+      "pass": true
+    },
+    "marker_follows_neutral_PIVOT_BOOM": {
+      "pass": true
+    },
+    "marker_follows_neutral_PIVOT_STICK": {
+      "pass": true
+    },
+    "marker_follows_neutral_PIVOT_BUCKET": {
+      "pass": true
+    },
+    "descendant_transforms_slew_test": {
+      "pass": true,
+      "max_vertex_error_m": 1.1920928955078125e-06
+    },
+    "joint_continuity_slew_test": {
+      "pass": true,
+      "max_pin_error_m": 0.0
+    },
+    "marker_follows_slew_test_PIVOT_SLEW": {
+      "pass": true
+    },
+    "marker_follows_slew_test_PIVOT_BOOM": {
+      "pass": true
+    },
+    "marker_follows_slew_test_PIVOT_STICK": {
+      "pass": true
+    },
+    "marker_follows_slew_test_PIVOT_BUCKET": {
+      "pass": true
+    },
+    "descendant_transforms_articulated_workgroup": {
+      "pass": true,
+      "max_vertex_error_m": 1.0941958278826368e-06
+    },
+    "joint_continuity_articulated_workgroup": {
+      "pass": true,
+      "max_pin_error_m": 4.76837158203125e-07
+    },
+    "marker_follows_articulated_workgroup_PIVOT_SLEW": {
+      "pass": true
+    },
+    "marker_follows_articulated_workgroup_PIVOT_BOOM": {
+      "pass": true
+    },
+    "marker_follows_articulated_workgroup_PIVOT_STICK": {
+      "pass": true
+    },
+    "marker_follows_articulated_workgroup_PIVOT_BUCKET": {
+      "pass": true
+    },
+    "reset_returns_neutral": {
+      "pass": true,
+      "max_error_m": 0.0
+    }
+  },
+  "nodes": [
+    {
+      "name": "NODE_UNDERCARRIAGE",
+      "parent": null,
+      "local_location_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "neutral_rotation_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "rotation_axis_local": null,
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "meshes": [
+        "left_track_blockout",
+        "right_track_blockout",
+        "left_crawler_frame",
+        "right_crawler_frame",
+        "central_x_frame",
+        "slew_support"
+      ]
+    },
+    {
+      "name": "NODE_UPPERSTRUCTURE",
+      "parent": "NODE_UNDERCARRIAGE",
+      "local_location_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "neutral_rotation_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_pivot_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "rotation_axis_local": "Z",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.0499999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.0499999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "meshes": [
+        "main_upper_platform",
+        "cab",
+        "engine_body",
+        "counterweight",
+        "boom_mounting_base"
+      ]
+    },
+    {
+      "name": "NODE_BOOM",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "local_location_m": [
+        0.770199716091156,
+        0.0,
+        0.5900000333786011
+      ],
+      "neutral_rotation_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_pivot_m": [
+        0.770199716091156,
+        0.0,
+        1.6399999856948853
+      ],
+      "rotation_axis_local": "Y",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.770199716091156
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.5900000333786011
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          0.770199716091156
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.6399999856948853
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "meshes": [
+        "boom"
+      ]
+    },
+    {
+      "name": "NODE_STICK",
+      "parent": "NODE_BOOM",
+      "local_location_m": [
+        5.658824920654297,
+        0.0,
+        -0.49000000953674316
+      ],
+      "neutral_rotation_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_pivot_m": [
+        6.429024696350098,
+        0.0,
+        1.149999976158142
+      ],
+      "rotation_axis_local": "Y",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          5.658824920654297
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          -0.49000000953674316
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          6.429024696350098
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.149999976158142
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "meshes": [
+        "stick"
+      ]
+    },
+    {
+      "name": "NODE_BUCKET",
+      "parent": "NODE_STICK",
+      "local_location_m": [
+        -2.857551097869873,
+        0.0,
+        0.5499999523162842
+      ],
+      "neutral_rotation_rad": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "rotation_axis_local": "Y",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          -2.857551097869873
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          0.5499999523162842
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "world_matrix": [
+        [
+          1.0,
+          0.0,
+          0.0,
+          3.5714735984802246
+        ],
+        [
+          0.0,
+          1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0,
+          1.6999999284744263
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "meshes": [
+        "bucket",
+        "bucket_left_cheek",
+        "bucket_right_cheek",
+        "bucket_cutting_edge"
+      ]
+    }
+  ],
+  "individual_joint_tests": {
+    "NODE_UNDERCARRIAGE": {
+      "angle_deg": 12,
+      "axis": "Z",
+      "moving_meshes": [
+        "boom",
+        "boom_mounting_base",
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_right_cheek",
+        "cab",
+        "central_x_frame",
+        "counterweight",
+        "engine_body",
+        "left_crawler_frame",
+        "left_track_blockout",
+        "main_upper_platform",
+        "right_crawler_frame",
+        "right_track_blockout",
+        "slew_support",
+        "stick"
+      ]
+    },
+    "NODE_UPPERSTRUCTURE": {
+      "angle_deg": 12,
+      "axis": "Z",
+      "moving_meshes": [
+        "boom",
+        "boom_mounting_base",
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_right_cheek",
+        "cab",
+        "counterweight",
+        "engine_body",
+        "main_upper_platform",
+        "stick"
+      ]
+    },
+    "NODE_BOOM": {
+      "angle_deg": 12,
+      "axis": "Y",
+      "moving_meshes": [
+        "boom",
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_right_cheek",
+        "stick"
+      ]
+    },
+    "NODE_STICK": {
+      "angle_deg": 12,
+      "axis": "Y",
+      "moving_meshes": [
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_right_cheek",
+        "stick"
+      ]
+    },
+    "NODE_BUCKET": {
+      "angle_deg": 12,
+      "axis": "Y",
+      "moving_meshes": [
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_right_cheek"
+      ]
+    }
+  },
+  "test_poses": {
+    "neutral": {
+      "angles_deg": {},
+      "node_world_pivots_m": {
+        "NODE_UNDERCARRIAGE": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "NODE_UPPERSTRUCTURE": [
+          0.0,
+          0.0,
+          1.0499999523162842
+        ],
+        "NODE_BOOM": [
+          0.770199716091156,
+          0.0,
+          1.6399999856948853
+        ],
+        "NODE_STICK": [
+          6.429024696350098,
+          0.0,
+          1.149999976158142
+        ],
+        "NODE_BUCKET": [
+          3.5714735984802246,
+          0.0,
+          1.6999999284744263
+        ]
+      },
+      "workgroup_bbox_m": {
+        "min": [
+          0.6207588911056519,
+          -0.5899999737739563,
+          0.3299999237060547
+        ],
+        "max": [
+          6.734999656677246,
+          0.5899999737739563,
+          3.011777877807617
+        ]
+      }
+    },
+    "slew_test": {
+      "angles_deg": {
+        "NODE_UPPERSTRUCTURE": 30
+      },
+      "node_world_pivots_m": {
+        "NODE_UNDERCARRIAGE": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "NODE_UPPERSTRUCTURE": [
+          0.0,
+          0.0,
+          1.0499999523162842
+        ],
+        "NODE_BOOM": [
+          0.6670125126838684,
+          0.385099858045578,
+          1.6399999856948853
+        ],
+        "NODE_STICK": [
+          5.567698955535889,
+          3.214512348175049,
+          1.149999976158142
+        ],
+        "NODE_BUCKET": [
+          3.092987060546875,
+          1.7857367992401123,
+          1.6999999284744263
+        ]
+      },
+      "workgroup_bbox_m": {
+        "min": [
+          0.38759297132492065,
+          0.050571829080581665,
+          0.3299999237060547
+        ],
+        "max": [
+          5.947680950164795,
+          3.566685676574707,
+          3.011777877807617
+        ]
+      }
+    },
+    "articulated_workgroup": {
+      "angles_deg": {
+        "NODE_BOOM": -35,
+        "NODE_STICK": -40,
+        "NODE_BUCKET": 75
+      },
+      "node_world_pivots_m": {
+        "NODE_UNDERCARRIAGE": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "NODE_UPPERSTRUCTURE": [
+          0.0,
+          0.0,
+          1.0499999523162842
+        ],
+        "NODE_BOOM": [
+          0.770199716091156,
+          0.0,
+          1.6399999856948853
+        ],
+        "NODE_STICK": [
+          5.686690330505371,
+          0.0,
+          4.484384536743164
+        ],
+        "NODE_BUCKET": [
+          4.415842533111572,
+          0.0,
+          1.8665528297424316
+        ]
+      },
+      "workgroup_bbox_m": {
+        "min": [
+          0.4854971468448639,
+          -0.5899999737739563,
+          0.49655285477638245
+        ],
+        "max": [
+          6.065749168395996,
+          0.5899999737739563,
+          4.849033355712891
+        ]
+      }
+    }
+  },
+  "limits": "Illustrative test angles only, not factory operating limits. Visual collision review only."
+}
