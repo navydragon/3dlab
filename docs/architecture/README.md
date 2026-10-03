@@ -1,3 +1,3 @@
 # Architecture
 
-Architectural decisions have not yet been finalized. The [system architecture proposal](system-architecture.md) documents the recommended MVP architecture for review; accepted decisions will be recorded separately as ADRs.
+The [accepted system architecture](system-architecture.md) is the architecture source of truth for the MVP. Accepted decisions are recorded under [ADRs](../adr/README.md); concerns explicitly deferred by the architecture remain undecided.

@@ -1,10 +1,12 @@
-# Proposed MVP System Architecture
+# MVP System Architecture
 
-**Status: Proposed**
+**Status: Accepted**
 
 **Date:** 2026-10-02
 
-This is a reviewable recommendation for the first MVP and its first vertical slice. It is not an accepted architecture decision or permission to begin implementation. No ADRs, dependencies, application files, or infrastructure are created by this proposal.
+**Acceptance note (2026-10-03):** The architecture was reviewed after commit `2db6ae2858b814874bf7c0610b227802941ed031` and accepted with the contract and milestone corrections recorded below. React + Vite, strict TypeScript, React Router, React Three Fiber/Three.js, JSON + Markdown, Zod, React local state/reducer/context, Vitest, React Testing Library, Playwright, and static/local MVP content are accepted. No backend, database, authentication, or CMS is required for the MVP. Acceptance does not authorize application implementation in this documentation task.
+
+Accepted decisions are recorded in [ADR 0001](../adr/0001-client-side-react-vite-application.md), [ADR 0002](../adr/0002-content-driven-local-repository.md), [ADR 0003](../adr/0003-react-three-fiber-visualization-boundary.md), [ADR 0004](../adr/0004-pure-deterministic-simulation-core.md), and [ADR 0005](../adr/0005-url-addressable-contextual-navigation.md). `sessionStorage` UI restoration is optional/deferred; slice one restores `processId` + `stageId` through the URL and must work without storage.
 
 ## 1. Architecture goals
 
@@ -44,13 +46,13 @@ The following existing documents govern this proposal; architecture does not red
 11. **Engineering checks:** TypeScript strict checks or equivalent, independent unit/integration tests, component/navigation tests, E2E tests, formatting/lint checks, and production-build verification. Small modules and explicit contracts must be easy to inspect and change during Codex-driven implementation.
 12. **Delivery and resilience:** emit static build artifacts. Deep-link reloads need host support. Content and text navigation must remain usable when an asset or WebGL fails. Desktop is primary; tablet adapts, and mobile remains readable with functional navigation and later calculations.
 
-### 2.3. Existing ambiguities, not silent requirement changes
+### 2.3. Scope boundaries and reviewed contract corrections
 
 - The vision §§13–14 proposes a broader earthworks pilot with bulldozers, rollers, cases, and teacher reports. The current MVP scope defines the narrower excavator/dump-truck process. This proposal preserves the long-term vision but adds none of the broader pilot features to current scope.
-- User flows §19 Acceptance Flow 5 puts fleet recalculation in first-slice acceptance; §3 also describes a production-system context in that slice. UI/UX §§54–55 and this task place fleet simulation UI in the next slice. The proposal follows the explicit task and UI/UX boundary, retaining those flows for the complete MVP and flagging their milestone labels for human reconciliation.
-- Learning goals §3 describes four depths for the first vertical slice. UI/UX §54's technical slice does not demonstrate all productivity/economic goals. Those goals remain full-MVP obligations; slice one proves only its stated interactions, not educational readiness of the complete MVP.
-- Some user-flow examples use `stage: excavation`; domain-model §§4, 9 defines `excavation-stage`. Use the existing canonical `ProcessStage.id`, keeping `Operation.id: excavation` separate. Do not rename entities or treat an operation ID as a stage ID.
-- Domain-model §18's illustrative metric IDs differ in places from simulation-model §17's output IDs. Propose an explicit adapter from calculated fields to approved metric definitions; review the final metric vocabulary before slice two. Never silently drop a result or claim the example vocabularies already agree.
+- User flows §19 Acceptance Flow 5 and the production-system context are assigned to the second slice / full MVP. The first technical slice follows UI/UX §54; fleet simulation UI follows §55. The full-MVP requirement is preserved.
+- Learning goals §3's four depths belong to the complete MVP learning experience. Slice one proves architecture, 3D interaction, and navigation, not all productivity/economic goals or educational readiness of the complete MVP.
+- Navigation/context examples use `stageId: excavation-stage`, matching domain-model §§4, 9. `Operation.id: excavation` remains separate from `ProcessStage.id: excavation-stage`; human-readable labels are unchanged.
+- Simulation-model §17 is the canonical output metric vocabulary, and domain-model §18 uses the same IDs. Application adapters map calculated fields to these IDs without changing formulas, dropping outputs, or introducing alternate metric IDs.
 
 ## 3. Evaluated alternatives
 
@@ -110,7 +112,7 @@ One client-side modular application with local, version-controlled content and s
 
 Use one repository and one build rather than a monorepo or separately published packages. Logical modules can later become packages if there is an actual reuse or tooling need. The MVP needs no backend service, database, authentication, container, queue, cloud infrastructure, CMS, or microservice. Static hosting is delivery infrastructure, not a new application backend; its provider is deferred.
 
-The proposed stack and boundaries need review before implementation. After review, accepted decisions can be recorded under the existing ADR directory in a separate task.
+The stack and boundaries are accepted and recorded in ADRs 0001–0005. Implementation remains a separate task; explicitly deferred concerns and content details still require their own review.
 
 ## 5. Technology recommendations
 
@@ -171,7 +173,7 @@ Enforce these boundaries later with restricted-import rules and independent test
 
 ## 7. Repository structure proposal
 
-The following is a future implementation layout, not a set of paths created by this task. Only the existing documentation tree and this proposal exist now. Create modules when their slice needs them; do not scaffold empty future modules.
+The following is a future implementation layout, not a set of paths created by this task. Only documentation, including this architecture and accepted ADRs, exists now. Create modules when their slice needs them; do not scaffold empty future modules.
 
 ```text
 src/
@@ -190,7 +192,7 @@ src/
     simulation/              scenario mapping, orchestration, interpretation
     state/                   pure reducers, drafts, comparison snapshots
   navigation/                route builders, return context, restoration rules
-  infrastructure/session/    browser session storage adapter
+  infrastructure/session/    optional/deferred browser session storage adapter
   ui/
     pages/                   home, catalog, machine, process; later system view
     components/              compact/component cards and needed primitives
@@ -331,7 +333,7 @@ Measure GLB download size, texture memory, initialization time, and frame behavi
 
 ## 11. Navigation and state architecture
 
-### 11.1. Proposed public addresses
+### 11.1. Public addresses
 
 ```text
 /                                      home
@@ -339,7 +341,7 @@ Measure GLB download size, texture memory, initialization time, and frame behavi
 /machines/:machineId                   machine module
 /machines/:machineId/:sectionId        implemented learning section
 /processes/:processId                  process overview
-/processes/:processId?stage=:stageId    selected process stage
+/processes/:processId?stageId=:stageId  selected process stage
 ```
 
 Future slice-two addresses may include `/systems/:systemId?scenario=:scenarioId`. A processes catalog route can be introduced when needed by the complete MVP; in slice one the home Process entry can point to the single content-listed process. These paths are navigation design, not domain IDs. Validate section IDs against the resolved learning module and stage IDs against the process; unknown entities get a not-found view, invalid optional selections get a visible recoverable explanation.
@@ -356,9 +358,9 @@ Use explicit internal URL query fields for a shareable/reload-safe return target
 /machines/excavator/construction?fromProcess=excavation-haul&fromStage=excavation-stage
 ```
 
-This serializes navigation context, not a new domain entity. Validate process/stage existence and the machine's eligible role before showing the return action. Construct an internal destination with route builders; never redirect to an arbitrary URL from query text. Carry those fields through the machine's internal links. Explicit return navigates to `/processes/excavation-haul?stage=excavation-stage`, not an unconditional history decrement.
+This serializes navigation context, not a new domain entity. Validate process/stage existence and the machine's eligible role before showing the return action. Construct an internal destination with route builders; never redirect to an arbitrary URL from query text. Carry those fields through the machine's internal links. Explicit return navigates to `/processes/excavation-haul?stageId=excavation-stage`, not an unconditional history decrement.
 
-Route history state and a narrow session-state map keyed by entity/context can retain compact-card/panel state, selected machine, scroll position, and optional camera state. Propose versioned `sessionStorage` snapshots for reload restoration within a tab, with parsing, reference validation, bounded retention, and graceful failure if storage is unavailable. URL IDs are authoritative for selected entity/stage; storage restores only compatible optional detail. No persistence promise across browser sessions is made.
+Required restoration of `processId` + `stageId` uses the URL and works without `sessionStorage`. Route history state and a narrow in-memory session-state map may retain compact-card/panel state, selected machine, scroll position, and optional camera state. `sessionStorage` restoration is optional/deferred and is not a slice-one dependency. If later implemented, snapshots need versioning, parsing, reference validation, bounded retention, and graceful failure when storage is unavailable. URL IDs remain authoritative; storage restores only compatible optional detail. No persistence promise across browser sessions is made.
 
 Ordinary browser Back follows actual visited sections (user-flow §13); explicit “Back to stage” skips the learning detour and returns to its semantic origin. Entering a machine by plain deep link without valid origin shows hierarchy/catalog navigation. Stale context cannot send a user to a nonexistent stage or another website. Do not introduce an unbounded custom global navigation stack.
 
@@ -379,7 +381,7 @@ These are future implementation gates, not tools or workflows installed by this 
 
 1. **Content/domain:** validate all content and schemas, duplicate IDs, missing references, stage order, role eligibility, component ownership, provenance, learning links, and incompatible units. Use deliberately broken fixtures to prove rejection; validate every real content bundle. Assert compact and full views resolve the same machine ID/data.
 2. **Simulation unit tests:** execute under a non-DOM environment. Cover every simulation-model §35 requirement, baseline trucks 1–5, distance 4 km with 3 and 5 trucks, zero distance, invalid inputs, nonfinite values, output constraints, discrete bucket rounding, and coefficient application. Compare against §21–22 expected values with the documented relative tolerance `1e-6`; use suitable absolute tolerance for zero. Expected fixtures are test oracles, never production cached answers.
-3. **Application unit/integration:** check content joins and where-used queries, scenario-to-input mappings, result envelopes/versioning, immutable comparisons, errors, and neutral interpretation. Test navigation context parsing/restoration, missing/stale IDs, direct entry, and storage failure. Pure reducers run without React.
+3. **Application unit/integration:** check content joins and where-used queries, scenario-to-input mappings, result envelopes/versioning, immutable comparisons, errors, and neutral interpretation. Test navigation context parsing/restoration, missing/stale IDs, direct entry, and restoration without storage. Test storage failure only if optional storage restoration is later introduced. Pure reducers run without React.
 4. **Components:** React Testing Library tests cards, labels, selected state, keyboard actions, pause/resume controls, loading/error/empty states, unit formatting, and contextual breadcrumbs. A viewer test double isolates UI behavior; it cannot prove raycasting or actual playback.
 5. **Assets/viewer:** inspect actual asset nodes/clips against mapping, including duplicate-name ambiguity and missing clips. Browser tests verify real mapped bucket selection, highlight, camera fit/reset, and play/pause/resume with the approved GLB. Selection also works from the accessible component list. Avoid relying on unstable pixel-perfect GPU snapshots.
 6. **Navigation/E2E:** cover first-slice flows listed below using a served production build, including direct URL load/reload, browser Back/Forward, return after machine-section changes, no-origin entry, stale context, and compact-card close. Inject asset HTTP/decode failures and unsupported 3D conditions; text/navigation must still work. Verify keyboard focus and visible textual alternatives; manual QA covers real device/GPU usability.
@@ -441,18 +443,18 @@ AI, LMS dashboards, authorization systems, AR/VR, normative costing, auto-optimi
 - **Unverified numbers/provenance:** use the documented illustrative baselines; show source labels and units. Runtime validation cannot promote illustrative data to engineering authority.
 - **Version drift:** review and lock compatible React/Fiber/tooling versions before implementation; version assets/content/calculation models independently. Test saved results against their model identity.
 - **False determinism:** clocks and browser storage stay outside numerical payloads; test repeatability without animation or wall-clock data.
-- **Proposed decisions mistaken for acceptance:** maintain Proposed status, report source conflicts, and create accepted ADRs only after human review in a separate task.
+- **Acceptance mistaken for scope expansion:** preserve Accepted status and ADR traceability while keeping implementation authorization and deferred concerns separate. Acceptance does not add features to the MVP.
 
 ## 16. Open questions for human review
 
-1. Approve or amend the recommended stack, local-content strategy, viewer boundary, and URL/session-state design before converting accepted decisions into ADRs.
-2. Confirm slice milestones: reconcile user-flow Acceptance Flow 5 and learning-goal first-slice depth wording with UI/UX §§54–55; retain the full-MVP obligations. Confirm how the broader vision pilot stages map to later scope.
+1. The stack, local-content strategy, viewer boundary, and URL-based contextual return are accepted in ADRs 0001–0005. Exact package versions, hosting, and optional storage restoration remain deferred.
+2. Slice milestones and complete-MVP learning-depth wording are reconciled with UI/UX §§54–55. How the broader vision pilot stages map to later scope remains a product-planning question.
 3. Which excavator asset is available, licensed, optimized, and equipped with selectable bucket geometry and an approved working-cycle clip? What device/browser, asset-size, memory, and frame-quality budgets will reviewers accept?
-4. Approve the exact domain/content schemas, source/provenance record format, primary relationship ownership, schema-version policy, and metric-ID mapping. Are additional instance-level operation objects actually needed? No such new entity is assumed here.
+4. Approve the exact domain/content schemas, source/provenance record format, primary relationship ownership, and schema-version policy. Metric IDs are now canonical under simulation-model §17. Are additional instance-level operation objects actually needed? No such new entity is assumed here.
 5. Approve the educational content and visual phase mappings. How should overlapping digging/filling terminology be presented consistently across the existing cycle descriptions without changing the aggregate calculation model?
 6. Before slice two, approve expert validation of the existing numerical model, input control ranges, optional near-balance bounds, and result interpretation. No new engineering constants are proposed.
-7. Are optional panel/camera restoration and tab-only scenario persistence sufficient, or is cross-session persistence an actual MVP requirement? Backend storage is not inferred from the desire to compare two scenarios.
+7. Optional panel/camera storage restoration and persistence mechanisms remain deferred; slice one must work without them. Is cross-session scenario persistence an actual requirement for a later slice? Backend storage is not inferred from the desire to compare two scenarios.
 8. Which static hosting environment will support history fallback and any deployment base path? Are SEO or initial HTML requirements strong enough to revisit the SPA choice?
 9. Confirm the future localization representation before adding languages; current entity IDs and Russian names remain stable. Future LMS/authoring interfaces need concrete requirements before design.
 
-This document leaves product ambiguities visible, preserves the existing requirements, and proposes technical boundaries without beginning application implementation.
+This document records accepted technical boundaries, leaves remaining product questions visible, and preserves the existing requirements without beginning application implementation.

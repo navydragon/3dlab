@@ -712,18 +712,30 @@ parameterValues:
 
 Описывает выходной показатель расчёта.
 
-Для MVP:
+Для MVP канонический словарь выходных показателей определяется в `docs/domain/simulation-model.md` §17:
 
 ```text
-excavator-productivity
-system-productivity
-excavator-utilization
+effective-bucket-volume
+bucket-passes
+truck-loading-time
+loaded-travel-time
+empty-travel-time
+truck-free-cycle-time
+match-factor
+balanced-truck-count
+excavator-transport-utilization
 excavator-idle-share
+truck-wait-time
 truck-wait-share
+excavator-standalone-productivity
+system-productivity
 project-duration
-operating-cost
-unit-cost
+system-hourly-cost
+total-operating-cost
+unit-operating-cost
 ```
+
+Headline KPI: `system-productivity`, `project-duration`, `total-operating-cost`. Остальные показатели используются для объяснения расчёта и подробного сравнения, включая `unit-operating-cost`. Это различие относится к представлению: все перечисленные показатели сохраняют свои канонические ID и входят в результат модели, без изменения формул или ожидаемых значений.
 
 ### Минимальные поля
 

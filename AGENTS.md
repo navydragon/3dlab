@@ -28,7 +28,7 @@ Current authoritative product, domain, and design documents also include:
 - `docs/domain/simulation-model.md`
 - `docs/design/ui-ux-spec.md`
 
-Current architecture proposal (Status: Proposed; subject to review):
+Current accepted architecture source of truth (Status: Accepted):
 
 - `docs/architecture/system-architecture.md`
 

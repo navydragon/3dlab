@@ -132,7 +132,7 @@
 - следующий уровень после машины;
 - следующий уровень после процесса.
 
-В первом vertical slice он может не присутствовать как отдельный пункт главного меню, но должен существовать как самостоятельный учебный контекст.
+Раздел «Производственная система» является самостоятельным учебным контекстом полного MVP и появляется во втором vertical slice. В первый технический vertical slice по `docs/design/ui-ux-spec.md` §54 fleet simulation не входит.
 
 ---
 
@@ -458,9 +458,11 @@ vs
 
 ```text
 returnContext = process
-process = excavation-haul
-stage = excavation
+processId = excavation-haul
+stageId = excavation-stage
 ```
+
+Идентификаторы `processId` и `stageId` должны быть адресуемы в URL и сохраняться при переходах внутри модуля машины. Контекстный возврат не должен зависеть только от browser history или от `sessionStorage`; восстановление дополнительных панелей и камеры через storage необязательно и отложено.
 
 ---
 
@@ -781,7 +783,7 @@ stage = excavation
 Решить производственную задачу
 ```
 
-В первом vertical slice третий вариант может вести непосредственно в эксперимент с экскаватором и автосамосвалами.
+В первом техническом vertical slice доступны входы «Изучить машину» и «Изучить процесс». Третий вход появляется во втором vertical slice и ведёт в эксперимент с экскаватором и автосамосвалами; он остаётся частью полного MVP.
 
 ---
 
@@ -835,13 +837,13 @@ machine: dump-truck
 
 process: excavation-haul
 
-stage: excavation
-stage: loading
-stage: haul
-stage: unloading
+stageId: excavation-stage
+stageId: loading-stage
+stageId: haul-stage
+stageId: unloading-stage
 ```
 
-Окончательная модель идентификаторов определяется в `docs/domain/domain-model.md`.
+Канонические идентификаторы определены в `docs/domain/domain-model.md`. Например, `Operation.id: excavation` и `ProcessStage.id: excavation-stage` обозначают разные сущности.
 
 ---
 
@@ -864,9 +866,13 @@ stage: unloading
 
 ---
 
-## 19. Acceptance flows для первого vertical slice
+## 19. Acceptance flows по вертикальным срезам
 
-Первый vertical slice считается успешно собранным, если работают следующие маршруты.
+### Первый технический vertical slice
+
+Состав первого технического среза определяется в `docs/design/ui-ux-spec.md` §54: главная, каталог машин, модуль экскаватора, интерактивное 3D, выбор `bucket`, карточка компонента, рабочий цикл Play/Pause, связь «Где применяется», переход в процесс, страница процесса, выбор `excavation-stage`, compact card экскаватора, переход в полный модуль и контекстный возврат.
+
+Первый технический vertical slice считается успешно собранным, если работают Acceptance Flows 1–4 ниже. Fleet simulation не входит в этот срез.
 
 ### Acceptance Flow 1
 
@@ -903,12 +909,17 @@ stage: unloading
 Процесс
 → Этап «Разработка»
 → Экскаватор
+→ Краткая карточка
 → Полный модуль машины
 → Назад
 → Этап «Разработка»
 ```
 
-### Acceptance Flow 5
+### Второй vertical slice / acceptance полного MVP
+
+Второй срез определяется в `docs/design/ui-ux-spec.md` §55 и включает fleet simulation, результаты и сравнение сценариев. Acceptance Flow 5 остаётся обязательным для полного MVP.
+
+### Acceptance Flow 5 — Fleet simulation (второй срез)
 
 ```text
 Производственная система

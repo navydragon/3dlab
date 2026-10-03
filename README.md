@@ -45,11 +45,11 @@ docs/domain/simulation-model.md
 docs/design/ui-ux-spec.md
 ```
 
-Proposed system architecture (awaiting review):
+Accepted system architecture:
 
 `docs/architecture/system-architecture.md`
 
-Architecture decision records are planned after review; see `docs/adr/README.md`.
+Accepted architecture decisions are recorded under `docs/adr/`; see `docs/adr/README.md`.
 
 ## First MVP
 
