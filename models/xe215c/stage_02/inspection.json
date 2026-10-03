@@ -1,0 +1,992 @@
+{
+  "blender_version": "5.2.2 LTS",
+  "units": "meters",
+  "master": {
+    "Overall length": 9.625,
+    "Overall width": 2.99,
+    "Overall height": 3.1,
+    "Upper platform width": 2.83,
+    "Crawler overall length": 4.255,
+    "Track length on ground": 3.462,
+    "Crawler gauge": 2.39,
+    "Boom length": 5.68,
+    "Arm length": 2.91,
+    "Counterweight clearance": 1.05,
+    "Ground clearance": 0.485,
+    "Min. tail swing radius": 2.89,
+    "Track shoe width": 0.6
+  },
+  "checks": {
+    "total_track_width": {
+      "actual_m": 2.990000009536743,
+      "target_m": 2.99,
+      "pass": true
+    },
+    "track_gauge": {
+      "actual_m": 2.390000104904175,
+      "target_m": 2.39,
+      "pass": true
+    },
+    "left_track_width": {
+      "actual_m": 0.6000000238418579,
+      "target_m": 0.6,
+      "pass": true
+    },
+    "left_crawler_length": {
+      "actual_m": 4.255000114440918,
+      "target_m": 4.255,
+      "pass": true
+    },
+    "left_ground_contact": {
+      "actual_m": 3.4619998931884766,
+      "target_m": 3.462,
+      "pass": true
+    },
+    "right_track_width": {
+      "actual_m": 0.6000000238418579,
+      "target_m": 0.6,
+      "pass": true
+    },
+    "right_crawler_length": {
+      "actual_m": 4.255000114440918,
+      "target_m": 4.255,
+      "pass": true
+    },
+    "right_ground_contact": {
+      "actual_m": 3.4619998931884766,
+      "target_m": 3.462,
+      "pass": true
+    },
+    "contact_length_guide": {
+      "actual_m": 3.461999872217556,
+      "target_m": 3.462,
+      "pass": true
+    },
+    "platform_width": {
+      "actual_m": 2.8299999237060547,
+      "target_m": 2.83,
+      "pass": true
+    },
+    "boom_pin_distance": {
+      "actual_m": 5.680000064387707,
+      "target_m": 5.68,
+      "pass": true
+    },
+    "stick_pin_distance": {
+      "actual_m": 2.909999633261405,
+      "target_m": 2.91,
+      "pass": true
+    },
+    "counterweight_clearance": {
+      "actual_m": 1.0499999523162842,
+      "target_m": 1.05,
+      "pass": true
+    },
+    "x_frame_clearance": {
+      "actual_m": 0.48500001430511475,
+      "target_m": 0.485,
+      "pass": true
+    },
+    "tail_swing_radius": {
+      "actual_m": 2.8900001111064166,
+      "target_m": 2.89,
+      "pass": true
+    },
+    "transport_envelope_length": {
+      "actual_m": 9.624999761581421,
+      "target_m": 9.625,
+      "pass": true
+    },
+    "transport_envelope_height": {
+      "actual_m": 3.0999999046325684,
+      "target_m": 3.1,
+      "pass": true
+    },
+    "metric_identity_scale": {
+      "pass": true
+    },
+    "independent_workgroup": {
+      "pass": true
+    },
+    "four_pivots": {
+      "pass": true
+    },
+    "transverse_pivot_axes": {
+      "pass": true
+    },
+    "slew_world_axis": {
+      "pass": true
+    },
+    "origins_match_pivots": {
+      "pass": true
+    },
+    "no_800mm_track_shoe": {
+      "pass": true
+    },
+    "no_rig_animation_constraints_materials": {
+      "pass": true
+    },
+    "bucket_hangs_below_pin": {
+      "pass": true
+    },
+    "cutting_edge_low_forward": {
+      "pass": true
+    },
+    "bucket_ground_clearance": {
+      "pass": true
+    },
+    "cab_left_separate_lower_hood": {
+      "pass": true
+    },
+    "no_parenting_modifiers": {
+      "pass": true
+    },
+    "independent_major_meshes": {
+      "pass": true
+    },
+    "overall_width": {
+      "actual_m": 2.990000009536743,
+      "target_m": 2.99,
+      "pass": true
+    },
+    "stage01_matching_cameras": {
+      "pass": true
+    },
+    "stage01_matching_resolution": {
+      "pass": true
+    }
+  },
+  "objects": [
+    {
+      "name": "PIVOT_BOOM",
+      "type": "EMPTY",
+      "collection": [
+        "00_GUIDES"
+      ],
+      "dimensions_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_position_m": [
+        0.770199716091156,
+        0.0,
+        1.6399999856948853
+      ],
+      "origin_pivot_m": [
+        0.770199716091156,
+        0.0,
+        1.6399999856948853
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "PIVOT_BUCKET",
+      "type": "EMPTY",
+      "collection": [
+        "00_GUIDES"
+      ],
+      "dimensions_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_position_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "origin_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "PIVOT_SLEW",
+      "type": "EMPTY",
+      "collection": [
+        "00_GUIDES"
+      ],
+      "dimensions_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "PIVOT_STICK",
+      "type": "EMPTY",
+      "collection": [
+        "00_GUIDES"
+      ],
+      "dimensions_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "world_position_m": [
+        6.429024696350098,
+        0.0,
+        1.149999976158142
+      ],
+      "origin_pivot_m": [
+        6.429024696350098,
+        0.0,
+        1.149999976158142
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": null,
+        "max": null
+      }
+    },
+    {
+      "name": "boom",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        5.917855262756348,
+        0.6600000262260437,
+        2.0017778873443604
+      ],
+      "world_position_m": [
+        0.770199716091156,
+        0.0,
+        1.6399999856948853
+      ],
+      "origin_pivot_m": [
+        0.770199716091156,
+        0.0,
+        1.6399999856948853
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          0.6207588911056519,
+          -0.33000001311302185,
+          1.0099999904632568
+        ],
+        "max": [
+          6.538614273071289,
+          0.33000001311302185,
+          3.011777877807617
+        ]
+      }
+    },
+    {
+      "name": "boom_mounting_base",
+      "type": "MESH",
+      "collection": [
+        "20_UPPERSTRUCTURE"
+      ],
+      "dimensions_m": [
+        0.949999988079071,
+        0.7200000286102295,
+        0.6500000953674316
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          0.30000001192092896,
+          -0.36000001430511475,
+          1.2999999523162842
+        ],
+        "max": [
+          1.25,
+          0.36000001430511475,
+          1.9500000476837158
+        ]
+      }
+    },
+    {
+      "name": "bucket",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        1.4549996852874756,
+        1.059999942779541,
+        1.4450000524520874
+      ],
+      "world_position_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "origin_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          3.231473684310913,
+          -0.5299999713897705,
+          0.3399999141693115
+        ],
+        "max": [
+          4.686473369598389,
+          0.5299999713897705,
+          1.784999966621399
+        ]
+      }
+    },
+    {
+      "name": "bucket_cutting_edge",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        0.18000030517578125,
+        1.1799999475479126,
+        0.12000000476837158
+      ],
+      "world_position_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "origin_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          4.541473388671875,
+          -0.5899999737739563,
+          0.3299999237060547
+        ],
+        "max": [
+          4.721473693847656,
+          0.5899999737739563,
+          0.44999992847442627
+        ]
+      }
+    },
+    {
+      "name": "bucket_left_cheek",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        1.3900001049041748,
+        0.06000000238418579,
+        1.3799999952316284
+      ],
+      "world_position_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "origin_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          3.231473684310913,
+          0.5299999713897705,
+          0.3399999141693115
+        ],
+        "max": [
+          4.621473789215088,
+          0.5899999737739563,
+          1.71999990940094
+        ]
+      }
+    },
+    {
+      "name": "bucket_right_cheek",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        1.3900001049041748,
+        0.06000000238418579,
+        1.3799999952316284
+      ],
+      "world_position_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "origin_pivot_m": [
+        3.5714735984802246,
+        0.0,
+        1.6999999284744263
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          3.231473684310913,
+          -0.5899999737739563,
+          0.3399999141693115
+        ],
+        "max": [
+          4.621473789215088,
+          -0.5299999713897705,
+          1.71999990940094
+        ]
+      }
+    },
+    {
+      "name": "cab",
+      "type": "MESH",
+      "collection": [
+        "20_UPPERSTRUCTURE"
+      ],
+      "dimensions_m": [
+        1.880000114440918,
+        0.9449999332427979,
+        1.7999999523162842
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -0.4300000071525574,
+          0.46000000834465027,
+          1.2999999523162842
+        ],
+        "max": [
+          1.4500000476837158,
+          1.4049999713897705,
+          3.0999999046325684
+        ]
+      }
+    },
+    {
+      "name": "central_x_frame",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        2.799999952316284,
+        1.8799999952316284,
+        0.2849999666213989
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -1.399999976158142,
+          -0.9399999976158142,
+          0.48500001430511475
+        ],
+        "max": [
+          1.399999976158142,
+          0.9399999976158142,
+          0.7699999809265137
+        ]
+      }
+    },
+    {
+      "name": "counterweight",
+      "type": "MESH",
+      "collection": [
+        "20_UPPERSTRUCTURE"
+      ],
+      "dimensions_m": [
+        0.970000147819519,
+        2.8299999237060547,
+        1.130000114440918
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -2.890000104904175,
+          -1.4149999618530273,
+          1.0499999523162842
+        ],
+        "max": [
+          -1.9199999570846558,
+          1.4149999618530273,
+          2.180000066757202
+        ]
+      }
+    },
+    {
+      "name": "engine_body",
+      "type": "MESH",
+      "collection": [
+        "20_UPPERSTRUCTURE"
+      ],
+      "dimensions_m": [
+        3.1599998474121094,
+        2.6500000953674316,
+        0.9800000190734863
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -2.319999933242798,
+          -1.350000023841858,
+          1.2999999523162842
+        ],
+        "max": [
+          0.8399999737739563,
+          1.2999999523162842,
+          2.2799999713897705
+        ]
+      }
+    },
+    {
+      "name": "left_crawler_frame",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        3.7200000286102295,
+        0.47999995946884155,
+        0.4399999976158142
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -1.8600000143051147,
+          0.9549999833106995,
+          0.25
+        ],
+        "max": [
+          1.8600000143051147,
+          1.434999942779541,
+          0.6899999976158142
+        ]
+      }
+    },
+    {
+      "name": "left_track_blockout",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        4.255000114440918,
+        0.6000000238418579,
+        0.9100000262260437
+      ],
+      "world_position_m": [
+        0.0,
+        1.1950000524520874,
+        0.4399999976158142
+      ],
+      "origin_pivot_m": [
+        0.0,
+        1.1950000524520874,
+        0.4399999976158142
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -2.127500057220459,
+          0.8949999809265137,
+          0.0
+        ],
+        "max": [
+          2.127500057220459,
+          1.4950000047683716,
+          0.9100000262260437
+        ]
+      }
+    },
+    {
+      "name": "main_upper_platform",
+      "type": "MESH",
+      "collection": [
+        "20_UPPERSTRUCTURE"
+      ],
+      "dimensions_m": [
+        4.409999847412109,
+        2.8299999237060547,
+        0.25
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        1.0499999523162842
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -2.8299999237060547,
+          -1.4149999618530273,
+          1.0499999523162842
+        ],
+        "max": [
+          1.5800000429153442,
+          1.4149999618530273,
+          1.2999999523162842
+        ]
+      }
+    },
+    {
+      "name": "right_crawler_frame",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        3.7200000286102295,
+        0.47999995946884155,
+        0.4399999976158142
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -1.8600000143051147,
+          -1.434999942779541,
+          0.25
+        ],
+        "max": [
+          1.8600000143051147,
+          -0.9549999833106995,
+          0.6899999976158142
+        ]
+      }
+    },
+    {
+      "name": "right_track_blockout",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        4.255000114440918,
+        0.6000000238418579,
+        0.9100000262260437
+      ],
+      "world_position_m": [
+        0.0,
+        -1.1950000524520874,
+        0.4399999976158142
+      ],
+      "origin_pivot_m": [
+        0.0,
+        -1.1950000524520874,
+        0.4399999976158142
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -2.127500057220459,
+          -1.4950000047683716,
+          0.0
+        ],
+        "max": [
+          2.127500057220459,
+          -0.8949999809265137,
+          0.9100000262260437
+        ]
+      }
+    },
+    {
+      "name": "slew_support",
+      "type": "MESH",
+      "collection": [
+        "10_UNDERCARRIAGE"
+      ],
+      "dimensions_m": [
+        1.6200000047683716,
+        1.6200000047683716,
+        0.2799999713897705
+      ],
+      "world_position_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "origin_pivot_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          -0.8100000023841858,
+          -0.8100000023841858,
+          0.7699999809265137
+        ],
+        "max": [
+          0.8100000023841858,
+          0.8100000023841858,
+          1.0499999523162842
+        ]
+      }
+    },
+    {
+      "name": "stick",
+      "type": "MESH",
+      "collection": [
+        "30_WORKGROUP"
+      ],
+      "dimensions_m": [
+        3.2911829948425293,
+        0.46000000834465027,
+        1.0096807479858398
+      ],
+      "world_position_m": [
+        6.429024696350098,
+        0.0,
+        1.149999976158142
+      ],
+      "origin_pivot_m": [
+        6.429024696350098,
+        0.0,
+        1.149999976158142
+      ],
+      "parent": null,
+      "bbox_world_m": {
+        "min": [
+          3.443816661834717,
+          -0.23000000417232513,
+          0.8081561923027039
+        ],
+        "max": [
+          6.734999656677246,
+          0.23000000417232513,
+          1.8178369998931885
+        ]
+      }
+    }
+  ],
+  "machine_bbox_world_m": {
+    "min": [
+      -2.890000104904175,
+      -1.4950000047683716,
+      0.0
+    ],
+    "max": [
+      6.734999656677246,
+      1.4950000047683716,
+      3.0999999046325684
+    ]
+  },
+  "stage": "02",
+  "immutable_stage_01_sha256": {
+    "models/xe215c/stage_01/checkpoints/front.png": "f6579f63a8e0532fab02677bd9bac14cc866488fa4145321c3c160e2ef91bb53",
+    "models/xe215c/stage_01/checkpoints/left.png": "43263fed4e98ade107f5cce93f60ab3f0053c9a17141b9abfd5e3721aa378b95",
+    "models/xe215c/stage_01/checkpoints/rear.png": "324e980223bf150f0e2af0d9fec26480fc03099c998f73ddf8fe1a8df3907d39",
+    "models/xe215c/stage_01/checkpoints/right.png": "f60ec60cd2cd5977729ff2ebde1ca7981211a15991493f40ad28b39a5faf40cd",
+    "models/xe215c/stage_01/checkpoints/three_quarter_front.png": "64dee6e42e7c314bec904dcc47fd3aef462fffcdbe18993f74612a811c908f48",
+    "models/xe215c/stage_01/checkpoints/three_quarter_rear.png": "34235a4c5a2548faf7e13a9dcc6924a26c0e2a2a077329c2d9eb8d7c62aa69e5",
+    "models/xe215c/stage_01/checkpoints/top.png": "9d7d361720b30a3812b7cf0db995e1decf89f5efb9909734fc3c06b09939db78",
+    "models/xe215c/stage_01/inspection.json": "ced1c45454ef1c5f910147af111e488728e089d82e1cd833091e4e45bdd2b4e9",
+    "models/xe215c/stage_01/README.md": "e6d8e0572ed9c5f3e991a8c2e49f925c09e1b806d8f9563769c71e35bb6f62eb",
+    "models/xe215c/stage_01/xe215c_stage_01.blend": "6d6ee94475a1fca10ba584ab06efe106b090c01e8056d100286f1f387379b4c1",
+    "scripts/blender/check_stage_01.py": "2bd44824c285bddcab7fd3ef90e0825272aa201be6afd8c31e8ba7608cefafd9",
+    "scripts/blender/stage_01_blockout.py": "473b6e8be076c06d3385536923e4fb573570bdfafece4fc177597434898e2059"
+  },
+  "reconstruction": "Pin positions, pose and shell proportions are estimates from selected references, not certified coordinates.",
+  "cameras": [
+    {
+      "name": "CAM_left",
+      "position_m": [
+        1.9225000143051147,
+        24.0,
+        1.5499999523162842
+      ],
+      "rotation_rad": [
+        -1.570796251296997,
+        3.141592502593994,
+        -0.0
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_right",
+      "position_m": [
+        1.9225000143051147,
+        -24.0,
+        1.5499999523162842
+      ],
+      "rotation_rad": [
+        1.5707964897155762,
+        -0.0,
+        0.0
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_front",
+      "position_m": [
+        25.922500610351562,
+        0.0,
+        1.5499999523162842
+      ],
+      "rotation_rad": [
+        1.5707963705062866,
+        -0.0,
+        1.5707963705062866
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_rear",
+      "position_m": [
+        -22.077499389648438,
+        0.0,
+        1.5499999523162842
+      ],
+      "rotation_rad": [
+        1.5707963705062866,
+        -0.0,
+        -1.5707963705062866
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_top",
+      "position_m": [
+        1.9225000143051147,
+        0.0,
+        25.549999237060547
+      ],
+      "rotation_rad": [
+        0.0,
+        -0.0,
+        0.0
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_three_quarter_front",
+      "position_m": [
+        17.342323303222656,
+        15.419822692871094,
+        11.572884559631348
+      ],
+      "rotation_rad": [
+        1.1399717330932617,
+        -5.7700571431951175e-08,
+        2.356194496154785
+      ],
+      "ortho_scale_m": 11.699999809265137
+    },
+    {
+      "name": "CAM_three_quarter_rear",
+      "position_m": [
+        -13.497323036193848,
+        -15.419822692871094,
+        11.572884559631348
+      ],
+      "rotation_rad": [
+        1.1399719715118408,
+        1.552073136679155e-08,
+        -0.7853983044624329
+      ],
+      "ortho_scale_m": 11.699999809265137
+    }
+  ]
+}
