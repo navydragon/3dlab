@@ -1,0 +1,9 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+coverage/
+package-lock.json
+# Existing authoritative documents retain their formatting.
+docs/
+AGENTS.md
