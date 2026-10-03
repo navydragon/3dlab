@@ -1,6 +1,6 @@
 # Application-facing 3D asset specification
 
-Status: Current pipeline contract. No approved production excavator asset is connected.
+Status: Current pipeline contract. XE215C Stage 09 metadata and static production asset are connected; viewer implementation remains deferred.
 
 ## Scope and ownership
 
@@ -23,7 +23,9 @@ do not assume unsupported Blender features will render.
 
 Approved binaries belong in `public/assets/3d/`; metadata belongs in
 `content/3d/`, one Asset3D JSON record per file (subdirectories permitted).
-Both currently contain only gitkeep. No production node or clip names are known.
+The XE215C delivery uses `content/3d/xe215c.json` and the versioned public directory
+`public/assets/3d/xe215c/v1_0_0/`. Its adjacent manifest is a generated copy of the
+same Asset3D record, not a second mapping contract.
 
 `uri` is a base-relative web path starting with `assets/3d/` and ending in
 `.glb` or `.gltf`, matching `format`. The future asset adapter resolves it
@@ -47,6 +49,10 @@ See `src/domain/asset3d.ts` and the content schema. Fields:
 - `animationMappings`: stable learning activity key → exact external clip name.
 - `cameraPresets` (optional): stable preset ID, finite position/target triples in
   the exported model coordinate frame; position and target must differ.
+- `production` (optional): SHA256/byte size, meters/Y-up convention, canonical
+  transform names, statistics, actual clip duration in seconds and animated node
+  names, loop/rest semantics, mapping notes and limitations. These are asset
+  evidence, not educational identity or simulation parameters.
 
 Names, Three.js objects, React types and animation mixers are not domain data.
 External names are preserved exactly, including case/spaces; blank names fail.
@@ -75,6 +81,10 @@ selectable geometry for every major canonical component. Bucket geometry and its
 explicit mapping are mandatory for the first viewer slice. Several mapped meshes
 can represent one educational component; a mesh cannot ambiguously select two.
 Unmapped geometry must not acquire inferred educational meaning.
+For XE215C, six explicitly classified nonselectable `bucket-linkage` auxiliary
+meshes join the `bucket-cylinder` mapping for complete highlight/visibility sets.
+Direct hit selection must still respect their `edu_selectable=false`; this is an
+explicit asset assembly policy, not identity inferred from hierarchy or names.
 Mappings to groups/descendant resolution would require an explicit later contract;
 the initial selection mapping addresses inspected mesh nodes.
 
@@ -130,8 +140,9 @@ The target is an approved working-cycle visualization. Deliver named clips and
 record their exact inspected names through animationMappings; never guess the
 first clip or derive a name from a domain ID. The conceptual
 `excavator-working-cycle` activity from domain-model §27 can map to
-`<actual-working-cycle-clip-name>` only after inspection. No production clip name
-or phase timeline is defined today.
+`<actual-working-cycle-clip-name>` only after inspection. XE215C maps that activity
+to `excavator_work_cycle_demo` (11.666666984558105 seconds). No instructional
+phase timeline is inferred.
 
 Clip duration is visual playback time, independent of engineering `t_cycle`.
 UI speed changes do not change calculations. Verify assembly coordination and
@@ -146,7 +157,7 @@ and never override approved presets by accident.
 1. Shape validation checks IDs, fields, URI, mappings and camera data.
 2. Domain validation checks subject existence and component existence/ownership,
    including duplicate asset IDs across the metadata collection.
-3. Future topology validation checks the actual exported scene, unique/exact node
+3. Topology validation checks the actual exported scene, unique/exact node
    resolution, mesh selectability, hierarchy, declared clips and resources.
 4. Delivery review checks asset provenance/license, appearance, pivots/scale,
    initial pose, working cycle and measured performance.
@@ -155,6 +166,9 @@ and never override approved presets by accident.
 levels 1–2 after domain validation. Zero files is valid. Missing/malformed files
 or invalid metadata fail explicitly; no invalid asset is discarded as success.
 Passing this command does not certify topology or binary delivery.
+`npm run assets:validate` additionally checks the real XE215C GLB against its
+manifest, complete name mappings, canonical hierarchy, clips, public copy and
+immutable authoring stages. Production static HTTP delivery has an E2E check.
 
 Later composition will supply validated metadata to the isolated viewer adapter.
 The viewer loads topology, resolves node mappings and emits MachineComponentId

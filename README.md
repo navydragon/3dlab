@@ -113,7 +113,7 @@ npm run test
 npm run build
 ```
 
-`npm run validate` runs all six gates above. Typechecking is independent of the Vite build. `npm run format` formats application/tooling/content files and this README; existing authoritative documents retain their formatting. `npm run test:watch` starts Vitest watch mode.
+`npm run validate` runs all six gates above plus production asset validation. Typechecking is independent of the Vite build. `npm run format` formats application/tooling/content files and this README; existing authoritative documents retain their formatting. `npm run test:watch` starts Vitest watch mode.
 
 For browser smoke tests, install Chromium once, then run:
 
@@ -131,7 +131,7 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 - `src/application`: pure repository queries and page view models; grouping, supported sections, stage selection and semantic return-context validation.
 - `src/navigation`: centralized routes, builders, and structural query parsing. Selected stages and return context live in the URL.
 - `src/ui` and `src/app`: graph-backed pages, accessible layout, repository context and injectable loaded/invalid application composition.
-- `src/visualization`: plain interaction contracts only; no renderer or assets.
+- `src/visualization`: plain interaction contracts only; no renderer. Production metadata and binaries use the content/public pipeline described below.
 - `src/test`, colocated tests, and `tests/`: component/unit, executable lint-boundary, and production-preview browser checks.
 
 ESLint protects domain/application/content/visualization dependencies and the future `src/simulation` location. Pure production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. Simulation remains documentation-only. There is no global state library, persistence, or backend.
@@ -148,8 +148,8 @@ React 19.3.0 is compatible with the published Fiber 9.8.1 React peer range (`>=1
 
 ## 3D asset pipeline
 
-Approved binaries will live under `public/assets/3d/`; one JSON metadata record per asset will live under `content/3d/` (nested folders supported). Both currently contain only gitkeep: there is no approved production excavator model, node/clip mapping or connected viewer.
+Production binaries live under `public/assets/3d/`; one JSON Asset3D metadata record per asset lives under `content/3d/` (nested folders supported). XE215C Stage 09 connects the immutable Stage 08 GLB through `content/3d/xe215c.json` and `public/assets/3d/xe215c/v1_0_0/`. A connected viewer remains deferred.
 
 See [3D asset specification](docs/3d/3d-asset-spec.md) and [Blender export guide](docs/3d/blender-export-guide.md). Renderer-neutral contracts belong to `src/domain/asset3d.ts`; content schemas validate shapes and machine/component ownership. `npm run content:validate` automatically validates all 3D metadata JSON alongside domain content; zero metadata files is valid. Metadata validation does not inspect binary topology.
 
-Asset URIs use `assets/3d/...glb` or `.gltf`, resolved against the application base by the future asset adapter. Re-export/version changes preserve Machine/component IDs. Actual node/clip inspection, licensed asset delivery and the viewer remain a later task; no Three.js/Fiber dependencies were added.
+Asset URIs use `assets/3d/...glb` or `.gltf`, resolved against the application base by the future asset adapter. Re-export/version changes preserve Machine/component IDs. `npm run assets:generate` reproducibly creates the Stage 09 manifest, inspection and exact public copy from actual GLB bytes; `npm run assets:validate` checks integrity, complete mapping, hierarchy, clips and immutable Stage 01–08 hashes. It is included in `npm run validate`. Production HTTP delivery is covered by E2E. See [Stage 09 delivery notes](models/xe215c/stage_09/README.md) for statistics, animation/rest semantics and limits. No Three.js/Fiber dependencies were added.

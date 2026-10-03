@@ -20,7 +20,9 @@
     "test:watch": "vitest",
     "test:e2e": "npm run build && playwright test",
     "content:validate": "node scripts/validate-content.ts",
-    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run content:validate && npm run test && npm run build"
+    "assets:generate": "node scripts/stage_09_assets.ts --generate",
+    "assets:validate": "node scripts/stage_09_assets.ts",
+    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run content:validate && npm run assets:validate && npm run test && npm run build"
   },
   "dependencies": {
     "react": "19.3.0",

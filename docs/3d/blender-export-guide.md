@@ -1,5 +1,11 @@
 # Blender → application export guide
 
+Current delivery: XE215C Stage 08 supplies the immutable exported GLB and Stage 09
+supplies actual binary inspection, application mapping and versioned public copy.
+See `models/xe215c/stage_09/README.md`; use `npm run assets:generate` and
+`npm run assets:validate` for that existing delivery. Preparation-task statements
+below describe the earlier checklist, not the current asset availability.
+
 Use this checklist when preparing the actual excavator asset. Follow the
 [asset specification](3d-asset-spec.md); this guide does not authorize invented
 geometry, machine dimensions, engineering parameters or educational content.

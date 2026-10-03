@@ -1,0 +1,3378 @@
+{
+  "stage": "09",
+  "source": "models/xe215c/stage_08/excavator.glb",
+  "immutableHashes": {
+    "models/xe215c/stage_01/checkpoints/front.png": "f6579f63a8e0532fab02677bd9bac14cc866488fa4145321c3c160e2ef91bb53",
+    "models/xe215c/stage_01/checkpoints/left.png": "43263fed4e98ade107f5cce93f60ab3f0053c9a17141b9abfd5e3721aa378b95",
+    "models/xe215c/stage_01/checkpoints/rear.png": "324e980223bf150f0e2af0d9fec26480fc03099c998f73ddf8fe1a8df3907d39",
+    "models/xe215c/stage_01/checkpoints/right.png": "f60ec60cd2cd5977729ff2ebde1ca7981211a15991493f40ad28b39a5faf40cd",
+    "models/xe215c/stage_01/checkpoints/three_quarter_front.png": "64dee6e42e7c314bec904dcc47fd3aef462fffcdbe18993f74612a811c908f48",
+    "models/xe215c/stage_01/checkpoints/three_quarter_rear.png": "34235a4c5a2548faf7e13a9dcc6924a26c0e2a2a077329c2d9eb8d7c62aa69e5",
+    "models/xe215c/stage_01/checkpoints/top.png": "9d7d361720b30a3812b7cf0db995e1decf89f5efb9909734fc3c06b09939db78",
+    "models/xe215c/stage_01/inspection.json": "ced1c45454ef1c5f910147af111e488728e089d82e1cd833091e4e45bdd2b4e9",
+    "models/xe215c/stage_01/README.md": "e6d8e0572ed9c5f3e991a8c2e49f925c09e1b806d8f9563769c71e35bb6f62eb",
+    "models/xe215c/stage_01/xe215c_stage_01.blend": "6d6ee94475a1fca10ba584ab06efe106b090c01e8056d100286f1f387379b4c1",
+    "models/xe215c/stage_02/checkpoints/front.png": "140e56a899652858138ec5f652b3d2f168b35adc3fa44d57487123b9a31ab9e5",
+    "models/xe215c/stage_02/checkpoints/left.png": "4267f1fa736e8fc986b2ef669ba3a50af1628e08ec2fb74745200e5019532fc4",
+    "models/xe215c/stage_02/checkpoints/rear.png": "6e64b7a404ad659ee5f070baebee8fea87f61f18a2b1bb6c3a08cb098965f642",
+    "models/xe215c/stage_02/checkpoints/right.png": "e4db040f8eeab2ee857885392862478a2f778f275bd0a1ce84f50cc4af60a136",
+    "models/xe215c/stage_02/checkpoints/three_quarter_front.png": "f18ccf853bcdb753e703244d49458305d1e84b485eef414395e44892bb5a0fcf",
+    "models/xe215c/stage_02/checkpoints/three_quarter_rear.png": "6ca1576c5d767b12bc5b3a21ac58ae79008b9a89712c716544fb9f9406d768ba",
+    "models/xe215c/stage_02/checkpoints/top.png": "14462ce8404fe9c84e164960d915098ad19f8a051770a6a06eed49e9d24e9c81",
+    "models/xe215c/stage_02/comparison_stage_01_vs_02.png": "94906a130ed0169d5de8d066cfddf5e92274d95eb9aa80b9c1a771a5d01e1c19",
+    "models/xe215c/stage_02/inspection.json": "203d8bfc971520538217a9659e6257127af79d99a2de3f8c497f0d47ec9cb72b",
+    "models/xe215c/stage_02/README.md": "e55d9477c7d2927cccaa68026e0e93f3bdc4bafdaf7f65ba804b53393c9243e2",
+    "models/xe215c/stage_02/xe215c_stage_02.blend": "1b954f3dfe9af4e2c705bd0a176a3061a89385100afc41ced6c2b514b83b1d57",
+    "models/xe215c/stage_03/checkpoints/articulated_workgroup_three_quarter.png": "82a0e7aee35c3c10eda23a5e9a1d0757743cc0cf2f38ce0c5135299c1cc43229",
+    "models/xe215c/stage_03/checkpoints/neutral_three_quarter.png": "13921c25387b00039b625cb1f3bee6061ae9dfb43e9d3768ba3b4a19e4de3b61",
+    "models/xe215c/stage_03/checkpoints/slew_test_three_quarter.png": "56177d49a916d63caa37aa21c6e4631568b542f88ec17afe37a2536b4f8e7735",
+    "models/xe215c/stage_03/inspection.json": "7354f824919f10f357c5774b76c4f5e17a71385e49b7023651102c077b4dd86f",
+    "models/xe215c/stage_03/README.md": "c91e636227c40e95c1f36f71dd7080b133bc966be0848305bbcf189aa1c348b6",
+    "models/xe215c/stage_03/xe215c_stage_03.blend": "0be75b86cd4f6682af49096aeaba29824ecc62b93443a440f9397503b50d5a2b",
+    "models/xe215c/stage_04/checkpoints/articulated_primary_geometry.png": "c5e960d11a3cf1f780696fc6398c5711842c11ff4fe39045e7988f0e862ea510",
+    "models/xe215c/stage_04/checkpoints/front.png": "47768375e4b0ebfcb45cd2b361067bca99d1dbb4ba1454e488b04da0664e579e",
+    "models/xe215c/stage_04/checkpoints/left.png": "272e23e556731b591fca85d9b768cc88475c1f1d28cc4ca8c87c858c8f9a6cbe",
+    "models/xe215c/stage_04/checkpoints/rear.png": "ef2e2e3ab63b6db18dc552c7409516e9e27f6d2bd2192734ea225fb25ab94b18",
+    "models/xe215c/stage_04/checkpoints/right.png": "5c221d476a90a3a7b83efaa9e8a924a7af1920065f15e6a7b58b42178cc0d42f",
+    "models/xe215c/stage_04/checkpoints/three_quarter_front.png": "2e250c38d001bfde2749c686a4bcd53e1eda13839f047e0badcd60f1c632428c",
+    "models/xe215c/stage_04/checkpoints/three_quarter_rear.png": "16398f97afda16577bd95fc875f4e3429e63c0461ff2a86c2c992fd9d5448c21",
+    "models/xe215c/stage_04/checkpoints/top.png": "840c228c65d07ccf27d22ef7f01914ac83293cdfdabd9f89dbbf1f5ba0de0113",
+    "models/xe215c/stage_04/inspection.json": "8a911fca601fd69ad83f278175093d4f5bc237a9cbad3b4ebd48ac70b503d537",
+    "models/xe215c/stage_04/README.md": "671616c9aa342a6fa26e38cc7c0812b2c57640fb7d123518a94b92ffda847e77",
+    "models/xe215c/stage_04/xe215c_stage_04.blend": "8dd82d6ef7b00a99a88ad40f46dd3d816bde8dcd3ed07856db20240b91f9c722",
+    "models/xe215c/stage_05/checkpoints/boom-cylinder.png": "ef4817dee8801b606bb69463f93699fe11e84a2024be124ea422d3cc11fad8d5",
+    "models/xe215c/stage_05/checkpoints/boom.png": "0a2bd004a96baf6493311f7c6a37e657560b5133b9d75e27ae92f2d67bfd4544",
+    "models/xe215c/stage_05/checkpoints/bucket-cylinder.png": "062af26a414ba767ab9aac4dbfcd3c9b8c90a61e56f702c632ffab8f54b7da32",
+    "models/xe215c/stage_05/checkpoints/bucket.png": "c9110a367909afd34c3d2d0d276c1561b493128c1d9b5f492203898c87e12feb",
+    "models/xe215c/stage_05/checkpoints/neutral_overview.png": "6f6d88877c6a3fcbe1a4186e72588bc5954fe1321604d4fe10e9e6056c045b2e",
+    "models/xe215c/stage_05/checkpoints/power-unit.png": "97f521d6360e4c5401554469bac4910f1752b443d5175aa34a6ee5baefefdfe1",
+    "models/xe215c/stage_05/checkpoints/stick-cylinder.png": "cb9e07e7cc9a759bf9169f76dbbc4fc00f95fd066e9e3376a991faa33fa600ba",
+    "models/xe215c/stage_05/checkpoints/stick.png": "966ff6979db13bd49309dd3c061f480bf73c1276a50c6e5f01a16c0e99f1b0e0",
+    "models/xe215c/stage_05/checkpoints/undercarriage.png": "7d233553876f33348ce723ea936302a048378697aeeb7d5582d43858806e44b5",
+    "models/xe215c/stage_05/checkpoints/upperstructure.png": "8c5638980b69668b44a37fa4cacb25d62e51c7ef28713c41d511d184d4b90ca5",
+    "models/xe215c/stage_05/component_manifest.json": "e4553df15622845526b5c1f37b4e8d895cde9feb878f5f5fc717254d3d0f0a61",
+    "models/xe215c/stage_05/inspection.json": "c7ec793dea75e054d9503e64c90f7c6b554a7a7d0eeb5a914321744074aa0dd1",
+    "models/xe215c/stage_05/README.md": "36471fc3506293f38ae8fcbcc4c3d296a35cc78c551744454f66fbca322ef496",
+    "models/xe215c/stage_05/xe215c_stage_05.blend": "406f3011680f058ef4fffb236f77683176dff5152824808061e7254425aa36c9",
+    "models/xe215c/stage_06/checkpoints/digging.png": "751bf22e04e1587bd2cfbb3ea1d496a4d11b246c132ed30ec428894b8db14b5e",
+    "models/xe215c/stage_06/checkpoints/dump.png": "50ad97d1d322798cffa9cfc77642d9d6f1e6b585f3db90ed3a32c771e5e5089b",
+    "models/xe215c/stage_06/checkpoints/filled.png": "e2e25ccf862ca17fe55729648180c95e988ed875fad614f51d6d278436452e15",
+    "models/xe215c/stage_06/checkpoints/lifted.png": "6099bb54ac0e74c630d39a4930ab3f2bd9f2913ca5ca03a6c80c24aa42e9f38a",
+    "models/xe215c/stage_06/checkpoints/neutral.png": "701c4704cf029ccbd2b25e96da961937c354652b8c21cdd8480945fa2cc2551e",
+    "models/xe215c/stage_06/checkpoints/returned.png": "83a3afd2630614f2b9ede89ec039a071a5f586e1c2fe454bf493287cc06b6f41",
+    "models/xe215c/stage_06/checkpoints/slewed.png": "dae8b8796c5dd1169a962346e23f6002a41afeea6ec890ea8aa294b9d5242191",
+    "models/xe215c/stage_06/inspection.json": "28394149c7d927dc3f51607ffa8bdaafd34c007f695b40dac68df0090fbd3c4a",
+    "models/xe215c/stage_06/README.md": "7e390ab9b8ec1f46bc78735728649b609ed3d3ee17e6ad01225e989b31744a16",
+    "models/xe215c/stage_06/work_cycle_contact_sheet.png": "e01c778ef453bc82f1e5a313f2941826ddb0451aecd73d2d4d69df99924f665a",
+    "models/xe215c/stage_06/xe215c_stage_06.blend": "6c2e234f2513b44aff86276792500e0d28c493600dc3ddf2ce1ae35e1be218fd",
+    "models/xe215c/stage_07/checkpoints/front.png": "fea330377c1a5339c4e8f52b0d938dfe31bed8e25c248f7d0ac495e9ba512b94",
+    "models/xe215c/stage_07/checkpoints/left.png": "008dbb3a1bf712489ad53894615e361f30e96a7821ec2ac7f9f44185acf0ebe8",
+    "models/xe215c/stage_07/checkpoints/lifted.png": "03f4e8f8ac285deb96e9781851e7dc98778ecda6f517bb516fadfe985920a431",
+    "models/xe215c/stage_07/checkpoints/rear.png": "ef6a75a92449b927a4004cfb77ead399e5cde3a0170bfd928240b6e27557a76c",
+    "models/xe215c/stage_07/checkpoints/right.png": "3eb1e2fe915c6735a285c3ec3c7f5c5002f8bb96f4986fcb0f1781f3eb824a96",
+    "models/xe215c/stage_07/checkpoints/slewed_dump.png": "4b91db080ed8223b7547dc075ee289a9c530fd04605b53b7de4a49882a0d7650",
+    "models/xe215c/stage_07/checkpoints/three_quarter_front.png": "131f6a5afcace891705288cf40bbb0a3f2003df86f0f38b2453f43b636b109d3",
+    "models/xe215c/stage_07/checkpoints/three_quarter_rear.png": "25405fedf946bc6ec8652fac55c1673c137a869b2a70152afac7153e7e93dda0",
+    "models/xe215c/stage_07/checkpoints/top.png": "a2f291fd65817b614547535c132750862e6ad9e49199b38138844458cbca4234",
+    "models/xe215c/stage_07/inspection.json": "9d330add922fa21664eefebf4e3301e54ced21935f9023156c7ef0c936d6f58f",
+    "models/xe215c/stage_07/material_contact_sheet.png": "feecf6b6b42a09ef093f7f8914e041ec1d11bba2c14688b12ab05901112bb59c",
+    "models/xe215c/stage_07/README.md": "552757190531fa092b0e7a82d83fe1c668da93ae397bc8f39148fb96060a77e9",
+    "models/xe215c/stage_07/xe215c_stage_07.blend": "46644c4bf5fff2ff9f3ce3397745f1f2c72d97c0cd1ee4ab2d46bb50ef7c9808",
+    "models/xe215c/stage_08/checkpoints/roundtrip_lifted.png": "ce62f8b742a47a3d291937108d1eef72ff6dab15881525c1863be801d89c3880",
+    "models/xe215c/stage_08/checkpoints/roundtrip_neutral.png": "893f60e659a0cd4425eca2d8b2ad192712ada9385f71566a94c2bab5315dba00",
+    "models/xe215c/stage_08/excavator.glb": "36b1d77283b435c3d7c24079431c55de88ee8f6e3ecb52375c75352495c8a5c5",
+    "models/xe215c/stage_08/inspection.json": "9e6c4da3c90c0745db9c9d51ae907e6c53088e932648d4bbc6c982cac80dea0a",
+    "models/xe215c/stage_08/README.md": "5de2b0e234984f6c090e746a8eba2fbd6208c1c636a96783ce37ace4a6cc0106",
+    "scripts/blender/check_stage_01.py": "2bd44824c285bddcab7fd3ef90e0825272aa201be6afd8c31e8ba7608cefafd9",
+    "scripts/blender/check_stage_02.py": "aa2281a85fef6382a638b3a2b181d1001308644f37b9e3dacfd6c59539468501",
+    "scripts/blender/check_stage_03.py": "4ecb605af7da99f0b9274b07387a1dc779a1ae0420807e51d1f7ad4fd2b6ccc9",
+    "scripts/blender/check_stage_04.py": "391a353997cb72fed46f2b2ef375249d3fd59b70ca61ff1272be51f583e7f44c",
+    "scripts/blender/check_stage_05.py": "a708c1fc6ce69ae536a68260b11a969beb1163c23ecd8fc84f30673b4ccd9f1e",
+    "scripts/blender/check_stage_06.py": "f897775a9f4f3adc9fa5fc8a0a712085d4292e83755acec47da7ea44fac64bfb",
+    "scripts/blender/check_stage_07.py": "6b7aa8e3af41138112391c02883f4e4a7ed9aa5c3f51c966fd8a7726c7d4d47d",
+    "scripts/blender/check_stage_08.py": "245284d8343476b4c262399fb9d5402e47775af6d80b9ee7da5a74d00edf9b03",
+    "scripts/blender/stage_01_blockout.py": "473b6e8be076c06d3385536923e4fb573570bdfafece4fc177597434898e2059",
+    "scripts/blender/stage_02_contact_sheet.py": "00158381e0527faa827608c22e94b91510b1eebbd25cad87d9e13fa046b8a28f",
+    "scripts/blender/stage_02_proportions.py": "1ae9afe8a5c9742fa19ae7f88de0ed2d04ba9536254786f64a98f23b822be44f",
+    "scripts/blender/stage_03_hierarchy_kinematics.py": "2fdbe7bbbc47138ea6b5de61cf7298db3b0bfd60b24c911ffc6813472e007877",
+    "scripts/blender/stage_04_detailing.py": "ea1b35470a94d9501e2bc459e34ded038ce09693ef80aa9fe16807fdba81ccc1",
+    "scripts/blender/stage_05_segmentation.py": "417eb8eb8edbc022e1a7484ca6f82b9b8d79c81ef58bfd98027c57ee9e785c76",
+    "scripts/blender/stage_06_kinematics_animation.py": "a4d02b7fd1e08b6610c8a4a447d90aeb063a4102693186b329a4f64888702eae",
+    "scripts/blender/stage_07_materials_optimization.py": "d5402e033a9f8bea750b73957cae580cef36bf878d9f9916d5524f6a0b40daac",
+    "scripts/blender/stage_08_export.py": "9960d5e8dd18c653b846cb95e2b575867d14555439abc4170de9cac80bb854d1"
+  },
+  "sha256": "36b1d77283b435c3d7c24079431c55de88ee8f6e3ecb52375c75352495c8a5c5",
+  "sizeBytes": 600324,
+  "nodes": [
+    {
+      "name": "central_x_frame",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "central_x_frame_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_carrier_roller_01",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_carrier_roller_01_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_carrier_roller_02",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_carrier_roller_02_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_crawler_beam_cap",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_crawler_beam_cap_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_crawler_frame",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_crawler_frame_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_idler_hub",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_idler_hub_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_idler_wheel",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_idler_wheel_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_01",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_01_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_02",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_02_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_03",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_03_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_04",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_04_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_05",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_05_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_06",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_06_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_road_roller_07",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_road_roller_07_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_sprocket_hub",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_sprocket_hub_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_sprocket_wheel",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_sprocket_wheel_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_track_blockout",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_track_blockout_mesh",
+      "materials": ["track_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0.4399999976158142, -1.1950000524520874],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "left_track_treads",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "left_track_treads_mesh",
+      "materials": ["track_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_cylinder_barrel",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_cylinder_barrel_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_cylinder_end_base",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_cylinder_end_base_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_cylinder_end_rod",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_cylinder_end_rod_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0500001907348633, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_cylinder_gland",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_cylinder_gland_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_cylinder_rod",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_cylinder_rod_mesh",
+      "materials": ["hydraulic_rod_metal"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0500001907348633, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_mounting_base",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "boom_mounting_base_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_front_upper_glazing",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_front_upper_glazing_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_front_windshield",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_front_windshield_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_left_main_window",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_left_main_window_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_left_rear_window",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_left_rear_window_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_lower_sill",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_lower_sill_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_right_main_window",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_right_main_window_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_right_rear_window",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_right_rear_window_mesh",
+      "materials": ["cab_glass_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "cab_roof_cap",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "cab_roof_cap_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "counterweight",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "counterweight_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "engine_body",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "engine_body_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "power-unit",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "engine_left_service_panel",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "engine_left_service_panel_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "power-unit",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "engine_right_service_panel",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "engine_right_service_panel_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "power-unit",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "engine_top_access_panel",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "engine_top_access_panel_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "power-unit",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "main_upper_platform",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "main_upper_platform_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "boom_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_left_side_plate",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "boom_left_side_plate_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.770199716091156, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_right_side_plate",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "boom_right_side_plate_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.770199716091156, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "boom_root_pin_boss",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "boom_root_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "boom",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.770199716091156, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cylinder_barrel",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_cylinder_barrel_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cylinder_end_base",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_cylinder_end_base_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cylinder_end_rod",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_cylinder_end_rod_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cylinder_gland",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_cylinder_gland_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cylinder_rod",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_cylinder_rod_mesh",
+      "materials": ["hydraulic_rod_metal"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_linkage_connecting_link",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_linkage_connecting_link_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.1499998569488525, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_linkage_rocker",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "bucket_linkage_rocker_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "linkage_input_pin_boss",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "linkage_input_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "linkage_link_pin_boss",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "linkage_link_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "linkage_rocker_pin_boss",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "linkage_rocker_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_cutting_edge",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_cutting_edge_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_left_cheek",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_left_cheek_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_left_mount_ear",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_left_mount_ear_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_left_wear_rib",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_left_wear_rib_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_right_cheek",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_right_cheek_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_right_mount_ear",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_right_mount_ear_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_right_wear_rib",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_right_wear_rib_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_root_pin_boss",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_root_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_tooth_01",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_tooth_01_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_tooth_02",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_tooth_02_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_tooth_03",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_tooth_03_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_tooth_04",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_tooth_04_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "bucket_tooth_05",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "bucket_tooth_05_mesh",
+      "materials": ["cutting_edge_steel"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "bucket",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "linkage_bucket_pin_boss",
+      "parent": "NODE_BUCKET",
+      "children": [],
+      "mesh": "linkage_bucket_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "auxiliary",
+        "edu_subsystem": "bucket-linkage",
+        "edu_selectable": false,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-3.5714735984802246, -1.6999999284744263, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "NODE_BUCKET",
+      "parent": "NODE_STICK",
+      "children": [
+        "bucket",
+        "bucket_cutting_edge",
+        "bucket_left_cheek",
+        "bucket_left_mount_ear",
+        "bucket_left_wear_rib",
+        "bucket_right_cheek",
+        "bucket_right_mount_ear",
+        "bucket_right_wear_rib",
+        "bucket_root_pin_boss",
+        "bucket_tooth_01",
+        "bucket_tooth_02",
+        "bucket_tooth_03",
+        "bucket_tooth_04",
+        "bucket_tooth_05",
+        "linkage_bucket_pin_boss"
+      ],
+      "mesh": null,
+      "materials": [],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "technical",
+        "edu_selectable": false,
+        "edu_renderable": false,
+        "source_rotation_axis_local": "Y",
+        "gltf_rotation_axis_local": [0, 0, -1]
+      },
+      "restTRS": {
+        "translation": [-2.857551097869873, 0.5499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "stick_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_left_side_plate",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "stick_left_side_plate_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_right_side_plate",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "stick_right_side_plate_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_root_pin_boss",
+      "parent": "NODE_STICK",
+      "children": [],
+      "mesh": "stick_root_pin_boss_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-6.429024696350098, -1.149999976158142, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "NODE_STICK",
+      "parent": "NODE_BOOM",
+      "children": [
+        "bucket_cylinder_barrel",
+        "bucket_cylinder_end_base",
+        "bucket_cylinder_end_rod",
+        "bucket_cylinder_gland",
+        "bucket_cylinder_rod",
+        "bucket_linkage_connecting_link",
+        "bucket_linkage_rocker",
+        "linkage_input_pin_boss",
+        "linkage_link_pin_boss",
+        "linkage_rocker_pin_boss",
+        "NODE_BUCKET",
+        "stick",
+        "stick_left_side_plate",
+        "stick_right_side_plate",
+        "stick_root_pin_boss"
+      ],
+      "mesh": null,
+      "materials": [],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "technical",
+        "edu_selectable": false,
+        "edu_renderable": false,
+        "source_rotation_axis_local": "Y",
+        "gltf_rotation_axis_local": [0, 0, -1]
+      },
+      "restTRS": {
+        "translation": [5.658824920654297, -0.49000000953674316, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_cylinder_barrel",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "stick_cylinder_barrel_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.7701995968818665, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_cylinder_end_base",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "stick_cylinder_end_base_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.7701995968818665, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_cylinder_end_rod",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "stick_cylinder_end_rod_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.7701998353004456, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_cylinder_gland",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "stick_cylinder_gland_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.7701995968818665, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "stick_cylinder_rod",
+      "parent": "NODE_BOOM",
+      "children": [],
+      "mesh": "stick_cylinder_rod_mesh",
+      "materials": ["hydraulic_rod_metal"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "stick-cylinder",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [-0.7701998353004456, -1.6399999856948853, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "NODE_BOOM",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [
+        "boom",
+        "boom_left_side_plate",
+        "boom_right_side_plate",
+        "boom_root_pin_boss",
+        "NODE_STICK",
+        "stick_cylinder_barrel",
+        "stick_cylinder_end_base",
+        "stick_cylinder_end_rod",
+        "stick_cylinder_gland",
+        "stick_cylinder_rod"
+      ],
+      "mesh": null,
+      "materials": [],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "technical",
+        "edu_selectable": false,
+        "edu_renderable": false,
+        "source_rotation_axis_local": "Y",
+        "gltf_rotation_axis_local": [0, 0, -1]
+      },
+      "restTRS": {
+        "translation": [0.770199716091156, 0.5900000333786011, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "service_front_right_panel",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "service_front_right_panel_mesh",
+      "materials": ["industrial_body_yellow"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "power-unit",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "tower_pin_support_left",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "tower_pin_support_left_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "tower_pin_support_right",
+      "parent": "NODE_UPPERSTRUCTURE",
+      "children": [],
+      "mesh": "tower_pin_support_right_mesh",
+      "materials": ["hydraulic_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "upperstructure",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, -1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "NODE_UPPERSTRUCTURE",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [
+        "boom_cylinder_barrel",
+        "boom_cylinder_end_base",
+        "boom_cylinder_end_rod",
+        "boom_cylinder_gland",
+        "boom_cylinder_rod",
+        "boom_mounting_base",
+        "cab",
+        "cab_front_upper_glazing",
+        "cab_front_windshield",
+        "cab_left_main_window",
+        "cab_left_rear_window",
+        "cab_lower_sill",
+        "cab_right_main_window",
+        "cab_right_rear_window",
+        "cab_roof_cap",
+        "counterweight",
+        "engine_body",
+        "engine_left_service_panel",
+        "engine_right_service_panel",
+        "engine_top_access_panel",
+        "main_upper_platform",
+        "NODE_BOOM",
+        "service_front_right_panel",
+        "tower_pin_support_left",
+        "tower_pin_support_right"
+      ],
+      "mesh": null,
+      "materials": [],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "technical",
+        "edu_selectable": false,
+        "edu_renderable": false,
+        "source_rotation_axis_local": "Z",
+        "gltf_rotation_axis_local": [0, 1, 0]
+      },
+      "restTRS": {
+        "translation": [0, 1.0499999523162842, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_carrier_roller_01",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_carrier_roller_01_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_carrier_roller_02",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_carrier_roller_02_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_crawler_beam_cap",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_crawler_beam_cap_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_crawler_frame",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_crawler_frame_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_idler_hub",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_idler_hub_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_idler_wheel",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_idler_wheel_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_01",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_01_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_02",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_02_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_03",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_03_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_04",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_04_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_05",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_05_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_06",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_06_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_road_roller_07",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_road_roller_07_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_sprocket_hub",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_sprocket_hub_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_sprocket_wheel",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_sprocket_wheel_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_track_blockout",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_track_blockout_mesh",
+      "materials": ["track_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0.4399999976158142, 1.1950000524520874],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "right_track_treads",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "right_track_treads_mesh",
+      "materials": ["track_dark"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "slew_bearing_ring",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "slew_bearing_ring_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "slew_support",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "slew_support_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "x_frame_left_gusset",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "x_frame_left_gusset_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "x_frame_right_gusset",
+      "parent": "NODE_UNDERCARRIAGE",
+      "children": [],
+      "mesh": "x_frame_right_gusset_mesh",
+      "materials": ["dark_chassis"],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_component": "undercarriage",
+        "edu_role": "geometry",
+        "edu_selectable": true,
+        "edu_renderable": true
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    },
+    {
+      "name": "NODE_UNDERCARRIAGE",
+      "parent": null,
+      "children": [
+        "central_x_frame",
+        "left_carrier_roller_01",
+        "left_carrier_roller_02",
+        "left_crawler_beam_cap",
+        "left_crawler_frame",
+        "left_idler_hub",
+        "left_idler_wheel",
+        "left_road_roller_01",
+        "left_road_roller_02",
+        "left_road_roller_03",
+        "left_road_roller_04",
+        "left_road_roller_05",
+        "left_road_roller_06",
+        "left_road_roller_07",
+        "left_sprocket_hub",
+        "left_sprocket_wheel",
+        "left_track_blockout",
+        "left_track_treads",
+        "NODE_UPPERSTRUCTURE",
+        "right_carrier_roller_01",
+        "right_carrier_roller_02",
+        "right_crawler_beam_cap",
+        "right_crawler_frame",
+        "right_idler_hub",
+        "right_idler_wheel",
+        "right_road_roller_01",
+        "right_road_roller_02",
+        "right_road_roller_03",
+        "right_road_roller_04",
+        "right_road_roller_05",
+        "right_road_roller_06",
+        "right_road_roller_07",
+        "right_sprocket_hub",
+        "right_sprocket_wheel",
+        "right_track_blockout",
+        "right_track_treads",
+        "slew_bearing_ring",
+        "slew_support",
+        "x_frame_left_gusset",
+        "x_frame_right_gusset"
+      ],
+      "mesh": null,
+      "materials": [],
+      "extras": {
+        "edu_machine": "excavator",
+        "edu_role": "technical",
+        "edu_selectable": false,
+        "edu_renderable": false,
+        "source_rotation_axis_local": "ROOT"
+      },
+      "restTRS": {
+        "translation": [0, 0, 0],
+        "rotation": [0, 0, 0, 1],
+        "scale": [1, 1, 1]
+      }
+    }
+  ],
+  "materials": [
+    {
+      "name": "dark_chassis",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.021980946883559227, 0.027211781591176987, 0.0300741046667099, 1
+        ],
+        "metallicFactor": 0.3499999940395355,
+        "roughnessFactor": 0.6200000047683716
+      }
+    },
+    {
+      "name": "track_dark",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.010816383175551891, 0.0134117491543293, 0.015325203537940979, 1
+        ],
+        "metallicFactor": 0.4000000059604645,
+        "roughnessFactor": 0.7799999713897705
+      }
+    },
+    {
+      "name": "hydraulic_dark",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.03968190774321556, 0.04696420207619667, 0.05087608844041824, 1
+        ],
+        "metallicFactor": 0.550000011920929,
+        "roughnessFactor": 0.41999998688697815
+      }
+    },
+    {
+      "name": "hydraulic_rod_metal",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.47699978947639465, 0.5225215554237366, 0.5704815983772278, 1
+        ],
+        "roughnessFactor": 0.23000000417232513
+      }
+    },
+    {
+      "name": "industrial_body_yellow",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.868899405002594, 0.4064483046531677, 0.007194409146904945, 1
+        ],
+        "metallicFactor": 0.10000000149011612,
+        "roughnessFactor": 0.4300000071525574
+      }
+    },
+    {
+      "name": "cab_glass_dark",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.005422868765890598, 0.010816383175551891, 0.015325203537940979, 1
+        ],
+        "metallicFactor": 0.05000000074505806,
+        "roughnessFactor": 0.2199999988079071
+      }
+    },
+    {
+      "name": "cutting_edge_steel",
+      "doubleSided": true,
+      "extras": { "stage07_production": true },
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          0.08353512734174728, 0.10048151016235352, 0.11280478537082672, 1
+        ],
+        "metallicFactor": 0.75,
+        "roughnessFactor": 0.550000011920929
+      }
+    }
+  ],
+  "clips": [
+    {
+      "name": "excavator_work_cycle_demo",
+      "startSeconds": 0,
+      "durationSeconds": 11.666666984558105,
+      "loopable": true,
+      "channels": [
+        {
+          "node": "NODE_UPPERSTRUCTURE",
+          "path": "translation",
+          "interpolation": "STEP",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_UPPERSTRUCTURE",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_barrel",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_barrel",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_end_base",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_end_base",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_end_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_end_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_gland",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_gland",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "boom_cylinder_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_BOOM",
+          "path": "translation",
+          "interpolation": "STEP",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_BOOM",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_STICK",
+          "path": "translation",
+          "interpolation": "STEP",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_STICK",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_barrel",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_barrel",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_end_base",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_end_base",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_end_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_end_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_gland",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_gland",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_cylinder_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_linkage_connecting_link",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_linkage_connecting_link",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_linkage_rocker",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "bucket_linkage_rocker",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_input_pin_boss",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_input_pin_boss",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_link_pin_boss",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_link_pin_boss",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_rocker_pin_boss",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "linkage_rocker_pin_boss",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_BUCKET",
+          "path": "translation",
+          "interpolation": "STEP",
+          "endpointError": 0
+        },
+        {
+          "node": "NODE_BUCKET",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_barrel",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_barrel",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_end_base",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_end_base",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_end_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_end_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_gland",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_gland",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_rod",
+          "path": "translation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        },
+        {
+          "node": "stick_cylinder_rod",
+          "path": "rotation",
+          "interpolation": "LINEAR",
+          "endpointError": 0
+        }
+      ],
+      "animatedCanonicalNodes": [
+        "NODE_BOOM",
+        "NODE_BUCKET",
+        "NODE_STICK",
+        "NODE_UPPERSTRUCTURE"
+      ],
+      "animatedAuxiliaryNodes": [
+        "boom_cylinder_barrel",
+        "boom_cylinder_end_base",
+        "boom_cylinder_end_rod",
+        "boom_cylinder_gland",
+        "boom_cylinder_rod",
+        "bucket_cylinder_barrel",
+        "bucket_cylinder_end_base",
+        "bucket_cylinder_end_rod",
+        "bucket_cylinder_gland",
+        "bucket_cylinder_rod",
+        "bucket_linkage_connecting_link",
+        "bucket_linkage_rocker",
+        "linkage_input_pin_boss",
+        "linkage_link_pin_boss",
+        "linkage_rocker_pin_boss",
+        "stick_cylinder_barrel",
+        "stick_cylinder_end_base",
+        "stick_cylinder_end_rod",
+        "stick_cylinder_gland",
+        "stick_cylinder_rod"
+      ]
+    }
+  ],
+  "statistics": {
+    "nodes": 106,
+    "meshes": 101,
+    "triangles": 7004,
+    "materials": 7,
+    "textures": 0
+  },
+  "technicalResources": 0,
+  "roots": ["NODE_UNDERCARRIAGE"],
+  "meshOwnership": [
+    {
+      "node": "central_x_frame",
+      "mesh": "central_x_frame_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_carrier_roller_01",
+      "mesh": "left_carrier_roller_01_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_carrier_roller_02",
+      "mesh": "left_carrier_roller_02_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_crawler_beam_cap",
+      "mesh": "left_crawler_beam_cap_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_crawler_frame",
+      "mesh": "left_crawler_frame_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_idler_hub",
+      "mesh": "left_idler_hub_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_idler_wheel",
+      "mesh": "left_idler_wheel_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_01",
+      "mesh": "left_road_roller_01_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_02",
+      "mesh": "left_road_roller_02_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_03",
+      "mesh": "left_road_roller_03_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_04",
+      "mesh": "left_road_roller_04_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_05",
+      "mesh": "left_road_roller_05_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_06",
+      "mesh": "left_road_roller_06_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_road_roller_07",
+      "mesh": "left_road_roller_07_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_sprocket_hub",
+      "mesh": "left_sprocket_hub_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_sprocket_wheel",
+      "mesh": "left_sprocket_wheel_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_track_blockout",
+      "mesh": "left_track_blockout_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "left_track_treads",
+      "mesh": "left_track_treads_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_cylinder_barrel",
+      "mesh": "boom_cylinder_barrel_mesh",
+      "componentId": "boom-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_cylinder_end_base",
+      "mesh": "boom_cylinder_end_base_mesh",
+      "componentId": "boom-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_cylinder_end_rod",
+      "mesh": "boom_cylinder_end_rod_mesh",
+      "componentId": "boom-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_cylinder_gland",
+      "mesh": "boom_cylinder_gland_mesh",
+      "componentId": "boom-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_cylinder_rod",
+      "mesh": "boom_cylinder_rod_mesh",
+      "componentId": "boom-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_mounting_base",
+      "mesh": "boom_mounting_base_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab",
+      "mesh": "cab_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_front_upper_glazing",
+      "mesh": "cab_front_upper_glazing_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_front_windshield",
+      "mesh": "cab_front_windshield_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_left_main_window",
+      "mesh": "cab_left_main_window_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_left_rear_window",
+      "mesh": "cab_left_rear_window_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_lower_sill",
+      "mesh": "cab_lower_sill_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_right_main_window",
+      "mesh": "cab_right_main_window_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_right_rear_window",
+      "mesh": "cab_right_rear_window_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "cab_roof_cap",
+      "mesh": "cab_roof_cap_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "counterweight",
+      "mesh": "counterweight_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "engine_body",
+      "mesh": "engine_body_mesh",
+      "componentId": "power-unit",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "engine_left_service_panel",
+      "mesh": "engine_left_service_panel_mesh",
+      "componentId": "power-unit",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "engine_right_service_panel",
+      "mesh": "engine_right_service_panel_mesh",
+      "componentId": "power-unit",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "engine_top_access_panel",
+      "mesh": "engine_top_access_panel_mesh",
+      "componentId": "power-unit",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "main_upper_platform",
+      "mesh": "main_upper_platform_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom",
+      "mesh": "boom_mesh",
+      "componentId": "boom",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_left_side_plate",
+      "mesh": "boom_left_side_plate_mesh",
+      "componentId": "boom",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_right_side_plate",
+      "mesh": "boom_right_side_plate_mesh",
+      "componentId": "boom",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "boom_root_pin_boss",
+      "mesh": "boom_root_pin_boss_mesh",
+      "componentId": "boom",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cylinder_barrel",
+      "mesh": "bucket_cylinder_barrel_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cylinder_end_base",
+      "mesh": "bucket_cylinder_end_base_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cylinder_end_rod",
+      "mesh": "bucket_cylinder_end_rod_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cylinder_gland",
+      "mesh": "bucket_cylinder_gland_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cylinder_rod",
+      "mesh": "bucket_cylinder_rod_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_linkage_connecting_link",
+      "mesh": "bucket_linkage_connecting_link_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "bucket_linkage_rocker",
+      "mesh": "bucket_linkage_rocker_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "linkage_input_pin_boss",
+      "mesh": "linkage_input_pin_boss_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "linkage_link_pin_boss",
+      "mesh": "linkage_link_pin_boss_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "linkage_rocker_pin_boss",
+      "mesh": "linkage_rocker_pin_boss_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "bucket",
+      "mesh": "bucket_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_cutting_edge",
+      "mesh": "bucket_cutting_edge_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_left_cheek",
+      "mesh": "bucket_left_cheek_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_left_mount_ear",
+      "mesh": "bucket_left_mount_ear_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_left_wear_rib",
+      "mesh": "bucket_left_wear_rib_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_right_cheek",
+      "mesh": "bucket_right_cheek_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_right_mount_ear",
+      "mesh": "bucket_right_mount_ear_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_right_wear_rib",
+      "mesh": "bucket_right_wear_rib_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_root_pin_boss",
+      "mesh": "bucket_root_pin_boss_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_tooth_01",
+      "mesh": "bucket_tooth_01_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_tooth_02",
+      "mesh": "bucket_tooth_02_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_tooth_03",
+      "mesh": "bucket_tooth_03_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_tooth_04",
+      "mesh": "bucket_tooth_04_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "bucket_tooth_05",
+      "mesh": "bucket_tooth_05_mesh",
+      "componentId": "bucket",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "linkage_bucket_pin_boss",
+      "mesh": "linkage_bucket_pin_boss_mesh",
+      "componentId": "bucket-cylinder",
+      "source": "explicit bucket-linkage auxiliary policy",
+      "selectable": false
+    },
+    {
+      "node": "stick",
+      "mesh": "stick_mesh",
+      "componentId": "stick",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_left_side_plate",
+      "mesh": "stick_left_side_plate_mesh",
+      "componentId": "stick",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_right_side_plate",
+      "mesh": "stick_right_side_plate_mesh",
+      "componentId": "stick",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_root_pin_boss",
+      "mesh": "stick_root_pin_boss_mesh",
+      "componentId": "stick",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_cylinder_barrel",
+      "mesh": "stick_cylinder_barrel_mesh",
+      "componentId": "stick-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_cylinder_end_base",
+      "mesh": "stick_cylinder_end_base_mesh",
+      "componentId": "stick-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_cylinder_end_rod",
+      "mesh": "stick_cylinder_end_rod_mesh",
+      "componentId": "stick-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_cylinder_gland",
+      "mesh": "stick_cylinder_gland_mesh",
+      "componentId": "stick-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "stick_cylinder_rod",
+      "mesh": "stick_cylinder_rod_mesh",
+      "componentId": "stick-cylinder",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "service_front_right_panel",
+      "mesh": "service_front_right_panel_mesh",
+      "componentId": "power-unit",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "tower_pin_support_left",
+      "mesh": "tower_pin_support_left_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "tower_pin_support_right",
+      "mesh": "tower_pin_support_right_mesh",
+      "componentId": "upperstructure",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_carrier_roller_01",
+      "mesh": "right_carrier_roller_01_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_carrier_roller_02",
+      "mesh": "right_carrier_roller_02_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_crawler_beam_cap",
+      "mesh": "right_crawler_beam_cap_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_crawler_frame",
+      "mesh": "right_crawler_frame_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_idler_hub",
+      "mesh": "right_idler_hub_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_idler_wheel",
+      "mesh": "right_idler_wheel_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_01",
+      "mesh": "right_road_roller_01_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_02",
+      "mesh": "right_road_roller_02_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_03",
+      "mesh": "right_road_roller_03_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_04",
+      "mesh": "right_road_roller_04_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_05",
+      "mesh": "right_road_roller_05_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_06",
+      "mesh": "right_road_roller_06_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_road_roller_07",
+      "mesh": "right_road_roller_07_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_sprocket_hub",
+      "mesh": "right_sprocket_hub_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_sprocket_wheel",
+      "mesh": "right_sprocket_wheel_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_track_blockout",
+      "mesh": "right_track_blockout_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "right_track_treads",
+      "mesh": "right_track_treads_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "slew_bearing_ring",
+      "mesh": "slew_bearing_ring_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "slew_support",
+      "mesh": "slew_support_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "x_frame_left_gusset",
+      "mesh": "x_frame_left_gusset_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    },
+    {
+      "node": "x_frame_right_gusset",
+      "mesh": "x_frame_right_gusset_mesh",
+      "componentId": "undercarriage",
+      "source": "edu_component",
+      "selectable": true
+    }
+  ],
+  "componentCounts": {
+    "undercarriage": 39,
+    "upperstructure": 14,
+    "power-unit": 5,
+    "boom": 4,
+    "stick": 4,
+    "bucket": 14,
+    "boom-cylinder": 5,
+    "stick-cylinder": 5,
+    "bucket-cylinder": 11
+  },
+  "manifest": "content/3d/xe215c.json",
+  "publicManifest": "public/assets/3d/xe215c/v1_0_0/manifest.json"
+}

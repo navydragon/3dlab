@@ -58,6 +58,42 @@ const camera = z
   )
   .readonly();
 
+const production = z
+  .strictObject({
+    sha256: z.string().regex(/^[a-f0-9]{64}$/),
+    sizeBytes: z.number().int().positive(),
+    units: z.literal('meters'),
+    upAxis: z.literal('Y'),
+    canonicalNodes: z.array(text).min(1).readonly(),
+    statistics: z
+      .strictObject({
+        nodes: z.number().int().positive(),
+        meshes: z.number().int().positive(),
+        triangles: z.number().int().positive(),
+        materials: z.number().int().nonnegative(),
+        textures: z.number().int().nonnegative(),
+      })
+      .readonly(),
+    clips: z
+      .array(
+        z
+          .strictObject({
+            name: text,
+            durationSeconds: z.number().finite().positive(),
+            loopable: z.boolean(),
+            animatedCanonicalNodes: z.array(text).readonly(),
+            animatedAuxiliaryNodes: z.array(text).readonly(),
+            restSemantics: text,
+            timingSemantics: z.literal('visual-demonstration'),
+          })
+          .readonly(),
+      )
+      .readonly(),
+    mappingNotes: z.array(text).readonly(),
+    limitations: z.array(text).readonly(),
+  })
+  .readonly();
+
 export const asset3dSchema = z
   .strictObject({
     id: z.custom<Asset3DId>(isAsset3DId, 'Expected a stable asset ID'),
@@ -69,6 +105,7 @@ export const asset3dSchema = z
     nodeMappings: z.array(nodeMapping).readonly(),
     animationMappings: z.array(animationMapping).readonly(),
     cameraPresets: z.array(camera).readonly().optional(),
+    production: production.optional(),
   })
   .superRefine((asset, context) => {
     if (!asset.uri.endsWith('.' + asset.format))
