@@ -7,3 +7,6 @@ package-lock.json
 # Existing authoritative documents retain their formatting.
 docs/
 AGENTS.md
+# Supplied reference pack and generated Blender inventory retain source formatting.
+models/XCMG_XE215C_MODEL_SHEET/
+models/xe215c/stage_01/inspection.json

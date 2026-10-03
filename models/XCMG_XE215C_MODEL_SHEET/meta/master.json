@@ -1,0 +1,11 @@
+{
+  "master_pdf": "https://uploads-ssl.webflow.com/62d62f9870c0a933e38ed35a/631ee2467d75e8e4a8e900f4_XE215C.pdf",
+  "master_source_page": "https://www.xcmgthailand.com/product/xe215c/",
+  "master_configuration": {
+    "operating_weight_kg": 21900,
+    "rated_power_kw": 128.5,
+    "boom_mm": 5680,
+    "arm_mm": 2910
+  },
+  "variant_warning": "Do not mix the 21900 kg / 9625 x 2990 x 3100 master with older 21450 kg / 9525 x 2990 x 3000 sheets unless intentionally modeling that older variant."
+}

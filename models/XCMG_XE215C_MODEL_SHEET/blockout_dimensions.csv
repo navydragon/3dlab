@@ -1,0 +1,23 @@
+﻿parameter,unit,value,note
+Operating weight,kg,21900,Master sheet configuration
+Boom length,mm,5680,Standard
+Arm length,mm,2910,Standard
+Overall length,mm,9625,A
+Overall width,mm,2990,B
+Overall height,mm,3100,C
+Upper platform width,mm,2830,D
+Crawler overall length,mm,4255,E
+Undercarriage width,mm,2990,F
+Track shoe width,mm,800,G
+Track length on ground,mm,3462,H
+Crawler gauge,mm,2390,I
+Counterweight clearance,mm,1050,J
+Ground clearance,mm,485,K
+Min. tail swing radius,mm,2890,L
+Max digging height,mm,9620,Working range A
+Max dumping height,mm,6780,Working range B
+Max digging depth,mm,6680,Working range C
+8 ft level digging depth,mm,6500,Working range D
+Max vertical digging depth,mm,5715,Working range E
+Max digging reach,mm,9940,Working range F
+Min swing radius,mm,3530,Working range G
