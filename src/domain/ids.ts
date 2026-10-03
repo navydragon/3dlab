@@ -6,10 +6,24 @@ export type ProcessId = Id<'Process'>;
 export type ProcessStageId = Id<'ProcessStage'>;
 export type LearningSectionId = Id<'LearningSection'>;
 export type MachineComponentId = Id<'MachineComponent'>;
+export type OperationId = Id<'Operation'>;
+export type MachineRoleId = Id<'MachineRole'>;
 
 // Structural identity only: these guards do not establish content existence.
-function isStableId(value: unknown): value is string {
+export function isStableId(value: unknown): value is string {
   return typeof value === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+}
+
+export function isMachineComponentId(
+  value: unknown,
+): value is MachineComponentId {
+  return isStableId(value);
+}
+export function isOperationId(value: unknown): value is OperationId {
+  return isStableId(value);
+}
+export function isMachineRoleId(value: unknown): value is MachineRoleId {
+  return isStableId(value);
 }
 
 export function isMachineId(value: unknown): value is MachineId {

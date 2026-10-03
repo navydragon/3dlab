@@ -1,0 +1,12 @@
+[
+  {
+    "id": "excavation-haul",
+    "name": "Разработка грунта с погрузкой в автосамосвалы и транспортированием",
+    "stageIds": [
+      "excavation-stage",
+      "loading-stage",
+      "haul-stage",
+      "unloading-stage"
+    ]
+  }
+]

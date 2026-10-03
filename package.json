@@ -19,7 +19,8 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:e2e": "npm run build && playwright test",
-    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run test && npm run build"
+    "content:validate": "node scripts/validate-content.ts",
+    "validate": "npm run format:check && npm run lint && npm run typecheck && npm run content:validate && npm run test && npm run build"
   },
   "dependencies": {
     "react": "19.3.0",
@@ -39,6 +40,7 @@
     "@types/react-dom": "19.3.0",
     "@vitejs/plugin-react": "6.1.1",
     "eslint": "10.12.0",
+    "eslint-plugin-react-hooks": "7.1.1",
     "eslint-plugin-react-refresh": "0.5.7",
     "globals": "17.13.0",
     "jsdom": "30.1.1",

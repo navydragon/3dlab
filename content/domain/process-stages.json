@@ -1,0 +1,34 @@
+[
+  {
+    "id": "excavation-stage",
+    "processId": "excavation-haul",
+    "operationId": "excavation",
+    "sequence": 1,
+    "name": "Разработка грунта",
+    "machineRoleIds": ["excavation-lead-machine"]
+  },
+  {
+    "id": "loading-stage",
+    "processId": "excavation-haul",
+    "operationId": "loading",
+    "sequence": 2,
+    "name": "Погрузка",
+    "machineRoleIds": ["excavation-lead-machine", "soil-haul-vehicle"]
+  },
+  {
+    "id": "haul-stage",
+    "processId": "excavation-haul",
+    "operationId": "haul",
+    "sequence": 3,
+    "name": "Транспортирование",
+    "machineRoleIds": ["soil-haul-vehicle"]
+  },
+  {
+    "id": "unloading-stage",
+    "processId": "excavation-haul",
+    "operationId": "unloading",
+    "sequence": 4,
+    "name": "Разгрузка",
+    "machineRoleIds": ["soil-haul-vehicle"]
+  }
+]

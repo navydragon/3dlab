@@ -21,9 +21,9 @@
 
 ## Current stage
 
-Application foundation: accessible routing shells and local validation/test tooling.
+Application and domain foundation: accessible routing shells, a validated local knowledge graph, and validation/test tooling.
 
-Validated domain content, learning modules, 3D visualization, and simulation are not connected yet. Entity URLs display routing IDs without claiming the records exist.
+The domain repository is implemented but is not connected to the UI yet. Learning modules, 3D visualization, and simulation remain deferred. Entity URLs still display routing IDs without resolving content.
 
 ## Documentation
 
@@ -108,11 +108,12 @@ The development server defaults to http://localhost:5173. Use `npm install` when
 npm run format:check
 npm run lint
 npm run typecheck
+npm run content:validate
 npm run test
 npm run build
 ```
 
-`npm run validate` runs all five gates above. Typechecking is independent of the Vite build. `npm run format` formats application/tooling files and this README; existing authoritative documents retain their formatting. `npm run test:watch` starts Vitest watch mode.
+`npm run validate` runs all six gates above. Typechecking is independent of the Vite build. `npm run format` formats application/tooling/content files and this README; existing authoritative documents retain their formatting. `npm run test:watch` starts Vitest watch mode.
 
 For browser smoke tests, install Chromium once, then run:
 
@@ -125,14 +126,22 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 
 ## Foundation boundaries
 
-- `src/domain`: framework-independent opaque IDs and structural guards, not full entities.
-- `src/content`: validated ingestion interface; no production dataset or full schemas.
-- `src/application`: explicit content-not-connected state.
-- `src/navigation`: centralized routes, builders, and structural query parsing. Content existence, stage ownership, and role eligibility checks await the content repository.
+- `src/domain`: framework-independent IDs and minimal machine/component/operation/process/stage/role contracts.
+- `src/content`: Zod schemas, structured graph validation, read-only repository, and explicit local JSON adapter.
+- `src/application`: plain repository queries plus the UI's content-not-connected state.
+- `src/navigation`: centralized routes, builders, and structural query parsing. UI/navigation integration with the repository remains deferred.
 - `src/ui` and `src/app`: shell pages, accessible layout, and application composition.
 - `src/visualization`: plain interaction contracts only; no renderer or assets.
 - `src/test`, colocated tests, and `tests/`: component/unit, executable lint-boundary, and production-preview browser checks.
 
-ESLint protects domain/application/content/visualization dependencies and the future `src/simulation` location. Simulation remains documentation-only. There is no global state library, persistence, or backend.
+ESLint protects domain/application/content/visualization dependencies and the future `src/simulation` location. Pure production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. Simulation remains documentation-only. There is no global state library, persistence, or backend.
+
+## Domain content
+
+Six JSON collections live under `content/domain/`: machines, machine components, operations, machine roles, processes, and process stages. They contain only canonical MVP identities, source-limited Russian names/descriptions, and relationship references; no engineering values. Component descriptions reuse learning-goals §4 and names follow domain-model §§5–10 / UI/UX §10. The power-unit explanation is intentionally omitted pending approved prose.
+
+`npm run content:validate` reads all production files and runs the same strict schemas and graph checks used by the local adapter; failures exit nonzero with structured issue paths. The command uses Node 24's native TypeScript support, with no additional runner. `npm run validate` includes this check and requires no browser.
+
+Processes own ordered stage IDs; stages own their operation and participant role references; roles own eligible machine IDs. Where-used queries derive these relationships. Roles have no singular operation constraint, and related machines are not persisted as duplicated process data. The repository returns shared frozen records, `undefined` for missing IDs, and explicit invalid-content results. It is ready for later UI integration; existing shell pages deliberately remain unconnected.
 
 React 19.3.0 is compatible with the published Fiber 9.8.1 React peer range (`>=19 <19.4`), checked during bootstrap against the registry and [Fiber guidance](https://r3f.docs.pmnd.rs/getting-started/introduction). Neither Fiber nor Three.js is installed; recheck peer compatibility when implementing the viewer. TypeScript 6.0.3 is selected within the current TypeScript ESLint parser's supported range (`>=4.8.4 <6.1.0`), rather than the incompatible latest TypeScript major.

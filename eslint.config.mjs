@@ -2,6 +2,13 @@ import js from '@eslint/js';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import refresh from 'eslint-plugin-react-refresh';
+import hooks from 'eslint-plugin-react-hooks';
+import { builtinModules } from 'node:module';
+
+const nodeImports = {
+  regex: `^(node:|(${[...new Set(builtinModules.map((name) => name.replace(/^node:/, '').split('/')[0]))].join('|')})($|/))`,
+  message: 'Pure layers must not import Node runtime or I/O modules.',
+};
 
 const frameworkImports = [
   {
@@ -22,6 +29,36 @@ const pureGlobals = [
   'localStorage',
   'sessionStorage',
   'fetch',
+  'process',
+  'require',
+  'module',
+  'Buffer',
+  'Date',
+  'performance',
+  'setTimeout',
+  'setInterval',
+  'setImmediate',
+  'WebSocket',
+  'XMLHttpRequest',
+  'crypto',
+  'console',
+  'indexedDB',
+  'caches',
+  'Worker',
+  'EventSource',
+  'BroadcastChannel',
+];
+const pureProperties = [
+  ...pureGlobals.map((property) => ({
+    object: 'globalThis',
+    property,
+    message: 'Keep platform/runtime I/O outside pure layers.',
+  })),
+  {
+    object: 'Math',
+    property: 'random',
+    message: 'Pure layers must be deterministic.',
+  },
 ];
 
 export default tseslint.config(
@@ -42,9 +79,11 @@ export default tseslint.config(
     languageOptions: { globals: globals.browser },
   },
   {
-    files: ['src/**/*.tsx'],
-    plugins: { 'react-refresh': refresh },
+    files: ['src/**/*.{ts,tsx}'],
+    plugins: { 'react-refresh': refresh, 'react-hooks': hooks },
     rules: {
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'error',
       'react-refresh/only-export-components': [
         'error',
         { allowConstantExport: true },
@@ -53,11 +92,13 @@ export default tseslint.config(
   },
   {
     files: ['src/domain/**/*.{ts,tsx}'],
+    ignores: ['**/*.test.{ts,tsx}'],
     rules: {
       'no-restricted-imports': [
         'error',
         {
           patterns: [
+            nodeImports,
             {
               regex: '^zod($|/)',
               message: 'Validation belongs to the content boundary.',
@@ -76,6 +117,14 @@ export default tseslint.config(
         },
       ],
       'no-restricted-globals': ['error', ...pureGlobals],
+      'no-restricted-properties': ['error', ...pureProperties],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ImportExpression',
+          message: 'Pure layers must not perform dynamic module loading.',
+        },
+      ],
     },
   },
   {
@@ -94,11 +143,13 @@ export default tseslint.config(
   },
   {
     files: ['src/simulation/**/*.{ts,tsx}'],
+    ignores: ['**/*.test.{ts,tsx}'],
     rules: {
       'no-restricted-imports': [
         'error',
         {
           patterns: [
+            nodeImports,
             ...frameworkImports,
             layers([
               'ui',
@@ -112,6 +163,14 @@ export default tseslint.config(
         },
       ],
       'no-restricted-globals': ['error', ...pureGlobals],
+      'no-restricted-properties': ['error', ...pureProperties],
+      'no-restricted-syntax': [
+        'error',
+        {
+          selector: 'ImportExpression',
+          message: 'Pure layers must not perform dynamic module loading.',
+        },
+      ],
     },
   },
   {

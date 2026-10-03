@@ -1,0 +1,51 @@
+[
+  {
+    "id": "undercarriage",
+    "machineId": "excavator",
+    "name": "Ходовая часть",
+    "description": "Ходовая часть обеспечивает перемещение и опору машины."
+  },
+  {
+    "id": "upperstructure",
+    "machineId": "excavator",
+    "name": "Поворотная платформа",
+    "description": "Поворотная платформа обеспечивает изменение направления работы рабочего оборудования."
+  },
+  { "id": "power-unit", "machineId": "excavator", "name": "Силовая установка" },
+  {
+    "id": "boom",
+    "machineId": "excavator",
+    "name": "Стрела",
+    "description": "Стрела и рукоять задают положение ковша."
+  },
+  {
+    "id": "stick",
+    "machineId": "excavator",
+    "name": "Рукоять",
+    "description": "Стрела и рукоять задают положение ковша."
+  },
+  {
+    "id": "bucket",
+    "machineId": "excavator",
+    "name": "Ковш",
+    "description": "Ковш непосредственно взаимодействует с грунтом."
+  },
+  {
+    "id": "boom-cylinder",
+    "machineId": "excavator",
+    "name": "Гидроцилиндр стрелы",
+    "description": "Гидроцилиндры обеспечивают рабочие движения оборудования."
+  },
+  {
+    "id": "stick-cylinder",
+    "machineId": "excavator",
+    "name": "Гидроцилиндр рукояти",
+    "description": "Гидроцилиндры обеспечивают рабочие движения оборудования."
+  },
+  {
+    "id": "bucket-cylinder",
+    "machineId": "excavator",
+    "name": "Гидроцилиндр ковша",
+    "description": "Гидроцилиндры обеспечивают рабочие движения оборудования."
+  }
+]

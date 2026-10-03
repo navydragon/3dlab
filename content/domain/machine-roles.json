@@ -1,0 +1,12 @@
+[
+  {
+    "id": "excavation-lead-machine",
+    "name": "Разработка грунта и загрузка транспорта",
+    "eligibleMachineIds": ["excavator"]
+  },
+  {
+    "id": "soil-haul-vehicle",
+    "name": "Транспортирование грунта",
+    "eligibleMachineIds": ["dump-truck"]
+  }
+]

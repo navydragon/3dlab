@@ -1,0 +1,24 @@
+[
+  {
+    "id": "excavator",
+    "name": "Гидравлический экскаватор",
+    "componentIds": [
+      "undercarriage",
+      "upperstructure",
+      "power-unit",
+      "boom",
+      "stick",
+      "bucket",
+      "boom-cylinder",
+      "stick-cylinder",
+      "bucket-cylinder"
+    ],
+    "operationIds": ["excavation", "loading"]
+  },
+  {
+    "id": "dump-truck",
+    "name": "Автосамосвал",
+    "componentIds": [],
+    "operationIds": ["haul", "unloading"]
+  }
+]
