@@ -84,7 +84,7 @@ export function parseProcessRoute(
   return { ok: true, value: { processId, stageId } };
 }
 
-// Parse identity only. The future repository must check ownership/role eligibility
+// Parse identity only; application queries validate ownership and participation
 // before enabling a contextual-return action. Never accept a raw return URL.
 export function parseReturnContext(
   search: string,

@@ -104,8 +104,12 @@ describe('architectural import restrictions', () => {
     ['src/domain/ids.ts', '../ui/pages/HomePage'],
     ['src/domain/ids.ts', '../navigation/routes'],
     ['src/domain/ids.ts', '../visualization/contracts'],
-    ['src/application/content-state.ts', '../ui/components/ContentNotice'],
-    ['src/application/content-state.ts', 'react'],
+    ['src/application/page-queries.ts', '../ui/pages/MachinePage'],
+    ['src/application/page-queries.ts', 'react'],
+    ['src/ui/pages/MachinePage.tsx', '../../../content/domain/machines.json'],
+    ['src/ui/pages/MachinePage.tsx', 'zod'],
+    ['src/ui/pages/MachinePage.tsx', '../../content/schemas/domain'],
+    ['src/ui/pages/MachinePage.tsx', '../../content/adapters/local/repository'],
     ['src/content/ingestion.ts', '../navigation/routes'],
     ['src/simulation/future-core.ts', 'react'],
     ['src/simulation/future-core.ts', 'react-router'],
@@ -130,7 +134,7 @@ describe('architectural import restrictions', () => {
   it('allows a plain domain type in application code', async () => {
     const results = await eslint.lintText(
       "import type { MachineId } from '../domain/ids'; export type Example = MachineId;",
-      { filePath: 'src/application/content-state.ts' },
+      { filePath: 'src/application/page-queries.ts' },
     );
     expect(results.flatMap((result) => result.messages)).toEqual([]);
   });

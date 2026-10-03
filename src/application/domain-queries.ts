@@ -12,6 +12,9 @@ function required<T>(value: T | undefined): T {
 export function getMachineCatalog(repository: DomainRepository) {
   return repository.listMachines();
 }
+export function getProcessCatalog(repository: DomainRepository) {
+  return repository.listProcesses();
+}
 export function getMachineOverview(
   repository: DomainRepository,
   id: MachineId,

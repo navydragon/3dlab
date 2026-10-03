@@ -23,6 +23,7 @@ export interface MachineUse {
 }
 export interface DomainRepository {
   listMachines(): readonly Machine[];
+  listProcesses(): readonly Process[];
   getMachine(id: MachineId): Machine | undefined;
   getMachineComponents(id: MachineId): readonly MachineComponent[] | undefined;
   getOperation(id: OperationId): Operation | undefined;
@@ -65,6 +66,7 @@ export function createDomainRepository(input: unknown): RepositoryLoad {
   }
   const repository: DomainRepository = Object.freeze({
     listMachines: () => graph.machines,
+    listProcesses: () => graph.processes,
     getMachine: (id: MachineId) => machines.get(id),
     getMachineComponents: (id: MachineId) => {
       const machine = machines.get(id);

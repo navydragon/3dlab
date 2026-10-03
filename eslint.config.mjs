@@ -174,6 +174,25 @@ export default tseslint.config(
     },
   },
   {
+    files: ['src/ui/**/*.{ts,tsx}'],
+    ignores: ['**/*.test.{ts,tsx}'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            {
+              regex:
+                '\\.json$|^zod($|/)|(^|/)content/(schemas|adapters|validation)(/|$)',
+              message:
+                'UI must consume validated application queries, not raw content or schemas.',
+            },
+          ],
+        },
+      ],
+    },
+  },
+  {
     files: ['src/visualization/**/*.{ts,tsx}'],
     rules: {
       'no-restricted-imports': [

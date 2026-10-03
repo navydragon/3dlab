@@ -21,9 +21,9 @@
 
 ## Current stage
 
-Application and domain foundation: accessible routing shells, a validated local knowledge graph, and validation/test tooling.
+Domain UI integration: accessible machine/process catalogs and pages backed by the validated local knowledge graph.
 
-The domain repository is implemented but is not connected to the UI yet. Learning modules, 3D visualization, and simulation remain deferred. Entity URLs still display routing IDs without resolving content.
+Machine pages show canonical operations, components and grouped process usage. Process pages select stages via `stageId` and open machine pages with graph-validated contextual return, preserved across the supported `overview` and `applications` sections. Unknown entities/sections, invalid stage/context URLs and invalid content have explicit states. Full learning modules, 3D visualization, and simulation remain deferred.
 
 ## Documentation
 
@@ -128,9 +128,9 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 
 - `src/domain`: framework-independent IDs and minimal machine/component/operation/process/stage/role contracts.
 - `src/content`: Zod schemas, structured graph validation, read-only repository, and explicit local JSON adapter.
-- `src/application`: plain repository queries plus the UI's content-not-connected state.
-- `src/navigation`: centralized routes, builders, and structural query parsing. UI/navigation integration with the repository remains deferred.
-- `src/ui` and `src/app`: shell pages, accessible layout, and application composition.
+- `src/application`: pure repository queries and page view models; grouping, supported sections, stage selection and semantic return-context validation.
+- `src/navigation`: centralized routes, builders, and structural query parsing. Selected stages and return context live in the URL.
+- `src/ui` and `src/app`: graph-backed pages, accessible layout, repository context and injectable loaded/invalid application composition.
 - `src/visualization`: plain interaction contracts only; no renderer or assets.
 - `src/test`, colocated tests, and `tests/`: component/unit, executable lint-boundary, and production-preview browser checks.
 
@@ -142,6 +142,6 @@ Six JSON collections live under `content/domain/`: machines, machine components,
 
 `npm run content:validate` reads all production files and runs the same strict schemas and graph checks used by the local adapter; failures exit nonzero with structured issue paths. The command uses Node 24's native TypeScript support, with no additional runner. `npm run validate` includes this check and requires no browser.
 
-Processes own ordered stage IDs; stages own their operation and participant role references; roles own eligible machine IDs. Where-used queries derive these relationships. Roles have no singular operation constraint, and related machines are not persisted as duplicated process data. The repository returns shared frozen records, `undefined` for missing IDs, and explicit invalid-content results. It is ready for later UI integration; existing shell pages deliberately remain unconnected.
+Processes own ordered stage IDs; stages own their operation and participant role references; roles own eligible machine IDs. Where-used queries derive these relationships. Roles have no singular operation constraint, and related machines are not persisted as duplicated process data. The repository returns shared frozen records, `undefined` for missing IDs, and explicit invalid-content results. UI pages consume application queries without importing production JSON or schemas; composition loads the local adapter. Contextual return checks process/stage existence, ownership and machine eligibility without stored history.
 
 React 19.3.0 is compatible with the published Fiber 9.8.1 React peer range (`>=19 <19.4`), checked during bootstrap against the registry and [Fiber guidance](https://r3f.docs.pmnd.rs/getting-started/introduction). Neither Fiber nor Three.js is installed; recheck peer compatibility when implementing the viewer. TypeScript 6.0.3 is selected within the current TypeScript ESLint parser's supported range (`>=4.8.4 <6.1.0`), rather than the incompatible latest TypeScript major.
