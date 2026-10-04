@@ -11,6 +11,7 @@ import type {
   ViewerAnimationState,
   ViewerCommand,
   Visibility,
+  VisualProgress,
 } from './contracts';
 import { assetUrl } from './viewer-logic';
 import { SceneRuntime } from './scene-runtime';
@@ -80,6 +81,8 @@ interface Props {
   readonly onSelect: (id: MachineComponentId | null) => void;
   readonly onLoad: (state: ViewerLoadState) => void;
   readonly onAnimation: (state: ViewerAnimationState) => void;
+  readonly onProgress?: ((state: VisualProgress) => void) | undefined;
+  readonly progressBoundaries?: readonly number[] | undefined;
 }
 class RenderBoundary extends Component<
   { children: ReactNode; onError: () => void },
@@ -108,11 +111,18 @@ function Scene({
   ready: () => void;
 }) {
   const { camera, gl, invalidate, size } = useThree();
-  const { onLoad, onAnimation, command } = props;
+  const { onLoad, onAnimation, onProgress, command } = props;
   const controls = useRef<OrbitControls | null>(null);
   const samples = useRef<number[]>([]);
   const last = useRef(0);
   const samplePose = useRef(runtime.pose);
+  const progressSample = useRef({ last: 0, segment: -1 });
+  const reportProgress = () =>
+    onProgress?.({
+      pose: runtime.pose,
+      timeSeconds: runtime.timeSeconds,
+      durationSeconds: runtime.durationSeconds,
+    });
   useEffect(() => {
     const control = new OrbitControls(camera, gl.domElement);
     control.enableDamping = true;
@@ -154,7 +164,16 @@ function Scene({
     invalidate();
   }, [runtime, props.visibility, invalidate]);
   useEffect(() => {
-    runtime[command.kind]();
+    if (command.kind === 'seek') runtime.seek(command.timeSeconds);
+    else if (command.kind === 'set-playback-rate')
+      runtime.setPlaybackRate(command.rate);
+    else runtime[command.kind]();
+    progressSample.current = { last: 0, segment: -1 };
+    onProgress?.({
+      pose: runtime.pose,
+      timeSeconds: runtime.timeSeconds,
+      durationSeconds: runtime.durationSeconds,
+    });
     onAnimation(
       runtime.animation.status === 'available'
         ? {
@@ -163,11 +182,28 @@ function Scene({
           }
         : runtime.animation,
     );
-  }, [runtime, command, onAnimation]);
+  }, [runtime, command, onAnimation, onProgress]);
   useFrame((_, delta) => {
     runtime.update(delta);
     controls.current?.update();
     const now = performance.now();
+    const time = runtime.timeSeconds;
+    const segment =
+      time === 0
+        ? -1
+        : (props.progressBoundaries ?? []).filter(
+            (boundary) => time >= boundary,
+          ).length;
+    // Boundary crossings (including loop restart) are immediate. Ordinary progress
+    // is sampled at <=10 Hz, with no React update on each render frame.
+    if (
+      runtime.pose === 'playing' &&
+      (segment !== progressSample.current.segment ||
+        now - progressSample.current.last >= 100)
+    ) {
+      progressSample.current = { last: now, segment };
+      reportProgress();
+    }
     if (samplePose.current !== runtime.pose) {
       samplePose.current = runtime.pose;
       samples.current = [];

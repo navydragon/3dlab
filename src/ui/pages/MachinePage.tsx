@@ -15,6 +15,7 @@ import { useAssetRepository } from '../providers/asset-context';
 import { MachineViewerSection } from '../components/MachineViewerSection';
 import { useFoundationContent } from '../providers/foundation-context';
 import { Breadcrumbs } from '../components/Breadcrumbs';
+import { useWorkingCycleContent } from '../providers/working-cycle-context';
 import {
   TransportLearning,
   WorkingPrinciple,
@@ -23,6 +24,7 @@ export function MachinePage() {
   const repository = useDomainRepository();
   const assets = useAssetRepository();
   const learning = useFoundationContent();
+  const workingCycle = useWorkingCycleContent();
   const { machineId, sectionId } = useParams();
   const { search } = useLocation();
   const route = parseMachineRoute(machineId, sectionId);
@@ -136,6 +138,11 @@ export function MachinePage() {
             asset={view.asset.asset}
             components={view.components}
             cycle={view.selectedSection.id === 'working-cycle'}
+            learningCycle={
+              workingCycle.status === 'loaded'
+                ? workingCycle.repository.get(view.machine.id)
+                : undefined
+            }
           />
         )}
       {(view.asset.status === 'invalid' ||

@@ -8,6 +8,7 @@ import { createDomainRepository } from '../src/content/repository.ts';
 import { validateProductionSystems } from '../src/content/production-system-validation.ts';
 import { readSimulationScenarioFiles } from './simulation-scenario-files.ts';
 import { createFoundationRepository } from '../src/content/foundation-repository.ts';
+import { createWorkingCycleRepository } from '../src/content/working-cycle-repository.ts';
 
 try {
   const collections = await Promise.all(
@@ -110,6 +111,44 @@ try {
       files.map((file) => file.data),
       validation.graph,
     );
+    const cycleRaw: unknown = JSON.parse(
+      await readFile(
+        new URL('../content/learning/working-cycle.json', import.meta.url),
+        'utf8',
+      ),
+    );
+    const cycle = createWorkingCycleRepository(cycleRaw, domain.repository, {
+      resolve: (id) => {
+        if (assets.status !== 'valid') return { status: 'invalid' };
+        const matching = assets.assets.filter(
+          (asset) => asset.subjectId === id,
+        );
+        if (matching.length > 1) return { status: 'ambiguous' };
+        return matching[0]
+          ? { status: 'available', asset: matching[0] }
+          : { status: 'unavailable' };
+      },
+    });
+    if (cycle.status === 'invalid') {
+      cycle.issues.forEach((issue) =>
+        console.error(
+          `working-cycle ${issue.path.join('.')} — ${issue.message}`,
+        ),
+      );
+      process.exitCode = 1;
+    } else {
+      const record = cycle.repository.get(
+        validation.graph.machines.find((m) => m.id === 'excavator')!.id,
+      )!;
+      await Promise.all(
+        record.sources.map((source) =>
+          readFile(new URL('../' + source.location, import.meta.url), 'utf8'),
+        ),
+      );
+      console.log(
+        'S2 working cycle valid: six reviewed phases and authored visual anchors; engineering timing independent.',
+      );
+    }
     if (assets.status === 'invalid') {
       for (const issue of assets.issues) {
         const index = issue.path[0];

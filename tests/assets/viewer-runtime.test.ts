@@ -171,3 +171,110 @@ describe('production renderer logic', () => {
     remounted.dispose();
   });
 });
+
+describe('S2 real production clip seeking and rate', () => {
+  it('seeks all authored poses, including the endpoint, without drift; reset restores every neutral TRS', async () => {
+    const r = await runtime();
+    const neutral = transforms(r);
+    const nodes = [
+      'NODE_UPPERSTRUCTURE',
+      'NODE_BOOM',
+      'NODE_STICK',
+      'NODE_BUCKET',
+    ];
+    const rest = nodes.map((n) =>
+      r.scene.getObjectByName(n)!.quaternion.clone(),
+    );
+    const duration = asset.production!.clips[0]!.durationSeconds;
+    const keys = [
+      [0, [0, 10, 20, 5]],
+      [40 / 24, [0, 15, 25, 65]],
+      [80 / 24, [0, 30, 20, 75]],
+      [130 / 24, [60, 30, 20, 75]],
+      [165 / 24, [60, 25, 10, 5]],
+      [190 / 24, [60, 25, 10, 5]],
+      [235 / 24, [0, 30, 20, 75]],
+      [duration, [0, 10, 20, 5]],
+    ] as const;
+    const snapshots = new Map<number, number[][]>();
+    for (let repeat = 0; repeat < 3; repeat++)
+      for (const [time, degrees] of keys) {
+        r.seek(time);
+        expect(r.pose).toBe('paused');
+        expect(r.timeSeconds).toBe(time);
+        nodes.forEach((n, i) =>
+          expect(
+            (r.scene.getObjectByName(n)!.quaternion.angleTo(rest[i]!) * 180) /
+              Math.PI,
+          ).toBeCloseTo(degrees[i]!, 3),
+        );
+        const pose = transforms(r);
+        if (snapshots.has(time))
+          expect(JSON.stringify(pose)).toEqual(
+            JSON.stringify(snapshots.get(time)),
+          );
+        else snapshots.set(time, pose);
+        r.pause();
+        r.update(2);
+        expect(transforms(r)).toEqual(pose);
+      }
+    expect(snapshots.get(0)).not.toEqual(neutral);
+    for (const time of [0.73, 4.12, 10.31]) {
+      r.seek(time);
+      expect(transforms(r)).not.toEqual(neutral);
+      r.reset();
+      expect(transforms(r)).toEqual(neutral);
+    }
+    r.dispose();
+    const remount = await runtime();
+    expect(transforms(remount)).toEqual(neutral);
+    remount.dispose();
+  });
+  it.each([0.5, 1, 2] as const)(
+    'advances visual clip time at %s× and continues after paused seek',
+    async (rate) => {
+      const r = await runtime();
+      r.seek(2);
+      r.setPlaybackRate(rate);
+      r.update(1);
+      expect(r.timeSeconds).toBe(2);
+      r.play();
+      r.update(0.4);
+      expect(r.timeSeconds).toBeCloseTo(2 + 0.4 * rate, 12);
+      r.pause();
+      const paused = transforms(r);
+      r.setPlaybackRate(2);
+      r.update(1);
+      expect(transforms(r)).toEqual(paused);
+      r.reset();
+      r.play();
+      r.update(0.4);
+      expect(r.timeSeconds).toBeCloseTo(0.8, 12);
+      r.dispose();
+    },
+  );
+  it('preserves highlight and hide/isolate through seeking, speed and neutral reset', async () => {
+    const r = await runtime();
+    const mesh = r.scene.getObjectByName(bucket.sceneNodes[0]!) as Mesh;
+    r.select(bucket.componentId);
+    const highlight = mesh.material;
+    r.visibility({ hidden: [bucket.componentId], isolated: null });
+    for (const time of [0, 40 / 24, 165 / 24, r.durationSeconds]) {
+      r.seek(time);
+      r.setPlaybackRate(0.5);
+      r.play();
+      r.update(0.1);
+      r.pause();
+      expect(mesh.material).toBe(highlight);
+      expect(mesh.visible).toBe(false);
+    }
+    r.reset();
+    expect(mesh.material).toBe(highlight);
+    expect(mesh.visible).toBe(false);
+    r.visibility({ hidden: [], isolated: bucket.componentId });
+    r.seek(80 / 24);
+    for (const [m] of r.originals)
+      expect(m.visible).toBe(bucket.sceneNodes.includes(m.name));
+    r.dispose();
+  });
+});

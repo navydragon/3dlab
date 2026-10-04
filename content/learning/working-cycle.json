@@ -1,0 +1,158 @@
+{
+  "version": "1.0",
+  "machineId": "excavator",
+  "activity": "excavator-working-cycle",
+  "sources": [
+    {
+      "id": "reviewed-s2",
+      "location": "docs/product/s2-working-cycle-content-pack.md",
+      "scope": "Owner-reviewed pedagogical prose and visual interpretation, v1.0"
+    },
+    {
+      "id": "authored-visual",
+      "location": "scripts/blender/stage_06_kinematics_animation.py",
+      "scope": "Immutable source frames 1,41,81,131,166,191,236,281 at 24 fps"
+    },
+    {
+      "id": "production-clip",
+      "location": "content/3d/xe215c.json",
+      "scope": "Production clip duration and mapped activity; binary verified by assets:validate"
+    }
+  ],
+  "sourceRefs": ["reviewed-s2"],
+  "timingNotice": "Шкала показывает визуальное время учебной 3D-демонстрации. Оно не является инженерной продолжительностью рабочего цикла и не используется при расчёте производительности. Расчётное время цикла задаётся отдельно в сценарии.",
+  "overlapNotice": "Разработка и заполнение связаны и могут перекрываться. Текущая демонстрация начинается с условной позы разработки и не задаёт между ними инженерной временной границы.",
+  "phases": [
+    {
+      "phaseId": "excavation",
+      "order": 1,
+      "name": "Разработка грунта",
+      "goal": "Обеспечить взаимодействие ковша с грунтом и начало его захвата.",
+      "movement": "На этом этапе рабочее оборудование находится в положении разработки. В реальной операции ковш взаимодействует с грунтом; текущая 3D-демонстрация начинается с условной позы разработки и не моделирует грунт, сопротивление среды или физический процесс его отделения.",
+      "componentIds": [
+        "boom",
+        "stick",
+        "bucket",
+        "boom-cylinder",
+        "stick-cylinder",
+        "bucket-cylinder"
+      ],
+      "sourceRefs": ["reviewed-s2"],
+      "visualNote": "Это стартовая визуальная поза, а не измеренная длительность этапа."
+    },
+    {
+      "phaseId": "bucket-filling",
+      "order": 2,
+      "name": "Заполнение ковша",
+      "goal": "Заполнить ковш и перевести его в положение удержания материала.",
+      "movement": "Положение ковша изменяется при согласованном движении рабочего оборудования. Ковш переходит из условной позы разработки в положение удержания захваченного материала.",
+      "componentIds": ["bucket", "bucket-cylinder", "stick", "stick-cylinder"],
+      "sourceRefs": ["reviewed-s2"],
+      "visualNote": "Разработка и заполнение в реальной операции связаны и могут перекрываться; текущая учебная анимация не задаёт между ними инженерной временной границы."
+    },
+    {
+      "phaseId": "lifting",
+      "order": 3,
+      "name": "Подъём",
+      "goal": "Вывести наполненный ковш из зоны разработки и подготовить его к переносу.",
+      "movement": "Рабочее оборудование поднимается, при этом положение ковша сохраняет возможность удерживать захваченный материал.",
+      "componentIds": [
+        "boom",
+        "boom-cylinder",
+        "stick",
+        "stick-cylinder",
+        "bucket"
+      ],
+      "sourceRefs": ["reviewed-s2"]
+    },
+    {
+      "phaseId": "swing-to-dump",
+      "order": 4,
+      "name": "Поворот к разгрузке",
+      "goal": "Перенести поднятый ковш от зоны разработки к месту разгрузки.",
+      "movement": "Поворотная платформа вращается относительно ходовой части, перенося поднятое рабочее оборудование к месту разгрузки.",
+      "componentIds": ["upperstructure", "boom", "stick", "bucket"],
+      "sourceRefs": ["reviewed-s2"]
+    },
+    {
+      "phaseId": "unloading",
+      "order": 5,
+      "name": "Разгрузка",
+      "goal": "Передать материал из ковша в транспортное средство или заданную зону.",
+      "movement": "Положение ковша изменяется для разгрузки; стрела и рукоять обеспечивают необходимое положение рабочего оборудования.",
+      "componentIds": ["bucket", "bucket-cylinder", "boom", "stick"],
+      "sourceRefs": ["reviewed-s2"],
+      "visualNote": "Визуальный интервал включает переход в позу разгрузки и авторскую выдержку. Выдержка не является измеренным временем разгрузки."
+    },
+    {
+      "phaseId": "return",
+      "order": 6,
+      "name": "Обратный поворот и возврат",
+      "goal": "Вернуть машину в положение для начала следующего рабочего цикла.",
+      "movement": "Сначала поворотная платформа возвращает поднятое рабочее оборудование к зоне разработки, затем стрела, рукоять и ковш возвращаются к исходной рабочей позе.",
+      "componentIds": [
+        "upperstructure",
+        "boom",
+        "boom-cylinder",
+        "stick",
+        "stick-cylinder",
+        "bucket",
+        "bucket-cylinder"
+      ],
+      "sourceRefs": ["reviewed-s2"]
+    }
+  ],
+  "visual": {
+    "assetId": "excavator-main",
+    "assetVersion": "1.0.0",
+    "activity": "excavator-working-cycle",
+    "sourceRefs": ["authored-visual", "production-clip"],
+    "segments": [
+      {
+        "phaseId": "excavation",
+        "startSeconds": 0,
+        "milestones": []
+      },
+      {
+        "phaseId": "bucket-filling",
+        "startSeconds": 0,
+        "endSeconds": 1.6666666666666667,
+        "milestones": []
+      },
+      {
+        "phaseId": "lifting",
+        "startSeconds": 1.6666666666666667,
+        "endSeconds": 3.3333333333333335,
+        "milestones": []
+      },
+      {
+        "phaseId": "swing-to-dump",
+        "startSeconds": 3.3333333333333335,
+        "endSeconds": 5.416666666666667,
+        "milestones": []
+      },
+      {
+        "phaseId": "unloading",
+        "startSeconds": 5.416666666666667,
+        "endSeconds": 7.916666666666667,
+        "milestones": [
+          {
+            "timeSeconds": 6.875,
+            "meaning": "Поза разгрузки"
+          }
+        ]
+      },
+      {
+        "phaseId": "return",
+        "startSeconds": 7.916666666666667,
+        "endSeconds": 11.666666984558105,
+        "milestones": [
+          {
+            "timeSeconds": 9.791666666666666,
+            "meaning": "Обратный поворот завершён; рабочее оборудование ещё находится в поднятом положении."
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -227,10 +227,14 @@ isolated from existing machine/process/viewer routes.
 
 ## Educational MVP readiness
 
-Both technical product slices and S1 foundational learning content are implemented; full educational readiness remains partial until S2–S4. See the [documentation index](docs/README.md) for the six current source-of-truth documents and the [MVP readiness audit](docs/quality/mvp-readiness-audit.md) for requirement evidence, learning-goal coverage and four proposed remaining slices. This audit adds no product functionality.
+Both technical product slices and S1 foundational learning content are implemented; full educational readiness remains partial until S3/S4. See the [documentation index](docs/README.md) for the six current source-of-truth documents and the [MVP readiness audit](docs/quality/mvp-readiness-audit.md) for requirement evidence, learning-goal coverage and delivered S1/S2 and remaining S3/S4 slices. This audit adds no product functionality.
 
 ## S1 foundational learning content
 
 `content/learning/foundation.json` stores owner-approved prose and four scoped provenance records; no external URLs are fetched at runtime. Strict schema/reference/completeness validation and a frozen read-only repository feed application queries. See the [approved pack](docs/product/s1-foundation-content-pack.md) and [content contract](docs/domain/content-schema.md).
 
 Excavator overview/nine functions/«Как работает», shallow truck transport teaching and four process learning cards are available. Native compact disclosures preserve the selected stage; semantic breadcrumbs use canonical names. Machine → process `fromMachine` is graph-validated and survives stage selection/reload; explicit return targets applications. Existing process → machine `fromProcess/fromStage` is separate. No new numerical inputs/formulas/scenarios, phase controls or production 3D changes.
+
+## S2 pedagogical working cycle
+
+The working-cycle section now teaches six reviewed phases with canonical components, phase seeking/navigation, live visual progress and 0.5×/1×/2× playback. Learning overlay/provenance live in content/learning/working-cycle.json; approved prose and anchors are in docs/product/s2-working-cycle-content-pack.md. Excavation/filling intentionally share clip zero; Reset restores static neutral outside the clip. No engineering cycle time is inferred. S3/S4 remain deferred.

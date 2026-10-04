@@ -149,3 +149,13 @@ boundaries см. [data contracts](../architecture/data-contracts.md).
 - StageFoundation: processId/stageId/sourceRefs, goal/input/activity/result/handoff, modelNotes и participantNotes (roleId/machineId/note/factor names/sourceRefs). Participant pair обязан существовать в данном stage через canonical role eligibility. Input/result — учебный текст, не новые Material entities.
 
 Все objects strict, text nonblank, IDs structural; sourceRefs resolve; duplicate records/reference IDs отвергаются; owners/participants сверяются с DomainRepository. Delivery completeness требует обоих approved Machines, девяти компонентов, одного процесса, четырёх stages и всех approved participant notes. Optional capabilities explicit: отсутствие workingPrinciple у truck не подменяется текстом. Parsed nested records/arrays frozen, source JSON не мутируется. `npm run content:validate` использует тот же factory. Validation не доказывает инженерную истину: authority — approved pack, не schema/GLB.
+
+## S2 working-cycle learning overlay
+
+content/learning/working-cycle.json is a separate narrow WorkingCycle record: version, machineId, accepted LearningActivityId, reviewed sources/sourceRefs, timingNotice, overlapNotice and exactly six ordered phases (phaseId, order, name, goal, movement, canonical componentIds, optional visualNote). Visual mapping is distinct: assetId/version/activity/sourceRefs and ordered segments with startSeconds, optional endSeconds and authored milestones. Component names resolve from MachineComponent, never duplicate in learning JSON.
+
+Strict Zod shape and frozen nested records, canonical machine/component ownership, unique sources/references/phases/components, unique asset resolution with subject/version, mapped evidenced clip, finite nonnegative approved ordered anchors and actual endpoint (1e-6 floating tolerance only at returned) are required. CLI verifies provenance files exist; assets:validate verifies the actual mapped binary clip. No Three dependency is introduced.
+
+Asset/version: excavator-main/1.0.0; activity resolves through existing Asset3D.animationMappings. excavation anchor 0; bucket-filling 0 → 1.6666666666666667; lifting 1.6666666666666667 → 3.3333333333333335; swing-to-dump 3.3333333333333335 → 5.416666666666667; unloading 5.416666666666667 → 7.916666666666667 (dump milestone 6.875); return 7.916666666666667 → 11.666666984558105 (slew-back-complete milestone 9.791666666666666).
+
+Excavation has no visual duration; filling starts at the same anchor intentionally. These are learning phases, not ProcessStage or engineering timing. No phase metadata is added to Asset3D, manifest, GLB or userData. S1 pack is unchanged.

@@ -81,5 +81,13 @@ describe('asset-backed machine sections and accessible fallback', () => {
     expect(
       screen.getByRole('button', { name: 'Воспроизвести' }),
     ).toBeDisabled();
+    await user.click(
+      screen.getByRole('button', { name: '2. Заполнение ковша' }),
+    );
+    expect(
+      screen.getByRole('article', { name: 'Объяснение фазы' }),
+    ).toHaveTextContent(
+      'Заполнить ковш и перевести его в положение удержания материала.',
+    );
   });
 });

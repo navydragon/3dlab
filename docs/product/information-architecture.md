@@ -112,3 +112,7 @@ Local production-preview tests подтверждают direct load/reload; он
 timeline; machine parameters/productivity sections; guided system case и economic
 causal explanations. Их содержание задаёт content spec, приоритет — readiness audit.
 Не добавляются separate fleet scene, assessment portal, case catalog или LMS routes.
+
+## S2 working-cycle section delivered
+
+Existing /machines/excavator/working-cycle route, capability and fromProcess/fromStage semantic return are unchanged. Page presents the approved visual-time notice, viewer, Play/Pause/neutral Reset, labelled 0.5×/1×/2× rate group, six equal-weight phase buttons, bounded Previous/Next, approved explanation/canonical component names and separate textual visual progress. Selection seeks and pauses at range start; excavation/filling intentionally share zero. Live playback updates the current phase; Reset clears it and labels neutral as outside the clip. Controls wrap/stack on narrow layouts; no phase control requires Canvas coordinates. Reload starts neutral and preserves validated URL return context. S3 parameters/productivity and S4 guided economics remain deferred.

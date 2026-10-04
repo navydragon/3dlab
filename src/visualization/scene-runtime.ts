@@ -1,9 +1,15 @@
-import { AnimationMixer, LoopRepeat, Mesh, MeshStandardMaterial } from 'three';
+import {
+  AnimationMixer,
+  LoopOnce,
+  LoopRepeat,
+  Mesh,
+  MeshStandardMaterial,
+} from 'three';
 import type { AnimationClip, Material, Object3D } from 'three';
 import type { Asset3D } from '../domain/asset3d';
 import type { MachineComponentId, LearningActivityId } from '../domain/ids';
 import { animationClip, meshVisible, resolveMappings } from './viewer-logic';
-import type { Visibility } from './contracts';
+import type { PlaybackRate, Visibility } from './contracts';
 
 export class SceneRuntime {
   readonly mappings;
@@ -15,6 +21,13 @@ export class SceneRuntime {
   private highlights: Material[] = [];
   private readonly action;
   private playing = false;
+  private rate: PlaybackRate = 1;
+  get timeSeconds() {
+    return this.action?.time ?? 0;
+  }
+  get durationSeconds() {
+    return this.action?.getClip().duration ?? 0;
+  }
   pose: 'neutral' | 'paused' | 'playing' = 'neutral';
   constructor(
     readonly scene: Object3D,
@@ -87,11 +100,39 @@ export class SceneRuntime {
   }
   play() {
     if (this.action) {
+      if (this.action.time >= this.durationSeconds) this.action.reset();
+      this.action.setLoop(LoopRepeat, Infinity);
+      this.action.enabled = true;
+      this.action.setEffectiveTimeScale(this.rate);
       this.action.paused = false;
       this.action.play();
       this.playing = true;
       this.pose = 'playing';
     }
+  }
+  seek(timeSeconds: number) {
+    if (
+      !this.action ||
+      !Number.isFinite(timeSeconds) ||
+      timeSeconds < 0 ||
+      timeSeconds > this.durationSeconds
+    )
+      return;
+    this.playing = false;
+    this.action.reset().setLoop(LoopOnce, 1);
+    this.action.clampWhenFinished = true;
+    this.action.play();
+    this.action.time = timeSeconds;
+    this.mixer.update(0);
+    this.action.paused = true;
+    this.scene.updateMatrixWorld(true);
+    this.pose = 'paused';
+  }
+  setPlaybackRate(rate: PlaybackRate) {
+    if (![0.5, 1, 2].includes(rate)) return;
+    this.rate = rate;
+    // paused is independent from the effective playback scale.
+    this.action?.setEffectiveTimeScale(rate);
   }
   pause() {
     if (this.action && this.pose !== 'neutral') {

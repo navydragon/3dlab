@@ -1,10 +1,10 @@
 # MVP readiness audit
 
-Original readiness audit baseline: `793722754797737729bb7db1a9960c0f603477cd`. Current S1 implementation based on accepted audit commit `3c2371a56293acb084f341eb9d0a1c3e44080743`, 2026-10-04.
+Original readiness audit baseline: `793722754797737729bb7db1a9960c0f603477cd`. S1 accepted at `05ff7261d4527ffa3d66f2a693864dcb86a61df9`; current S2 implementation, 2026-10-04.
 
 **Образовательный MVP пока PARTIAL.** Два технических product slices приняты:
 canonical navigation/production 3D и deterministic system experiment/A/B.
-S1 foundational learning/content/navigation теперь реализован, но полнота учебного модуля требует S2/S3/S4. Numerical core/scenario и production 3D/Stage 01–09 не изменены.
+S1 foundational learning/content/navigation теперь реализован, но полнота учебного модуля требует S3/S4. Numerical core/scenario и production 3D/Stage 01–09 не изменены.
 
 Intended requirements: [scope](../product/mvp-scope.md),
 [learning goals](../product/learning-goals.md), [flows](../product/user-flows.md),
@@ -28,6 +28,8 @@ MISSING — обязательный элемент отсутствует. DEFE
 S1 не меняет scope, новые технические утверждения не изобретены: [reviewed pack](../product/s1-foundation-content-pack.md) утверждён владельцем проекта.
 
 ## Implementation evidence registry
+
+- **W**: [S2 reviewed pack](../product/s2-working-cycle-content-pack.md), [learning overlay](../../content/learning/working-cycle.json), [strict content tests](../../tests/tooling/working-cycle.test.ts), [UI tests](../../src/app/working-cycle-ui.test.tsx), [production E2E](../../tests/e2e/working-cycle.spec.ts); real GLTF seek/rates/reset tests in V.
 
 - **D**: [machines](../../content/domain/machines.json),
   [components](../../content/domain/machine-components.json),
@@ -61,7 +63,7 @@ S1 не меняет scope, новые технические утвержден
   [boundary tests](../../tests/tooling/boundaries.test.ts),
   [ESLint](../../eslint.config.mjs): route/error/history behavior and boundaries.
 
-Evidence keys below resolve to actual files above. S1 references now mean delivered foundational content; S2–S4 are proposed remaining slices.
+Evidence keys below resolve to actual files above. S1 references now mean delivered foundational content; S2 is delivered; S3/S4 are proposed remaining slices.
 
 - **L**: [foundation pack](../../content/learning/foundation.json), [schema/repository](../../src/content/foundation-repository.ts), [approval/content tests](../../tests/tooling/foundation.test.ts), [S1 UI tests](../../src/app/foundation-ui.test.tsx), [S1 E2E](../../tests/e2e/foundation.spec.ts): 4 source records, 2 machine records, 9 component explanations, 1 process, 4 stage records / 5 participant notes.
 
@@ -71,7 +73,7 @@ Evidence keys below resolve to actual files above. S1 references now mean delive
 | --- | --- | --- | --- |
 | A: 3D observation/parts | IMPLEMENTED | V: all 9 IDs selectable, orbit/zoom/fit, independent visibility | No required interaction gap; prose evaluated separately. |
 | A: purpose/construction/principle | IMPLEMENTED | L/M: reviewed overview, nine functions, capability-derived principle/chain | S1 foundational content complete; no detailed hydraulics required. |
-| A: understand working cycle | PARTIAL | V: real clip, Play/Pause/Reset | No named/active phases, purpose, navigation; S2. |
+| A: understand working cycle | IMPLEMENTED | W/V: approved phases/purpose/selection/live progress | Supports learning; student outcomes require evaluation. |
 | A: parameters/productivity | PARTIAL | C/S: factors are read-only source fields | No machine parameters section/standalone experiment; S3. |
 | A: applications/process connection | IMPLEMENTED | M/P: graph-derived where-used, reusable IDs | Educational stage explanation remains B gap; no duplicate machine. |
 | B: stages, roles, ordered graph | IMPLEMENTED | D/P: ordered scheme and eligible machines | Structural result only. |
@@ -87,16 +89,16 @@ Evidence keys below resolve to actual files above. S1 references now mean delive
 | 1. Open machines | IMPLEMENTED | B: Home → catalog | None. |
 | 2. Select excavator | IMPLEMENTED | B/M: canonical detail | None. |
 | 3. Study main elements in 3D | IMPLEMENTED | V/L: nine mappings with distinct approved functions | Power-unit and cylinder prose now present. |
-| 4. Run working cycle | IMPLEMENTED | V: actual clip playback | Phase understanding separately S2. |
+| 4. Run working cycle | IMPLEMENTED | V: actual clip playback | Reviewed phase understanding UI is delivered in S2. |
 | 5. See productivity parameters | PARTIAL | S/C: four factors visible in source | Machine-level meaning/section absent; S3. |
-| 6. Enter related process | IMPLEMENTED | M/B: applications links | None for transition; origin-source gap in flow A below. |
+| 6. Enter related process | IMPLEMENTED | M/B: applications links | None for transition; graph-validated fromMachine origin is delivered in S1. |
 | 7. See excavator/trucks as one complex | IMPLEMENTED | S: composition/participants shared domain references | Fleet 3D optional, not required to satisfy this. |
 | 8. Change truck count | IMPLEMENTED | S: validated N, explicit Calculate | None. |
 | 9. Get new productivity/idleness | IMPLEMENTED | S/C: real exact recalculation | None. |
 | 10. See duration/cost effects | IMPLEMENTED | S: duration/cost KPI and A/B deltas | Economic causal explanation separately PARTIAL; S4. |
 | 11. Start from processes | IMPLEMENTED | B/P: Home/catalog | None. |
 | 12. Open excavator from process | IMPLEMENTED | P/B: eligible card → module | None. |
-| 13. Study it | PARTIAL | M/L: five sections with approved S1 prose | Parameters/productivity and phase pedagogy remain S2/S3. |
+| 13. Study it | PARTIAL | M/L: five sections with approved S1 prose | Parameters/productivity remain S3. |
 | 14. Return to initial process | IMPLEMENTED | P/B: validated process/stage query | None for required stage restoration; optional camera/panel persistence deferred. |
 
 ## Machine and process learning depth
@@ -106,7 +108,7 @@ Evidence keys below resolve to actual files above. S1 references now mean delive
 | UX §§8–10: purpose/application | IMPLEMENTED | L/M: approved purpose/context/scope and process links | No S1 purpose gap. |
 | UX construction / LG-M01–02 | IMPLEMENTED | V/L: all nine approved functions visible in selected card | No missing power-unit/cylinder explanation. |
 | UX principle of operation | IMPLEMENTED | L/M: «Как работает», hydraulic drive prose, conceptual chain/grouping | Detailed schematic outside S1/MVP depth. |
-| UX §§15–17 / LG-M03–04: cycle | PARTIAL | V: 11.666666984558105 s illustrative clip | Six named phases/purpose/active phase/navigation; S2. |
+| UX §§15–17 / LG-M03–04: cycle | IMPLEMENTED | W/V: reviewed six phases, purpose, canonical movement/components, seek/navigation/rates/live progress | Visual anchors only; no engineering timings. |
 | UX parameters / LG-Q01 | MISSING | M: no parameters section; S source fields readonly | Four factors, units, assumptions, causal meaning; S3. |
 | UX productivity / flow E | MISSING | C formula exists; M has no experiment | Small standalone one-factor experiment using existing core; S3. |
 | UX where-used / LG-P03–04 | IMPLEMENTED | M/P: two-way canonical content graph | No mandatory graph mechanism gap. |
@@ -124,16 +126,9 @@ Canonical legacy description fields remain unchanged (8/9 components; machine/st
 
 Production animation, Play/Pause/resume and neutral Reset are IMPLEMENTED (V).
 Repeated real-GLTF runtime tests verify freeze/resume/static local TRS restoration;
-neutral Reset does not seek time zero, which is the digging pose. The Working Cycle section has no active phase labels, timeline, phase explanation/navigation or speed controls. S1 approved principle/process prose includes static grouped cycle sequences, which do not supply interactive phase pedagogy.
-These are PARTIAL/MISSING full-MVP UX obligations, although not first-slice gates.
+neutral Reset does not seek time zero, which is the digging pose. S2 now provides six active/selected phases, equal-weight timeline, reviewed explanations/navigation and approved visual speeds (W). Actual GLTF seeking/rates/endpoint/reset and production E2E prove behavior; this supports pedagogy without measuring student learning.
 
-Accepted teaching phases: excavation/digging, bucket filling, lifting, swing to dump,
-unloading, return swing. LG-M03 groups digging/filling; reviewed S2 content must
-present their overlap consistently with UX six-phase model. Visual anchor ranges
-require content/asset review. **Animation timing != engineering cycle time**;
-24 s illustrative calculation input does not come from the 11.667 s clip. Exact
-engineering synchronization, phase-based hydraulic calculation or new asset rig
-is not required by current scope. Do not edit immutable authoring stages in S2.
+Approved teaching phases: excavation, filling, lifting, swing to dump, unloading, return. Excavation is only an anchor at 0; filling starts there too, with explicit overlap. Anchors use authored frames and actual clip endpoint, not engineering durations. Visual time remains independent from scenario cycle input. All immutable authoring stages are preserved.
 
 ### Productivity and economics
 
@@ -155,10 +150,10 @@ task, not advanced estimating, normative costs or fabricated target deadline.
 
 | Flow / source | Status | Evidence | Gap / minimal closure |
 | --- | --- | --- | --- |
-| A: machine → process | PARTIAL | L/M/P/E2E: validated fromMachine, stage/overview/reload preservation and applications return | A7 closed; full module still needs S2/S3. |
-| B: process → full machine → return | PARTIAL | P/L/E2E: disclosure → principle/module → same stage | Context/content S1 closed; full learning module still S2/S3. |
+| A: machine → process | PARTIAL | L/M/P/E2E: validated fromMachine, stage/overview/reload preservation and applications return | A7 closed; full module still needs S3. |
+| B: process → full machine → return | PARTIAL | P/L/E2E: disclosure → principle/module → same stage | Context/content S1 closed; full learning module still S3. |
 | C: stage → compact machine card | IMPLEMENTED | L/P/E2E: name/role closed; notes/factors/action expanded; close preserves stage | No S1 disclosure gap. |
-| D: working-cycle study | PARTIAL | V/M: animation/play/pause/reset | Phase meaning/active label/navigation absent; S2. |
+| D: working-cycle study | IMPLEMENTED | W/V/M: phase meaning/selection/live progress/previous-next/speed, real seek/reset | No hydraulic/soil physics or engineering times are implied. |
 | E: machine productivity experiment | MISSING | M/C: calculator only | Four-factor standalone learning experiment; S3. |
 | F: truck-count experiment | IMPLEMENTED | S/C/E2E: source/N/edit/calculate/KPI | None for bounded mechanics. |
 | G: compare two variants | IMPLEMENTED | S/E2E: frozen A/B, multi-criterion deltas and reason | None for comparison mechanics. |
@@ -175,23 +170,23 @@ These technical acceptance paths do not override full learning obligations.
 | Flow | Status | Actual test evidence | Limit / minimum closure |
 | --- | --- | --- | --- |
 | 1 machine → real 3D → bucket → description | IMPLEMENTED | viewer.spec.ts real projected mesh hit + canonical card; production-asset.spec.ts HTTP/GLB | All nine approved S1 functions now implemented; no additional construction gap. |
-| 2 cycle Play/Pause/Continue | IMPLEMENTED | real scene-runtime tests assert frozen pause/resumed advance repeatedly; viewer E2E Play/Pause/Reset and UI controls | Browser E2E does not directly assert pose continuity for Pause→Continue; real runtime does. Phase pedagogy separately S2. |
+| 2 cycle Play/Pause/Continue | IMPLEMENTED | real scene-runtime tests assert frozen pause/resumed advance repeatedly; viewer E2E Play/Pause/Reset and UI controls | Browser E2E does not directly assert pose continuity for Pause→Continue; real runtime does. S2 phase pedagogy/seek/rates also tested in W. |
 | 3 machine → where-used → process | IMPLEMENTED | shell.spec.ts contextual navigation | No graph transition gap. |
-| 4 process → stage → machine → module → return | PARTIAL | shell.spec.ts proves available sections/reload/return same stage | S1 technical/content path implemented; full phase/productivity module remains S2/S3. |
+| 4 process → stage → machine → module → return | PARTIAL | shell.spec.ts proves available sections/reload/return same stage | S1 technical/content path implemented; full productivity module remains S3. |
 | 5 system → truck count → recalculated result | IMPLEMENTED | system-experiment.spec.ts real N=3/4 result, A/B, stale/reset | Educational explanation/task refinement separately S4. |
 
 ## Learning-goal matrix — all 25 IDs
 
 Source: [learning-goals §§4–9](../product/learning-goals.md). Coverage is deliberately
-conservative: 17 Satisfied, 6 Partially satisfied, 2 Not yet satisfied.
+conservative: 19 Satisfied, 4 Partially satisfied, 2 Not yet satisfied.
 None of the 25 accepted IDs is waived as Not required for MVP.
 
 | ID | Status | Reason / evidence / minimal closure |
 | --- | --- | --- |
 | LG-M01 | Satisfied | V/D: 9 named canonical parts selectable in real 3D. |
 | LG-M02 | Satisfied | L/M: nine approved functions, power-unit and distinct cylinder actions. |
-| LG-M03 | Partially satisfied | V/L: clip and static grouped cycle sequence exist; six-phase explanation/navigation remains S2. |
-| LG-M04 | Partially satisfied | L: functional movement relationships explained; phase-specific active/navigation evidence remains S2. |
+| LG-M03 | Satisfied | W/V: reviewed six phases, explanation/order/navigation, overlap and return to cycle start. |
+| LG-M04 | Satisfied | W/V: phase-specific moving canonical components and approved movement explanations with real pose selection. |
 | LG-M05 | Not yet satisfied | C values/formula only, no time-factor activity/explanation; S3. |
 | LG-M06 | Not yet satisfied | Capacity/fill readonly, no causal activity/explanation; S3. |
 | LG-T01 | Satisfied | L/M/P: approved truck purpose, transport role and canonical context. |
@@ -246,7 +241,7 @@ not external rights, instructional accuracy or usability on physical devices.
 
 ## Минимальные оставшиеся срезы
 
-Original ordered plan had four slices. **S1 delivered in this implementation** with reviewed content/disclosure/breadcrumbs/trusted fromMachine. S2–S4 below remain recommendations for later authorization, not implemented functionality.
+Original ordered plan had four slices. **S1 delivered in this implementation** with reviewed content/disclosure/breadcrumbs/trusted fromMachine. S2 delivered below; S3/S4 remain recommendations for later authorization, not implemented functionality.
 
 1. **S1 — delivered foundational content and contextual presentation.** Teach machine
    purpose, all 9 functions and operating principle; shallow truck purpose/cycle/
@@ -254,9 +249,9 @@ Original ordered plan had four slices. **S1 delivered in this implementation** w
    P01/P02; supports M04. Reviewed reusable prose/content, no truck 3D, manufacturer
    specs, full Material or CMS. Resolve content contract changes explicitly, do not
    embed graph rules in UI.
-2. **S2 — pedagogical working cycle.** Six phase names/purpose, active explanation,
+2. **S2 — delivered pedagogical working cycle.** Six phase names/purpose, active explanation,
    visual timeline and phase navigation/previous-next/speed per UX §§15–17/flow D.
-   Review visual anchors and digging/filling overlap; connect movements/components.
+   Reviewed authored visual anchors and explicit digging/filling overlap connect movements/components.
    Closes M03/M04. No engineering phase durations, hydraulic simulation or rig rework;
    preserve accepted immutable authoring stages.
 3. **S3 — machine factors and standalone productivity.** Explain four factors/units/
@@ -273,7 +268,7 @@ Original ordered plan had four slices. **S1 delivered in this implementation** w
 
 ### Required before MVP demo
 
-Remaining S2–S4, reviewed phase anchors/provenance, and full learning-path
+Remaining S3/S4 and full learning-path
 acceptance checks. Current preview tests support a technical demo; they do not make
 it an educational MVP. Before a public deployment, verify selected host history
 fallback/base paths; hosting is not selected. Physical desktop/tablet/GPU and
@@ -293,7 +288,7 @@ than invented performance thresholds. Only approved S1 gaps are implemented; rem
 - Hosting/provider/CI choices remain deferred delivery decisions; they do not justify
   describing current local routes/calculation UI as missing.
 
-## Validation — current S1 task
+## Validation — historical S1 task
 
 - `npm ci`: passed, 259 packages installed, 0 reported vulnerabilities; only verified Vite processes were restarted/restored for Windows native binding.
 - `npm run validate`: passed, running format/lint/type/content/assets/test/build; **522 tests passed in 31 files**. Final format/lint/type checks also passed after accessible E2E selector changes.
@@ -302,3 +297,12 @@ than invented performance thresholds. Only approved S1 gaps are implemented; rem
 - Protected-path diff empty: src/simulation, numerical scenario, production-system data, Asset3D metadata, public GLB/manifest, models/Stage 01–09 and dependency manifests unchanged. Asset validation confirms 600324 bytes, 101 meshes/nine mappings and immutable-stage integrity.
 - Existing lazy-viewer warning remains 983.97 kB minified / 261.67 kB gzip; build passes. Software Chromium cadence about 60 fps is local evidence, not a device guarantee.
 - 121 local Markdown targets and 25 unique LG rows checked; git diff --check passed. S1 delivery has no timeline/phase controls, parameters section, standalone experiment, new scenarios or S4 assignment/economic calculation explanations.
+
+## Validation — current S2 task
+
+- npm ci passed: 259 packages, zero reported vulnerabilities; only three confirmed workspace Vite processes restarted/restored.
+- npm run validate passed: formatting/lint/type/content/asset/unit/integration/build; 560 tests in 33 files. Production E2E: 18 Chromium tests passed (26.9 s), including two new S2 flows and every previous acceptance/failure path.
+- Real GLTF seek tests check expected authored rotation angles at all eight anchors, exact frozen pause, repeat/no drift (signed zero is numerically equivalent), arbitrary seek neutral restoration and neutral remount. Rates advance actual time at 0.5/1/2 while visibility/highlights remain independent.
+- Content tests reject malformed/duplicate/missing/references/asset/activity/timing mutations; phase resolver tests exact and adjacent boundaries, including point-only excavation and final endpoint. UI tests cover every phase explanation, canonical components, bounded navigation, rates and neutral distinction. Narrow production E2E checks 390 px and semantic return/reload.
+- Protected-path diff empty: numerical code/scenario/system records, S1 approved pack, Asset3D metadata, public GLB/manifest, Stage 01–09, Blender scripts and dependency manifests unchanged. Asset integrity: 600324 bytes, 101 meshes/nine mapped components, unchanged clip and stage hashes.
+- Lazy Three/Fiber chunk warning remains (985.15 kB minified / 262.04 kB gzip). Local software Chromium observations are not a device guarantee. LG-M03/M04 now Satisfied as supported educational opportunities; S3/S4 remain open.

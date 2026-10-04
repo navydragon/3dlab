@@ -19,6 +19,8 @@ import { SystemsCatalogPage, SystemPage } from '../ui/pages/SystemsPage';
 import { loadLocalFoundation } from '../content/adapters/local/foundation';
 import type { FoundationLoad } from '../content/foundation-repository';
 import { FoundationContext } from '../ui/providers/foundation-context';
+import { WorkingCycleContext } from '../ui/providers/working-cycle-context';
+import { loadLocalWorkingCycle } from '../content/adapters/local/working-cycle';
 
 export function App({
   content = loadLocalDomainRepository(),
@@ -55,29 +57,39 @@ export function App({
       <FoundationContext
         value={learning ?? loadLocalFoundation(content.repository)}
       >
-        <AssetContext value={assets}>
-          <SystemsContext value={systems}>
-            <Routes>
-              <Route element={<Layout />}>
-                <Route path={routes.home} element={<HomePage />} />
-                <Route
-                  path={routes.machines}
-                  element={<CatalogPage kind="machines" />}
-                />
-                <Route path={routes.machine} element={<MachinePage />} />
-                <Route path={routes.machineSection} element={<MachinePage />} />
-                <Route
-                  path={routes.processes}
-                  element={<CatalogPage kind="processes" />}
-                />
-                <Route path={routes.process} element={<ProcessPage />} />
-                <Route path={routes.systems} element={<SystemsCatalogPage />} />
-                <Route path={routes.system} element={<SystemPage />} />
-                <Route path="*" element={<RouteErrorPage />} />
-              </Route>
-            </Routes>
-          </SystemsContext>
-        </AssetContext>
+        <WorkingCycleContext
+          value={loadLocalWorkingCycle(content.repository, assets)}
+        >
+          <AssetContext value={assets}>
+            <SystemsContext value={systems}>
+              <Routes>
+                <Route element={<Layout />}>
+                  <Route path={routes.home} element={<HomePage />} />
+                  <Route
+                    path={routes.machines}
+                    element={<CatalogPage kind="machines" />}
+                  />
+                  <Route path={routes.machine} element={<MachinePage />} />
+                  <Route
+                    path={routes.machineSection}
+                    element={<MachinePage />}
+                  />
+                  <Route
+                    path={routes.processes}
+                    element={<CatalogPage kind="processes" />}
+                  />
+                  <Route path={routes.process} element={<ProcessPage />} />
+                  <Route
+                    path={routes.systems}
+                    element={<SystemsCatalogPage />}
+                  />
+                  <Route path={routes.system} element={<SystemPage />} />
+                  <Route path="*" element={<RouteErrorPage />} />
+                </Route>
+              </Routes>
+            </SystemsContext>
+          </AssetContext>
+        </WorkingCycleContext>
       </FoundationContext>
     </DomainContext>
   );

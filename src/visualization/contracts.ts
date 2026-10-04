@@ -22,9 +22,16 @@ export type ViewerAnimationState =
 
 // The renderer keeps this plain-data boundary. Scene objects, node
 // names, educational prose, and engineering times never cross it.
-export interface ViewerCommand {
-  readonly kind: 'play' | 'pause' | 'reset';
-  readonly sequence: number;
+export type PlaybackRate = 0.5 | 1 | 2;
+export type ViewerCommand = { readonly sequence: number } & (
+  | { readonly kind: 'play' | 'pause' | 'reset' }
+  | { readonly kind: 'seek'; readonly timeSeconds: number }
+  | { readonly kind: 'set-playback-rate'; readonly rate: PlaybackRate }
+);
+export interface VisualProgress {
+  readonly pose: 'neutral' | 'paused' | 'playing';
+  readonly timeSeconds: number;
+  readonly durationSeconds: number;
 }
 export interface Visibility {
   readonly hidden: readonly MachineComponentId[];
