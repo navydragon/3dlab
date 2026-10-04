@@ -3,12 +3,16 @@ import {
   isProcessId,
   isProcessStageId,
   isLearningSectionId,
+  isProductionSystemId,
+  isScenarioId,
 } from '../domain/ids';
 import type {
   MachineId,
   ProcessId,
   ProcessStageId,
   LearningSectionId,
+  ProductionSystemId,
+  ScenarioId,
 } from '../domain/ids';
 
 export const routes = {
@@ -18,7 +22,33 @@ export const routes = {
   machineSection: '/machines/:machineId/:sectionId',
   processes: '/processes',
   process: '/processes/:processId',
+  systems: '/systems',
+  system: '/systems/:systemId',
 } as const;
+
+export function systemPath(
+  id: ProductionSystemId,
+  scenario?: ScenarioId,
+): string {
+  return `${routes.systems}/${encodeURIComponent(id)}${scenario ? `?${new URLSearchParams({ scenario })}` : ''}`;
+}
+export function parseSystemRoute(
+  systemId: unknown,
+  search: string,
+): Parsed<{
+  readonly systemId: ProductionSystemId;
+  readonly scenarioId: ScenarioId | undefined;
+}> {
+  const scenarios = new URLSearchParams(search).getAll('scenario');
+  const scenarioId = scenarios[0];
+  if (
+    !isProductionSystemId(systemId) ||
+    scenarios.length > 1 ||
+    (scenarioId !== undefined && !isScenarioId(scenarioId))
+  )
+    return { ok: false };
+  return { ok: true, value: { systemId, scenarioId } };
+}
 
 export interface ReturnContext {
   readonly processId: ProcessId;

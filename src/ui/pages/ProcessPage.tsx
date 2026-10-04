@@ -5,12 +5,16 @@ import {
   parseProcessRoute,
   processPath,
   routes,
+  systemPath,
 } from '../../navigation/routes';
 import { useDomainRepository } from '../providers/domain-context';
 import { EntityNotFound } from '../components/EntityNotFound';
 import { RouteErrorPage } from './RouteErrorPage';
+import { useSystemsContent } from '../providers/systems-context';
+import { getRelatedSystems } from '../../application/system-experiment';
 export function ProcessPage() {
   const repository = useDomainRepository();
+  const systems = useSystemsContent();
   const { processId } = useParams();
   const { search } = useLocation();
   const identity = parseProcessRoute(processId, '');
@@ -31,6 +35,10 @@ export function ProcessPage() {
     );
   const detail =
     view.selection.status === 'selected' ? view.selection.detail : undefined;
+  const relatedSystems =
+    systems.status === 'valid'
+      ? getRelatedSystems(systems.repository, view.process.id)
+      : [];
   return (
     <>
       <p>
@@ -38,6 +46,18 @@ export function ProcessPage() {
       </p>
       <h1>{view.process.name}</h1>
       {view.process.description && <p>{view.process.description}</p>}
+      {relatedSystems.length > 0 && (
+        <section aria-label="Производственные системы">
+          <h2>Производственные системы</h2>
+          <ul>
+            {relatedSystems.map((system) => (
+              <li key={system.id}>
+                <Link to={systemPath(system.id)}>{system.name}</Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       <h2>Этапы процесса</h2>
       <ol className="stage-list">
         {view.stages.map((entry) => (

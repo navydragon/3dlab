@@ -21,12 +21,12 @@
 
 ## Current stage
 
-Domain UI integration: accessible machine/process catalogs and pages backed by the validated local knowledge graph.
+Two product slices: domain-backed machine/process/3D navigation and production-system fleet experiments with explicit calculation and A/B comparison.
 
-Machine pages show canonical operations, components and grouped process usage. Machines with validated assets also offer Construction and Working Cycle sections with the production 3D viewer. Process pages select stages via `stageId` and open machine pages with graph-validated contextual return, preserved across all supported machine sections. Unknown entities/sections, invalid stage/context URLs and invalid content have explicit states. Full learning modules and simulation UI remain deferred.
+Machine pages show canonical operations, components and grouped process usage. Machines with validated assets also offer Construction and Working Cycle sections with the production 3D viewer. Process pages select stages via `stageId` and open machine pages with graph-validated contextual return, preserved across all supported machine sections. Unknown entities/sections, invalid stage/context URLs and invalid content have explicit states. Full learning modules remain deferred.
 
 The pure `earthworks-deterministic-v1` core is implemented in `src/simulation/`
-and remains unconnected to UI. Its authoritative formulas, units and assumptions
+and is invoked by the pure application experiment service. Its authoritative formulas, units and assumptions
 are in `docs/domain/simulation-model.md`. The checked-in baseline under
 `content/simulation/` is illustrative, not XE215C engineering data.
 
@@ -36,15 +36,17 @@ outside this directory. Validation discovers every scenario deterministically,
 checks stable IDs, source text, explicit illustrative status, numerical inputs and
 duplicate IDs. The read-only scenario repository and local Vite adapter expose
 `list/get`, explicit absence and invalid-content results, without a default scenario
-or calculations. They remain unconnected to UI; the baseline stays illustrative.
+or calculations. Application queries select explicit supported sources for UI;
+the baseline stays illustrative.
 
 `content/domain/production-systems.json` defines `excavator-haul-system`, linking
 the `excavation-haul` process, canonical machine/role participants, the supported
 `earthworks-deterministic-v1` model and existing scenario IDs. System definitions
 own count constraints; scenarios alone own the experimental truck count. Strict
 shape/reference/model/count validation precedes the dedicated read-only repository
-and application overview query. No default scenario, calculations, UI or routes
-are introduced. Content validation runs domain → scenarios → systems → assets.
+and application overview query. Systems UI resolves these records through a separate
+provider; numerical execution belongs to the application service, with no default
+scenario. Content validation runs domain → scenarios → systems → assets.
 
 ## Documentation
 
@@ -150,7 +152,7 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 - `src/domain`: framework-independent IDs and minimal machine/component/operation/process/stage/role contracts.
 - `src/simulation`: explicit numerical input, structured validation/calculation failures, 18 canonical metrics and intermediate values. Loose volumes, unit-bearing inputs and a single metric-unit manifest; no presentation rounding.
 - `src/content`: Zod schemas, structured graph validation, read-only repository, and explicit local JSON adapter.
-- `src/application`: pure repository queries and page view models; grouping, supported sections, stage selection and semantic return-context validation.
+- `src/application`: pure repository queries and page view models; grouping, supported sections, stage selection and semantic return-context validation. Experiment orchestration handles supported-model dispatch, immutable source/working copy separation and frozen calculated comparison snapshots.
 - `src/navigation`: centralized routes, builders, and structural query parsing. Selected stages and return context live in the URL.
 - `src/ui` and `src/app`: graph-backed pages, accessible layout, repository context and injectable loaded/invalid application composition.
 - `src/visualization`: lazy React Three Fiber viewer, renderer-owned scene mapping/materials/visibility/mixer, camera controls and plain interaction contracts. Production metadata and binaries use the content/public pipeline described below.
@@ -199,3 +201,26 @@ budget is inferred from that warning. DPR is limited to 1.5; no postprocessing o
 shadows are added. Chromium E2E uses software WebGL sequentially for stable
 diagnostics. Measured observations and device limitations are recorded in the
 [completed viewer plan](docs/exec-plans/completed/0005-production-3d-viewer.md).
+
+## Production-system experiment
+
+Open `/systems`, choose a validated system, then explicitly select its supported
+scenario. `/systems/:systemId?scenario=:scenarioId` identifies the immutable source;
+no query shows an overview, malformed/duplicate query is invalid, and unavailable
+sources have recovery links without defaulting to another scenario. Home's production
+task and process-derived system links provide both entry paths.
+
+Only truck count is editable. Participant limits come from content; null maximum
+remains unbounded. Calculate explicitly runs the accepted model. Edits/reset mark
+the previous result stale; calculation failures clear current success. A/B saves
+freeze the input and exact result independently, fill two slots without replacement,
+and survive reset until cleared. Source change, navigation or reload clears page
+state; prediction and written justification have no grading or persistence.
+
+Primary productivity/duration/total cost KPIs, textual work/idle/wait bars, exact
+model relationships and a semantic A/B delta table explain results. Fractions become
+percentages only for display; ratio differences use percentage points. Display values
+are rounded, stored results are not. CU and loose-material volumes are explicitly
+illustrative scenario inputs, not XE215C specifications. No fleet scene, optimization
+criterion or recommended variant is implemented. Invalid system configuration is
+isolated from existing machine/process/viewer routes.

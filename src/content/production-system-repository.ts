@@ -46,3 +46,6 @@ export function createProductionSystemRepository(
   });
   return { status: 'valid', repository } as const;
 }
+export type ProductionSystemLoad = ReturnType<
+  typeof createProductionSystemRepository
+>;

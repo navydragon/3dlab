@@ -28,6 +28,7 @@ export function Layout() {
           </NavLink>
           <NavLink to={routes.machines}>Машины</NavLink>
           <NavLink to={routes.processes}>Процессы</NavLink>
+          <NavLink to={routes.systems}>Комплексы</NavLink>
         </nav>
       </header>
       <main id="main-content" ref={main} tabIndex={-1}>

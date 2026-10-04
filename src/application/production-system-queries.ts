@@ -2,7 +2,7 @@ import type { ProductionSystemId } from '../domain/ids';
 import type { ProductionSystemRepository } from '../content/production-system-repository';
 import type { DomainRepository } from '../content/repository';
 
-/** Content join only; experiment selection/state/calculation belongs to a later slice. */
+/** Canonical content join; experiment selection/state/calculation stays separate. */
 export function getProductionSystemOverview(
   systems: ProductionSystemRepository,
   domain: DomainRepository,

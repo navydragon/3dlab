@@ -23,6 +23,9 @@ function samePair(a: SystemParticipantDefinition, b: typeof excavator) {
 const earthworksV1 = Object.freeze({
   id: MODEL_ID as SimulationModelId,
   calculate,
+  editableParticipant(definitions: readonly SystemParticipantDefinition[]) {
+    return definitions.find((p) => samePair(p, truck));
+  },
   acceptsStructure(definitions: readonly SystemParticipantDefinition[]) {
     return (
       definitions.length === 2 &&

@@ -29,7 +29,7 @@ function selectedDetails() {
 }
 
 describe('domain-backed application', () => {
-  it('renders semantic home and two equal entry links without production-task feature', () => {
+  it('renders semantic home and three learning entry links', () => {
     open();
     expect(main().getByRole('heading', { level: 1 })).toHaveTextContent(
       'Машины и механизированные процессы',
@@ -50,8 +50,8 @@ describe('domain-backed application', () => {
       '#main-content',
     );
     expect(
-      screen.queryByRole('link', { name: /Производственная задача/ }),
-    ).not.toBeInTheDocument();
+      screen.getByRole('link', { name: /Производственная задача/ }),
+    ).toHaveAttribute('href', '/systems');
   });
   it('supports keyboard catalog navigation, canonical machine links and page focus', async () => {
     const user = userEvent.setup();

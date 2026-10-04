@@ -15,9 +15,8 @@ export function HomePage() {
         процессу разработки и транспортирования грунта.
       </p>
       <p className="muted">
-        Доступны каталоги машин и процессов, компоненты и переходы между
-        связанными этапами и машинами. Полные учебные материалы, 3D и расчёты
-        будут добавлены позже.
+        Доступны каталоги машин и процессов, изучение экскаватора и его рабочего
+        цикла в 3D, расчётные эксперименты с составом комплекса.
       </p>
       <div className="entry-grid">
         <Link className="entry" to={routes.machines}>
@@ -28,6 +27,11 @@ export function HomePage() {
         <Link className="entry" to={routes.processes}>
           <span className="entry-title">Процессы</span>
           <span>Вход через технологический процесс</span>
+          <span aria-hidden="true">→</span>
+        </Link>
+        <Link className="entry" to={routes.systems}>
+          <span className="entry-title">Производственная задача</span>
+          <span>Эксперимент с составом комплекса</span>
           <span aria-hidden="true">→</span>
         </Link>
       </div>
