@@ -1,0 +1,23 @@
+[
+  {
+    "id": "excavator-haul-system",
+    "name": "Механизированный комплекс: экскаватор и автосамосвалы",
+    "processId": "excavation-haul",
+    "participantDefinitions": [
+      {
+        "roleId": "excavation-lead-machine",
+        "machineId": "excavator",
+        "minCount": 1,
+        "maxCount": 1
+      },
+      {
+        "roleId": "soil-haul-vehicle",
+        "machineId": "dump-truck",
+        "minCount": 1,
+        "maxCount": null
+      }
+    ],
+    "simulationModelId": "earthworks-deterministic-v1",
+    "supportedScenarioIds": ["base-earthworks-scenario"]
+  }
+]

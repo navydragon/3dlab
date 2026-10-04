@@ -604,6 +604,14 @@ N × dump-truck
 
 Количество задаётся в `Scenario`.
 
+Уточнение текущего implementation slice (2026-10-04): `supportedScenarioIds`
+ссылаются на существующие численные `SimulationScenario` records из
+`content/simulation/`. Для `earthworks-deterministic-v1` число экскаваторов равно
+1 по допущению модели, а переменное число автосамосвалов хранится только в
+`scenario.input.truck.truckCount`. Полная сущность `Scenario` из раздела 16
+остаётся концептуальной; её дополнительные поля и отдельное `participantCounts`
+в текущем slice не реализуются. Структура системы не дублирует значения сценария.
+
 ---
 
 ## 15. Сущность SystemParticipantDefinition

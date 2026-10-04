@@ -13,7 +13,7 @@ import type {
   ProcessStageId,
   MachineRoleId,
 } from '../domain/ids';
-import { validateDomainContent } from './validation';
+import { validateDomainContent } from './validation.ts';
 import type { ValidationIssue } from './validation';
 
 export interface MachineUse {

@@ -38,6 +38,14 @@ duplicate IDs. The read-only scenario repository and local Vite adapter expose
 `list/get`, explicit absence and invalid-content results, without a default scenario
 or calculations. They remain unconnected to UI; the baseline stays illustrative.
 
+`content/domain/production-systems.json` defines `excavator-haul-system`, linking
+the `excavation-haul` process, canonical machine/role participants, the supported
+`earthworks-deterministic-v1` model and existing scenario IDs. System definitions
+own count constraints; scenarios alone own the experimental truck count. Strict
+shape/reference/model/count validation precedes the dedicated read-only repository
+and application overview query. No default scenario, calculations, UI or routes
+are introduced. Content validation runs domain → scenarios → systems → assets.
+
 ## Documentation
 
 Strategic product vision:
@@ -152,7 +160,7 @@ ESLint protects domain/application/content/visualization/simulation dependencies
 
 ## Domain content
 
-Six JSON collections live under `content/domain/`: machines, machine components, operations, machine roles, processes, and process stages. They contain only canonical MVP identities, source-limited Russian names/descriptions, and relationship references; no engineering values. Component descriptions reuse learning-goals §4 and names follow domain-model §§5–10 / UI/UX §10. The power-unit explanation is intentionally omitted pending approved prose.
+The core knowledge graph uses six JSON collections under `content/domain/`: machines, machine components, operations, machine roles, processes, and process stages. They contain only canonical MVP identities, source-limited Russian names/descriptions, and relationship references; no engineering values. Production systems use a dedicated repository linked to this graph and scenario content. Component descriptions reuse learning-goals §4 and names follow domain-model §§5–10 / UI/UX §10. The power-unit explanation is intentionally omitted pending approved prose.
 
 `npm run content:validate` reads all production files and runs the same strict schemas and graph checks used by the local adapter; failures exit nonzero with structured issue paths. The command uses Node 24's native TypeScript support, with no additional runner. `npm run validate` includes this check and requires no browser.
 
