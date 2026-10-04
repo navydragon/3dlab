@@ -125,7 +125,7 @@ near-balance bound/optimum отсутствуют.
 Asset3D passes plain identity/location/mappings/camera/production evidence, не
 Object3D. [Viewer contracts](../../src/visualization/contracts.ts) pass selected
 MachineComponentId, visibility, play/pause/reset sequence и loading/animation events.
-UI resolves text from domain content, viewer resolves external names from metadata.
+UI resolves identity from domain content and approved prose from learning content; viewer resolves external names from metadata.
 Three geometry/materials/mixer/raycasters/camera live only inside renderer.
 Runtime scene/material clones owned/disposed per viewer; downloaded bytes reused.
 Reset restores captured static local TRS rather than clip time-zero digging pose.
@@ -144,8 +144,15 @@ actual return pair — достаточная сериализация implement
 ## Target learning-content boundary
 
 Full LearningModule/Section/ContentBlock/ParameterDefinition/Material records и
-runtime Markdown renderer сейчас отсутствуют. Some short canonical prose lives
-в description JSON; calculation labels/interpretation text lives в UI/application.
+runtime Markdown renderer сейчас отсутствуют. Reviewed foundational prose now lives in content/learning/foundation.json; legacy descriptions remain canonical, but approved S1 explanation is resolved separately. Calculation labels/interpretation text remains in UI/application.
 Это bounded implementation, не утверждение о полном content-driven learning layer.
 Предлагаемое расширение требует reviewed reusable prose/LG references, без нового
 generic CMS/block engine или переноса формул/relationships в educational JSX.
+
+## S1 FoundationRepository and presentation
+
+Unknown pack + validated DomainRepository → strict shape/reference/completeness checks → loaded frozen repository or invalid structured issues. `getMachine`, `getComponent`, `getProcess`, `getStage` resolve canonical IDs; absent optional content returns undefined. Four source records read-only; no calculations, remote fetching or inferred prose. Factory shared by local bundler adapter and CLI validation.
+
+Application machine queries join foundation/component prose and derive working-principle section from validated capability. Process query joins stage learning and validates fromMachine against existing graph participation; no branch by machine identity in JSX. FoundationContext is separately injectable; invalid pack leaves canonical navigation available with explicit unavailability. Renderer still receives canonical IDs/geometry metadata, never educational relationships.
+
+Machine overview/construction/principle and transport blocks render approved statements. Process cards use native details, local open state, stable stage/role/machine key; closing keeps stage. Bread crumbs are presentation using canonical read-model labels, not domain entity fields. Navigation helper builds fromMachine, stage selection preserves only semantically trusted origin. Existing fromProcess/fromStage remain separate. No S2 timeline/anchors, S3 inputs/experiment, S4 task/economics changes.

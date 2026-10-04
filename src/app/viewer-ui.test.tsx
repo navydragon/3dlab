@@ -67,7 +67,7 @@ describe('asset-backed machine sections and accessible fallback', () => {
       within(details).getByRole('heading', { name: 'Ковш' }),
     ).toBeInTheDocument();
     expect(details).toHaveTextContent(
-      'Ковш непосредственно взаимодействует с грунтом.',
+      'Ковш — рабочий орган, непосредственно взаимодействующий с грунтом.',
     );
     expect(screen.getByRole('link', { name: 'Рабочий цикл' })).toHaveAttribute(
       'href',

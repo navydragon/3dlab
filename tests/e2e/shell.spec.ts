@@ -27,7 +27,9 @@ test('Home → Machines → Excavator → Where used → process', async ({ page
     .getByRole('region', { name: 'Где применяется' })
     .getByRole('link', { name: processName })
     .click();
-  await expect(page).toHaveURL('/processes/excavation-haul');
+  await expect(page).toHaveURL(
+    '/processes/excavation-haul?fromMachine=excavator',
+  );
   await expect(main.getByRole('heading', { level: 1 })).toHaveText(processName);
   expect(errors).toEqual([]);
 });
@@ -61,6 +63,9 @@ test('process detour preserves context across machine sections and exact return/
     path: 'test-results/process-stage.png',
     fullPage: true,
   });
+  await detail
+    .getByRole('heading', { name: 'Гидравлический экскаватор', exact: true })
+    .click();
   await detail.getByRole('link', { name: /Изучить машину/ }).click();
   await expect(page).toHaveURL(
     '/machines/excavator?fromProcess=excavation-haul&fromStage=excavation-stage',
@@ -90,6 +95,10 @@ test('browser Back keeps its ordinary history behavior during a machine detour',
   page,
 }) => {
   await page.goto('/processes/excavation-haul?stageId=excavation-stage');
+  await page
+    .getByRole('region', { name: /^Этап:/ })
+    .getByRole('heading', { name: 'Гидравлический экскаватор', exact: true })
+    .click();
   await page.getByRole('link', { name: /Изучить машину/ }).click();
   await page
     .getByRole('navigation', { name: 'Разделы машины' })

@@ -13,8 +13,7 @@ URL и производителя. Reference arrays duplicate-free; имена n
 проходит strict Zod shape checks, затем graph validation; validated records и
 reference arrays deeply frozen. Runtime repositories не expose mutable indexes.
 Проверка схемы не подтверждает учебную полноту, физическую точность или права на asset.
-Большинство описаний optional в **реальной** схеме, хотя образовательный минимум
-требует их наличия; см. [content spec](../product/mvp-content-spec.md).
+Большинство legacy descriptions optional в **реальной** схеме. Образовательный минимум требует пояснений, но не заполнения именно этих полей: approved S1 prose owns отдельный learning pack; см. [content spec](../product/mvp-content-spec.md).
 
 ## Domain graph: шесть коллекций
 
@@ -132,10 +131,21 @@ Adjacent public manifest — generated copy того же record, не втор�
 specification facts. Scenario data не является автоматически manufacturer data.**
 Formulas/units/assumptions принадлежат simulation-model и pure core; learning text
 — [content spec](../product/mvp-content-spec.md), definitions/relationships — JSON,
-geometry — GLB, bridge — Asset3D. Никакого current LearningModule/ContentBlock/
-ParameterDefinition/Material dataset нет. Их conceptual existence не следует
+geometry — GLB, bridge — Asset3D. Full LearningModule/ContentBlock/ParameterDefinition/Material datasets по-прежнему отсутствуют. Узкий S1 foundation pack реализован отдельно и описан ниже. Их conceptual existence не следует
 выдавать за checked-in schemas или educational implementation.
 
 Новый content field требует согласованного contract/schema/validator/consumer и
 provenance review. Этот docs task не мигрирует ни один record. Runtime/read-model
 boundaries см. [data contracts](../architecture/data-contracts.md).
+
+## S1 foundation learning pack v1.0
+
+`content/learning/foundation.json` — единственный focused pack, не CMS/block language. [Plain contracts](../../src/domain/foundation.ts), [strict schema/validation/repository](../../src/content/foundation-repository.ts) и [reviewed pack](../product/s1-foundation-content-pack.md).
+
+- `version` = 1.0; четыре source records: stable id, title, location, scope. Reviewed S1 document, accepted illustrative model, generic Komatsu hydraulics corroboration, XE215C visual-only reference. URL — metadata, не runtime dependency.
+- MachineFoundation: canonical machineId, sourceRefs, overview purpose/systemContext/scopeNote; optional workingPrinciple (paragraphs/chain/groups/explanations), transportCycle (steps/factor explanations/distance/follow-up), approved construction/applications intro. Block prose inherits its owning record provenance; nested group/factor records also have sourceRefs. No numeric Machine specs.
+- ComponentFoundation: machineId/componentId, sourceRefs, approved explanation. Identity/name/ownership остаются в canonical graph; все девять имеют ровно одну запись. Functional groups reference canonical components, не создают новый ownership graph.
+- ProcessFoundation: processId/sourceRefs/introduction, two machine cycles/synthesis/causal-chain/system-link intro. Ordered technological stages по-прежнему owns Process, не learning pack.
+- StageFoundation: processId/stageId/sourceRefs, goal/input/activity/result/handoff, modelNotes и participantNotes (roleId/machineId/note/factor names/sourceRefs). Participant pair обязан существовать в данном stage через canonical role eligibility. Input/result — учебный текст, не новые Material entities.
+
+Все objects strict, text nonblank, IDs structural; sourceRefs resolve; duplicate records/reference IDs отвергаются; owners/participants сверяются с DomainRepository. Delivery completeness требует обоих approved Machines, девяти компонентов, одного процесса, четырёх stages и всех approved participant notes. Optional capabilities explicit: отсутствие workingPrinciple у truck не подменяется текстом. Parsed nested records/arrays frozen, source JSON не мутируется. `npm run content:validate` использует тот же factory. Validation не доказывает инженерную истину: authority — approved pack, не schema/GLB.

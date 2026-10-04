@@ -1,6 +1,6 @@
 # Information architecture — actual and target MVP
 
-Baseline: `793722754797737729bb7db1a9960c0f603477cd`, 2026-10-04.
+Current S1 implementation, based on `3c2371a56293acb084f341eb9d0a1c3e44080743`, 2026-10-04.
 Текущая IA основана на [routes.ts](../../src/navigation/routes.ts),
 [App](../../src/app/App.tsx), application page queries и фактических страницах.
 Целевая учебная глубина задаётся [content spec](mvp-content-spec.md), scope/flows/UX.
@@ -51,16 +51,14 @@ Section IDs — presentation/navigation identity, не новая Machine. GLB m
 
 Текущие general sections: `overview` / Обзор, `applications` / Где применяется.
 При available asset добавляется `construction` / Конструкция; при mapped activity
-добавляется `working-cycle` / Рабочий цикл. Excavator имеет все четыре;
+добавляется `working-cycle` / Рабочий цикл. Validated foundation content с workingPrinciple добавляет `working-principle` / Как работает. Excavator имеет пять;
 dump-truck — два текстовых sections без 3D. Applications links также видны ниже
 содержимого каждого section. Bare machine path выбирает overview; явный
 `/machines/excavator/overview` тоже поддерживается.
 
 Target полного учебного MVP: Обзор, Конструкция, Принцип работы, Рабочий цикл,
 Параметры, Производительность, Где применяется и machine-in-process context.
-`working-principle`, `parameters`, `productivity` названы в domain-model §21,
-но сегодня page query их не поддерживает: существующая route pattern не делает
-эти разделы реализованными. Будущий exact URL следует существующим helpers после
+`working-principle` реализован в S1 по learning capability; `parameters` и `productivity` из domain-model §21 пока не поддерживаются: существующая route pattern не делает их реализованными. Будущий exact URL следует существующим helpers после
 добавления approved section capability; новые route shapes здесь не предлагаются.
 «Контроль знаний» не является обязательным экраном MVP (см. content spec).
 
@@ -74,6 +72,7 @@ Target полного учебного MVP: Обзор, Конструкция, 
   пара → invalid notice, не redirect. Application проверяет существование,
   ownership stage→process и role participation machine→stage. Valid pair сохраняется
   через все **поддерживаемые** machine sections и reload.
+- `fromMachine`: optional process origin. Центральный `parseMachineOrigin` проверяет syntax/duplicates, application query — existence и participation в данном Process через canonical graph. Invalid origin даёт notice без доверенного return; Process остаётся доступен. Valid origin сохраняется при stage selection/overview/reload. Return ведёт в applications section canonical Machine, не arbitrary URL. Это отдельное направление от fromProcess/fromStage.
 - `scenario`: absent → system overview; ровно один structurally valid supported
   ID → experiment source; malformed/empty/duplicate → invalid route; valid unknown
   или unsupported-by-system → recoverable unavailable state. Нет hidden default.
@@ -93,13 +92,10 @@ machine/process pages; asset errors не выключают textual learning/nav
 Process → selected stage → inline compact machine card → «Изучить машину» открывает
 Machine с `fromProcess/fromStage`. Explicit «Назад к этапу» строит process URL со
 `stageId`, независимо от browser Back. Back следует реальной history посещений.
-Compact cards сейчас inline при выборе stage; отдельного modal/open/close state нет.
+Compact cards — native details/summary: canonical имя и роль видны при закрытии; note/factor names и Study action внутри disclosure. Закрытие не меняет stageId, новый stage remounts disclosure.
 Обзор процесса доступен отдельным link и не подменяет обязательный semantic return.
 
-Machine → Где применяется → Process использует graph-derived links. Отдельный
-serialized `sourceType=machine` сейчас не сохраняется; если требуется history-independent
-machine-origin breadcrumb по flow A7, это точный navigation gap, а не domain copy.
-Сама обратная связь machine→process работает.
+Machine → Где применяется → Process использует graph-derived links с fromMachine. Valid origin показывает canonical имя и «Вернуться к машине» в applications. Breadcrumbs — semantic nav/ordered list, canonical current item text/aria-current, не доменные поля. Browser Back остаётся history navigation.
 
 URL owns entity/section/stage/source and return IDs. Page-local state owns selection,
 visibility, working N, last calculation, stale/error, predictions, frozen A/B, notes.

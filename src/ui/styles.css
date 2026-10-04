@@ -335,6 +335,34 @@ section[aria-label='Сохранённые варианты'] button:disabled {
   border: 1px solid #526775;
   border-radius: 0.25rem;
 }
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 0.4rem;
+  padding: 0;
+}
+.breadcrumbs li + li::before {
+  content: '→';
+  margin-right: 0.4rem;
+}
+summary {
+  cursor: pointer;
+}
+summary h3,
+summary p {
+  display: inline;
+  margin-right: 0.5rem;
+}
+.stage-learning dt {
+  font-weight: 650;
+}
+.foundation-learning dd,
+.stage-learning dd {
+  font-family: inherit;
+  margin-inline-start: 0;
+  margin-block-end: 1rem;
+}
 #prediction,
 #variant-reason {
   display: block;

@@ -13,9 +13,16 @@ import { EntityNotFound } from '../components/EntityNotFound';
 import { RouteErrorPage } from './RouteErrorPage';
 import { useAssetRepository } from '../providers/asset-context';
 import { MachineViewerSection } from '../components/MachineViewerSection';
+import { useFoundationContent } from '../providers/foundation-context';
+import { Breadcrumbs } from '../components/Breadcrumbs';
+import {
+  TransportLearning,
+  WorkingPrinciple,
+} from '../components/FoundationLearning';
 export function MachinePage() {
   const repository = useDomainRepository();
   const assets = useAssetRepository();
+  const learning = useFoundationContent();
   const { machineId, sectionId } = useParams();
   const { search } = useLocation();
   const route = parseMachineRoute(machineId, sectionId);
@@ -27,6 +34,7 @@ export function MachinePage() {
     route.value.sectionId,
     context.ok ? context.value : null,
     assets.resolve(route.value.machineId),
+    learning.status === 'loaded' ? learning.repository : undefined,
   );
   if (view.status === 'missing-machine')
     return (
@@ -48,6 +56,21 @@ export function MachinePage() {
     view.origin.status === 'valid' ? view.origin.context : undefined;
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Главная', href: routes.home },
+          { label: 'Машины', href: routes.machines },
+          {
+            label: view.machine.name,
+            ...(view.selectedSection.id !== 'overview'
+              ? { href: machinePath(view.machine.id, origin) }
+              : {}),
+          },
+          ...(view.selectedSection.id !== 'overview'
+            ? [{ label: view.selectedSection.name }]
+            : []),
+        ]}
+      />
       <p>
         <Link to={routes.machines}>К машинам</Link>
       </p>
@@ -64,6 +87,11 @@ export function MachinePage() {
         </p>
       )}
       <h1>{view.machine.name}</h1>
+      {learning.status === 'invalid' && (
+        <p role="alert">
+          Учебные материалы не прошли проверку. Предметная навигация доступна.
+        </p>
+      )}
       {view.machine.description && <p>{view.machine.description}</p>}
       <nav aria-label="Разделы машины">
         {view.sections.map((section) => (
@@ -78,6 +106,28 @@ export function MachinePage() {
           </Link>
         ))}
       </nav>
+      {view.selectedSection.id === 'construction' &&
+        view.foundation?.constructionIntro && (
+          <p>{view.foundation.constructionIntro}</p>
+        )}
+      {view.selectedSection.id === 'working-principle' &&
+        view.foundation?.workingPrinciple && (
+          <>
+            <WorkingPrinciple
+              content={view.foundation.workingPrinciple}
+              components={view.components}
+            />
+            {view.sections
+              .filter((s) => s.id === 'working-cycle')
+              .map((s) => (
+                <p key={s.id}>
+                  <Link to={machineSectionPath(view.machine.id, s.id, origin)}>
+                    К демонстрации рабочего цикла
+                  </Link>
+                </p>
+              ))}
+          </>
+        )}
       {(view.selectedSection.id === 'construction' ||
         view.selectedSection.id === 'working-cycle') &&
         view.asset.status === 'available' && (
@@ -97,6 +147,18 @@ export function MachinePage() {
       )}
       {view.selectedSection.id === 'overview' && (
         <>
+          {view.foundation ? (
+            <>
+              <p>{view.foundation.overview.purpose}</p>
+              <p>{view.foundation.overview.systemContext}</p>
+              <p>{view.foundation.overview.scopeNote}</p>
+            </>
+          ) : (
+            <p>Учебное описание машины недоступно.</p>
+          )}
+          {view.foundation?.transportCycle && (
+            <TransportLearning content={view.foundation.transportCycle} />
+          )}
           <h2>Операции</h2>
           <ul>
             {view.operations.map((operation) => (
@@ -111,7 +173,11 @@ export function MachinePage() {
               {view.components.map((component) => (
                 <li className="card" key={component.id}>
                   <h3>{component.name}</h3>
-                  {component.description && <p>{component.description}</p>}
+                  {component.explanation ? (
+                    <p>{component.explanation}</p>
+                  ) : (
+                    <p>Учебное описание компонента недоступно.</p>
+                  )}
                 </li>
               ))}
             </ul>
@@ -120,6 +186,10 @@ export function MachinePage() {
       )}
       <section aria-labelledby="where-used-heading">
         <h2 id="where-used-heading">Где применяется</h2>
+        {view.selectedSection.id === 'applications' &&
+          view.foundation?.applicationsIntro && (
+            <p>{view.foundation.applicationsIntro}</p>
+          )}
         {view.usage.length === 0 ? (
           <p>Связанные процессы пока не описаны.</p>
         ) : (
@@ -127,14 +197,22 @@ export function MachinePage() {
             {view.usage.map((use) => (
               <li className="card" key={use.process.id}>
                 <h3>
-                  <Link to={processPath(use.process.id)}>
+                  <Link
+                    to={processPath(use.process.id, undefined, view.machine.id)}
+                  >
                     {use.process.name}
                   </Link>
                 </h3>
                 <ul>
                   {use.stages.map((entry) => (
                     <li key={entry.stage.id}>
-                      <Link to={processPath(use.process.id, entry.stage.id)}>
+                      <Link
+                        to={processPath(
+                          use.process.id,
+                          entry.stage.id,
+                          view.machine.id,
+                        )}
+                      >
                         {entry.stage.name}
                       </Link>
                       <ul>

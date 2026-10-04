@@ -10,6 +10,7 @@ import type {
 import { getMachineOverview, getProcessOverview } from './domain-queries';
 import type { AssetResolution } from '../content/asset-repository';
 import { EXCAVATOR_WORKING_CYCLE } from '../domain/activities';
+import type { FoundationRepository } from '../content/foundation-repository';
 
 function section(id: string, name: string) {
   if (!isLearningSectionId(id))
@@ -90,13 +91,18 @@ export function getMachinePage(
   sectionId: LearningSectionId | undefined,
   origin: OriginContext | null | undefined,
   asset: AssetResolution = { status: 'unavailable' },
+  learning?: FoundationRepository,
 ) {
   const overview = getMachineOverview(repository, machineId);
   if (!overview) return { status: 'missing-machine' } as const;
+  const foundation = learning?.getMachine(machineId);
   const sections = [
     machineSections[0]!,
     ...(asset.status === 'available'
       ? [section('construction', 'Конструкция')]
+      : []),
+    ...(foundation?.workingPrinciple
+      ? [section('working-principle', 'Как работает')]
       : []),
     ...(asset.status === 'available' &&
     asset.asset.animationMappings.some(
@@ -119,6 +125,15 @@ export function getMachinePage(
   return {
     status: 'ready',
     ...overview,
+    components: Object.freeze(
+      overview.components.map((component) =>
+        Object.freeze({
+          ...component,
+          explanation: learning?.getComponent(component.id)?.explanation,
+        }),
+      ),
+    ),
+    foundation,
     operations: Object.freeze(operations),
     sections,
     asset,
@@ -131,6 +146,8 @@ export function getProcessPage(
   repository: DomainRepository,
   processId: ProcessId,
   selection: ProcessStageId | null | undefined,
+  fromMachine?: MachineId | null,
+  learning?: FoundationRepository,
 ) {
   const overview = getProcessOverview(repository, processId);
   if (!overview) return { status: 'missing-process' } as const;
@@ -143,5 +160,26 @@ export function getProcessPage(
       : selected
         ? ({ status: 'selected', detail: selected } as const)
         : ({ status: 'invalid' } as const);
-  return { status: 'ready', ...overview, selection: stageSelection } as const;
+  const machine = fromMachine ? repository.getMachine(fromMachine) : undefined;
+  const participates =
+    machine &&
+    repository
+      .getWhereUsed(machine.id)
+      ?.some((use) => use.process.id === processId);
+  const origin =
+    fromMachine === undefined
+      ? ({ status: 'none' } as const)
+      : participates
+        ? ({ status: 'valid', machine } as const)
+        : ({ status: 'invalid' } as const);
+  return {
+    status: 'ready',
+    ...overview,
+    selection: stageSelection,
+    origin,
+    foundation: learning?.getProcess(processId),
+    stageFoundation: selected
+      ? learning?.getStage(selected.stage.id)
+      : undefined,
+  } as const;
 }

@@ -71,8 +71,24 @@ export function machineSectionPath(
 ): string {
   return `${routes.machines}/${encodeURIComponent(id)}/${encodeURIComponent(section)}${returnQuery(context)}`;
 }
-export function processPath(id: ProcessId, stage?: ProcessStageId): string {
-  return `${routes.processes}/${encodeURIComponent(id)}${stage ? `?${new URLSearchParams({ stageId: stage })}` : ''}`;
+export function processPath(
+  id: ProcessId,
+  stage?: ProcessStageId,
+  fromMachine?: MachineId,
+): string {
+  const query = new URLSearchParams();
+  if (stage) query.set('stageId', stage);
+  if (fromMachine) query.set('fromMachine', fromMachine);
+  return `${routes.processes}/${encodeURIComponent(id)}${query.size ? `?${query}` : ''}`;
+}
+
+export function parseMachineOrigin(
+  search: string,
+): Parsed<MachineId | undefined> {
+  const origins = new URLSearchParams(search).getAll('fromMachine');
+  if (origins.length === 0) return { ok: true, value: undefined };
+  if (origins.length !== 1 || !isMachineId(origins[0])) return { ok: false };
+  return { ok: true, value: origins[0] };
 }
 
 type Parsed<T> =

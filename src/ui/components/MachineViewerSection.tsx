@@ -19,7 +19,9 @@ export function MachineViewerSection({
   cycle,
 }: {
   readonly asset: Asset3D;
-  readonly components: readonly MachineComponent[];
+  readonly components: readonly (MachineComponent & {
+    readonly explanation?: string | undefined;
+  })[];
   readonly cycle: boolean;
 }) {
   const [selected, setSelected] = useState<MachineComponentId | null>(null);
@@ -154,7 +156,11 @@ export function MachineViewerSection({
       {component && (
         <article aria-label="Выбранный компонент">
           <h3>{component.name}</h3>
-          {component.description && <p>{component.description}</p>}
+          {component.explanation ? (
+            <p>{component.explanation}</p>
+          ) : (
+            <p>Учебное описание компонента недоступно.</p>
+          )}
         </article>
       )}
       <div className="viewer-controls" aria-label="Видимость компонентов">

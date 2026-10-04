@@ -43,7 +43,7 @@ Baseline: `793722754797737729bb7db1a9960c0f603477cd`, 2026-10-04.
   также colocated в src. `src/test` — DOM test setup. Fixtures не production content.
 - `docs/`: intended vision/scope/goals/flows/design, descriptive current contracts,
   architecture/ADRs, historical ExecPlans и evidence-based readiness audit.
-  Нет runtime Markdown learning renderer/learning-content tree в текущем product.
+  Нет runtime Markdown renderer/CMS. `content/learning/foundation.json` — focused S1 approved prose pack; plain contracts, schema/repository/local adapter и application joins сохраняют отдельный learning boundary.
 
 ## Dependency direction
 

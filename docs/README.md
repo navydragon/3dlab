@@ -20,3 +20,5 @@ Intended requirements remain in [vision](vision/strategic-vision.md),
 implementation evidence; they do not waive unmet full-MVP learning obligations.
 [3D asset specification](3d/3d-asset-spec.md) and
 [export guide](3d/blender-export-guide.md) describe delivery responsibilities.
+
+S1 delivery: [reviewed foundation pack](product/s1-foundation-content-pack.md) and the updated [readiness audit](quality/mvp-readiness-audit.md). S2–S4 remain open.

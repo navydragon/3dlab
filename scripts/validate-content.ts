@@ -7,6 +7,7 @@ import { createSimulationScenarioRepository } from '../src/content/simulation-sc
 import { createDomainRepository } from '../src/content/repository.ts';
 import { validateProductionSystems } from '../src/content/production-system-validation.ts';
 import { readSimulationScenarioFiles } from './simulation-scenario-files.ts';
+import { createFoundationRepository } from '../src/content/foundation-repository.ts';
 
 try {
   const collections = await Promise.all(
@@ -36,6 +37,24 @@ try {
     const domain = createDomainRepository(validation.graph);
     if (domain.status !== 'loaded')
       throw new Error('Domain repository invalid');
+    const foundationRaw: unknown = JSON.parse(
+      await readFile(
+        new URL('../content/learning/foundation.json', import.meta.url),
+        'utf8',
+      ),
+    );
+    const foundation = createFoundationRepository(
+      foundationRaw,
+      domain.repository,
+    );
+    if (foundation.status === 'invalid') {
+      for (const issue of foundation.issues)
+        console.error(`foundation ${issue.path.join('.')} — ${issue.message}`);
+      process.exitCode = 1;
+    } else
+      console.log(
+        'S1 foundation content valid: 2 machines, 9 components, 1 process, 4 stages; explicit provenance.',
+      );
     const scenarioFiles = await readSimulationScenarioFiles(
       new URL('../content/simulation/', import.meta.url),
     );

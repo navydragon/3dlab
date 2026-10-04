@@ -160,7 +160,7 @@ describe('domain-backed application', () => {
       main().getByRole('link', { name: 'Разработка грунта' }),
     ).toHaveAttribute('aria-current', 'step');
   });
-  it('uses graph-derived Where used links without reciprocal origin state', async () => {
+  it('uses graph-derived Where used links with validated machine origin', async () => {
     open('/machines/dump-truck');
     const region = screen.getByRole('region', { name: 'Где применяется' });
     expect(
@@ -170,7 +170,10 @@ describe('domain-backed application', () => {
       within(region).getByRole('link', {
         name: 'Транспортирование',
       }),
-    ).toHaveAttribute('href', '/processes/excavation-haul?stageId=haul-stage');
+    ).toHaveAttribute(
+      'href',
+      '/processes/excavation-haul?stageId=haul-stage&fromMachine=dump-truck',
+    );
     await userEvent
       .setup()
       .click(within(region).getByRole('link', { name: processName }));

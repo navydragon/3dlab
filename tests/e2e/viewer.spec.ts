@@ -106,6 +106,10 @@ test('production construction selection, visibility and context return', async (
     fullPage: true,
   });
   await page.goto('/processes/excavation-haul?stageId=excavation-stage');
+  await page
+    .getByRole('region', { name: /^Этап:/ })
+    .getByRole('heading', { name: 'Гидравлический экскаватор', exact: true })
+    .click();
   await page.getByRole('link', { name: /Изучить машину/ }).click();
   await page.getByRole('link', { name: 'Конструкция', exact: true }).click();
   await page.getByRole('link', { name: /Назад к этапу/ }).click();

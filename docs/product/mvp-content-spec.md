@@ -2,7 +2,7 @@
 
 Статус: текущая спецификация минимального учебного наполнения, а не утверждение
 готовности продукта. Проверенный implementation baseline:
-`793722754797737729bb7db1a9960c0f603477cd` (2026-10-04).
+S1 implementation based on `3c2371a56293acb084f341eb9d0a1c3e44080743` (2026-10-04). Approved prose: [S1 pack](s1-foundation-content-pack.md).
 
 ## Источники и границы
 
@@ -35,19 +35,18 @@
 
 | Раздел | Назначение / LG | Минимальные блоки | Взаимодействие | Источники / состояние сегодня |
 |---|---|---|---|---|
-| Обзор | Назначение, операции, место машины; LG-P02/P04 | Краткое назначение; операции разработки/погрузки; ориентир по доступным учебным разделам; связанные процессы | Канонические ссылки в разделы и процесс | Scope §3A; flows A2; UX §9. **B:** имя, операции, компоненты и links есть; Machine.description и пояснение назначения отсутствуют; preview и ключевые параметры не показаны |
-| Конструкция | Распознать узел и объяснить функцию; LG-M01/M02 | Все девять canonical компонентов; название и краткая функция каждого; связь рабочих органов/цилиндров с движениями без внутреннего устройства двигателя/гидросистемы | Уже есть mesh/list selection, highlight, orbit/zoom/fit, hide/isolate/show-all и текстовая карточка | LG §4; UX §§10–13; domain §6. **A** для выбора; **B** для содержания: восемь коротких описаний, power-unit без prose, цилиндры и стрела/рукоять описаны обобщённо |
-| Принцип работы / Как работает | Связать узлы с движениями; LG-M02/M04 | Краткое объяснение движений стрелы, рукояти, ковша и платформы; названные связанные компоненты; различие движения и технологической фазы | Последовательное объяснение/фокус на существующей 3D; отдельный сложный rig не требуется | UX §14; LG §3/4. **C:** раздел и последовательное объяснение отсутствуют. Техническое содержание должно пройти предметную проверку |
+| Обзор | Назначение, операции, место машины; LG-P02/P04 | Краткое назначение; операции разработки/погрузки; ориентир по доступным учебным разделам; связанные процессы | Канонические ссылки в разделы и процесс | Scope §3A; flows A2; UX §9. **A** для S1: approved purpose/system context/scope и canonical operations/implemented section links; key parameters остаются S3 |
+| Конструкция | Распознать узел и объяснить функцию; LG-M01/M02 | Все девять canonical компонентов; название и краткая функция каждого; связь рабочих органов/цилиндров с движениями без внутреннего устройства двигателя/гидросистемы | Уже есть mesh/list selection, highlight, orbit/zoom/fit, hide/isolate/show-all и текстовая карточка | LG §4; UX §§10–13; domain §6. **A:** выбор и девять reviewed functions, включая power-unit и отдельные цилиндры, доступны из learning pack |
+| Принцип работы / Как работает | Связать узлы с движениями; LG-M02/M04 | Краткое объяснение движений стрелы, рукояти, ковша и платформы; названные связанные компоненты; различие движения и технологической фазы | Последовательное объяснение/фокус на существующей 3D; отдельный сложный rig не требуется | UX §14; LG §3/4. **A:** content-derived working-principle section «Как работает», approved paragraphs/chain/functional references |
 | Рабочий цикл | Порядок и смысл фаз; LG-M03/M04/M05 | Шесть названных фаз; по одной краткой цели/движению/связанным компонентам; порядок, активная фаза, объяснение выбранной фазы; отдельная оговорка visual time ≠ engineering cycle time | Существующие Play/Pause/neutral Reset; требуется instructional timeline, выбор/previous-next фаз, отображение активной фазы и playback speed по UX §§15–17 | Scope §6; LG-M03/M04; flow D. **B:** реальный clip и управление есть, phase model/timeline/seek/speed отсутствуют |
 | Основные параметры | Понимать смысл входов; LG-M05/M06/Q01 | Четыре параметра: вместимость ковша, наполнение, продолжительность цикла, использование времени; смысл, единица, источник/тип значения; явное отличие учебных входов от паспорта | Read-only объяснение, связанное с небольшим экспериментом; не добавлять неутверждённые нормы/диапазоны | UX §18; simulation §§4–6; LG-Q01. **C:** machine section отсутствует; те же четыре числа видны только как fixed context system experiment |
 | Производительность | Один параметр → результат → причина; LG-M05/M06/Q01–Q03 | Объём за цикл, циклы в час, standalone Q; объяснение зависимости от четырёх входов; distinction standalone/комплекс; единицы и provenance | Изменить один из четырёх входов при фиксированных остальных; явный расчёт, исходное/новое значение и причинное объяснение; прогноз допустим без grading | Flow E; UX §§19–21/47; simulation §§7/16–17. **C:** отдельного machine experiment нет; ядро умеет рассчитывать Q, но это ещё не учебный UI |
-| Области применения / Где применяется | Связать машину с операциями и процессом; LG-P04 | Canonical процесс, его этапы и роли машины; короткое объяснение производственного назначения | Уже есть process/stage links, связи вычисляются из graph | UX §22; flow A6–A8. **A** для переходов; **B** для explanation: labels и роли есть, развёрнутая причинная связь отсутствует |
-| Машина в процессе | Изучить один объект в производственном контексте; LG-P02/P03 | Контекст выбранного этапа; роль; ссылка на тот же Machine; возврат к тому же stage; параметры только с явно указанным источником | Уже есть inline compact card и full-module detour с URL return IDs; не нужен дубликат машины | Scope §11; flows B/C/J; ADR 0005. **A** для возврата; **B** для краткого учебного содержания и полного модуля |
+| Области применения / Где применяется | Связать машину с операциями и процессом; LG-P04 | Canonical процесс, его этапы и роли машины; короткое объяснение производственного назначения | Уже есть process/stage links, связи вычисляются из graph | UX §22; flow A6–A8. **A:** graph links, approved applications intro, stage role/learning cards; fromMachine trusted return |
+| Машина в процессе | Изучить один объект в производственном контексте; LG-P02/P03 | Контекст выбранного этапа; роль; ссылка на тот же Machine; возврат к тому же stage; параметры только с явно указанным источником | Native details с participant note/factor names, close keeps stage; full-module detour с URL return IDs; не нужен дубликат машины | Scope §11; flows B/C/J; ADR 0005. **A** для возврата/participant content; полный модуль остаётся **B** до S2/S3 |
 | Контроль знаний | Проверить понимание, не угадать интерфейс | Необязательные вопросы/ordering/prediction; обязательна возможность объяснить и обосновать, а не отдельный quiz engine | Существуют selection, прогноз направления и ungraded A/B justification; assessment screen не требуется scope §14 | LG §§12–15; UX §38; vision §10. **D** для отдельного экрана/graded workflow; это не отменяет учебных проверяемых действий |
 
-Названия и краткие функции переиспользуются из canonical content; новые длинные
-объяснения должны быть отдельным учебным содержанием с provenance. Отсутствующее
-описание power-unit нельзя заменять вымышленными характеристиками двигателя.
+Названия переиспользуются из canonical domain content, approved функции — из S1 learning pack; новые длинные
+объяснения должны быть отдельным учебным содержанием с provenance. Описание power-unit нельзя дополнять вымышленными характеристиками двигателя.
 Не требуются разрезы двигателя, детальная гидравлика, сварные швы или CAD-точность.
 
 ## Автосамосвал: намеренно небольшая глубина
@@ -64,10 +63,7 @@
    нового численного сценария или обязательного distance control.
 5. Canonical ссылки на haul/unloading stages и system experiment.
 
-Сегодня **B**: имя, haul/unloading operations, роли/where-used и N в комплексе есть;
-Machine.description, components, параметры на machine page и транспортное
-объяснение отсутствуют. Нужен **один shallow learning-content slice**, объединяемый
-с prose процесса. 3D самосвала и экскаваторная глубина не требуются.
+Сегодня **A** для shallow S1 depth: approved purpose/system role, transport sequence, шесть factor explanations, distance/fleet causal explanation/follow-up, canonical where-used. Небольшой truck content slice реализован; truck 3D и экскаваторная глубина не требуются.
 
 ## Визуальный цикл и учебная phase model
 
@@ -109,10 +105,7 @@ stages: цель, входное состояние/материал, резул
 - `unloading-stage`: результат доставки/разгрузки, роль транспорта и последующий
   возврат. Не добавлять отдельную модель затора на разгрузке в steady-state v1.
 
-Сегодня **B**: ordered graph, selectable stages, roles, canonical machine cards,
-context return и link к системе реализованы. Все ProcessStage.description и
-Process.description отсутствуют; input/output не объясняются. Только Operation
-loading имеет описание, причём ProcessPage выводит имя операции, не её description.
+Сегодня **A** для S1 process depth: graph/order/context links сохраняются, approved learning pack добавляет process intro и четыре stage cards с целью/исходным состоянием/действием/результатом/продолжением, participant notes и factor names. Legacy Process/Stage.description не заполнены: учебные объяснения разрешаются через отдельный validated learning repository.
 
 ## Производственная система и экономика
 
@@ -157,3 +150,7 @@ experiment и короткое обоснование, UX §38 ограничи�
 full Material/density model, множество машин/процессов, DES, optimization,
 fleet 3D и advanced exploded/transparency. Необходимые до demo slices перечислены
 в [аудите](../quality/mvp-readiness-audit.md#минимальные-оставшиеся-срезы).
+
+## S1 delivery status
+
+Reviewed foundation pack реализует purpose/9 component functions/principle, shallow truck и четыре stage cards с goal/input/activity/result/handoff/participant notes. Три учебные последовательности различаются; empty return не добавляет stage. Native compact disclosure, breadcrumbs и validated fromMachine закрыты. Canonical legacy description fields не заменены: approved learning prose имеет отдельный provenance boundary. S2 phase UI, S3 machine factors/experiment и S4 guided economic explanation остаются незавершёнными.

@@ -15,6 +15,7 @@ import { useSystemsContent } from '../providers/systems-context';
 import { RouteErrorPage } from './RouteErrorPage';
 import { EntityNotFound } from '../components/EntityNotFound';
 import { SystemExperiment } from '../components/SystemExperiment';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 
 function SystemsUnavailable() {
   return (
@@ -90,6 +91,13 @@ export function SystemPage() {
   const { view } = resolved;
   return (
     <>
+      <Breadcrumbs
+        items={[
+          { label: 'Главная', href: routes.home },
+          { label: 'Производственная задача', href: routes.systems },
+          { label: view.system.name },
+        ]}
+      />
       <p>
         <Link to={routes.systems}>К комплексам</Link>
       </p>
