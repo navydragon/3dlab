@@ -5,10 +5,11 @@ import type { MachineComponentId } from '../../domain/ids';
 import type {
   ViewerLoadState,
   ViewerAnimationState,
+  ViewerCommand,
+  Visibility,
 } from '../../visualization/contracts';
-import type { ViewerCommand } from '../../visualization/ProductionViewer';
-import { showAll } from '../../visualization/viewer-logic';
-import type { Visibility } from '../../visualization/viewer-logic';
+import { showAll } from '../../visualization/contracts';
+import { EXCAVATOR_WORKING_CYCLE } from '../../domain/activities';
 const ProductionViewer = lazy(
   () => import('../../visualization/ProductionViewer'),
 );
@@ -69,7 +70,7 @@ export function MachineViewerSection({
       <Suspense fallback={<p role="status">Подготовка 3D-viewer…</p>}>
         <ProductionViewer
           asset={asset}
-          activity="excavator-working-cycle"
+          activity={EXCAVATOR_WORKING_CYCLE}
           selected={selected}
           visibility={visibility}
           command={command}

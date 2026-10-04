@@ -5,9 +5,13 @@ import { Mesh, PerspectiveCamera } from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import type { Asset3D } from '../domain/asset3d';
-import type { MachineComponentId } from '../domain/ids';
-import type { ViewerLoadState, ViewerAnimationState } from './contracts';
-import type { Visibility } from './viewer-logic';
+import type { MachineComponentId, LearningActivityId } from '../domain/ids';
+import type {
+  ViewerLoadState,
+  ViewerAnimationState,
+  ViewerCommand,
+  Visibility,
+} from './contracts';
 import { assetUrl } from './viewer-logic';
 import { SceneRuntime } from './scene-runtime';
 import { fitInspectionCamera } from './camera-fit';
@@ -18,7 +22,7 @@ class LoadFailure extends Error {
     super(code);
   }
 }
-async function load(asset: Asset3D, activity: string) {
+async function load(asset: Asset3D, activity: LearningActivityId) {
   const url = assetUrl(asset.uri, import.meta.env.BASE_URL);
   let bytes = binaries.get(url);
   if (!bytes) {
@@ -67,13 +71,9 @@ function webglSupported() {
     return false;
   }
 }
-export interface ViewerCommand {
-  readonly kind: 'play' | 'pause' | 'reset';
-  readonly sequence: number;
-}
 interface Props {
   readonly asset: Asset3D;
-  readonly activity: string;
+  readonly activity: LearningActivityId;
   readonly selected: MachineComponentId | null;
   readonly visibility: Visibility;
   readonly command: ViewerCommand;

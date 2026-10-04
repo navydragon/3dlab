@@ -9,6 +9,17 @@ export type MachineComponentId = Id<'MachineComponent'>;
 export type OperationId = Id<'Operation'>;
 export type MachineRoleId = Id<'MachineRole'>;
 export type Asset3DId = Id<'Asset3D'>;
+export type LearningActivityId = Id<'LearningActivity'>;
+export type ScenarioId = Id<'Scenario'>;
+
+export function isLearningActivityId(
+  value: unknown,
+): value is LearningActivityId {
+  return isStableId(value);
+}
+export function isScenarioId(value: unknown): value is ScenarioId {
+  return isStableId(value);
+}
 
 export function isAsset3DId(value: unknown): value is Asset3DId {
   return isStableId(value);

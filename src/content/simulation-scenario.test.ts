@@ -13,7 +13,7 @@ describe('illustrative scenario ingestion boundary', () => {
   });
   it.each([
     { ...scenario, modelId: 'earthworks' },
-    { ...scenario, isIllustrative: false },
+    { ...scenario, isIllustrative: 'false' },
     {
       ...scenario,
       input: {

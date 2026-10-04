@@ -18,6 +18,7 @@ import {
 import { validateDomainContent } from '../src/content/validation.ts';
 import { validateAsset3D } from '../src/content/asset3d-validation.ts';
 import { domainFiles } from '../src/content/adapters/local/manifest.ts';
+import { EXCAVATOR_WORKING_CYCLE } from '../src/domain/activities.ts';
 
 const root = new URL('../', import.meta.url);
 const source = new URL('models/xe215c/stage_08/excavator.glb', root);
@@ -107,7 +108,7 @@ export async function stage09(generate = false) {
     })),
     animationMappings: [
       {
-        activity: 'excavator-working-cycle',
+        activity: EXCAVATOR_WORKING_CYCLE,
         clip: 'excavator_work_cycle_demo',
       },
     ],

@@ -9,6 +9,7 @@ import type {
 } from '../domain/ids';
 import { getMachineOverview, getProcessOverview } from './domain-queries';
 import type { AssetResolution } from '../content/asset-repository';
+import { EXCAVATOR_WORKING_CYCLE } from '../domain/activities';
 
 function section(id: string, name: string) {
   if (!isLearningSectionId(id))
@@ -99,7 +100,7 @@ export function getMachinePage(
       : []),
     ...(asset.status === 'available' &&
     asset.asset.animationMappings.some(
-      (m) => m.activity === 'excavator-working-cycle',
+      (m) => m.activity === EXCAVATOR_WORKING_CYCLE,
     )
       ? [section('working-cycle', 'Рабочий цикл')]
       : []),

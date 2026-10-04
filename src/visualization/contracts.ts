@@ -22,10 +22,15 @@ export type ViewerAnimationState =
 
 // The renderer keeps this plain-data boundary. Scene objects, node
 // names, educational prose, and engineering times never cross it.
-export interface ViewerInteraction {
-  readonly selectedComponentId: MachineComponentId | null;
-  readonly playback: PlaybackState;
-  readonly onComponentSelect: (id: MachineComponentId | null) => void;
-  readonly onPlaybackChange: (state: PlaybackState) => void;
-  readonly onLoadStateChange: (state: ViewerLoadState) => void;
+export interface ViewerCommand {
+  readonly kind: 'play' | 'pause' | 'reset';
+  readonly sequence: number;
 }
+export interface Visibility {
+  readonly hidden: readonly MachineComponentId[];
+  readonly isolated: MachineComponentId | null;
+}
+export const showAll: Visibility = Object.freeze({
+  hidden: Object.freeze([]),
+  isolated: null,
+});

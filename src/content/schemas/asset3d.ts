@@ -1,12 +1,14 @@
 import { z } from 'zod';
 import {
   isAsset3DId,
+  isLearningActivityId,
   isMachineId,
   isMachineComponentId,
   isStableId,
 } from '../../domain/ids.ts';
 import type {
   Asset3DId,
+  LearningActivityId,
   MachineId,
   MachineComponentId,
 } from '../../domain/ids';
@@ -45,7 +47,13 @@ const nodeMapping = z
   })
   .readonly();
 const animationMapping = z
-  .strictObject({ activity: stableName, clip: text })
+  .strictObject({
+    activity: z.custom<LearningActivityId>(
+      isLearningActivityId,
+      'Expected a stable activity ID',
+    ),
+    clip: text,
+  })
   .readonly();
 const camera = z
   .strictObject({ id: stableName, position: vector, target: vector })

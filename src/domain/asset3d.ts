@@ -1,4 +1,9 @@
-import type { Asset3DId, MachineId, MachineComponentId } from './ids';
+import type {
+  Asset3DId,
+  MachineId,
+  MachineComponentId,
+  LearningActivityId,
+} from './ids';
 
 // External names are exact asset identifiers, never educational/domain identities.
 export interface SceneNodeMapping {
@@ -6,7 +11,7 @@ export interface SceneNodeMapping {
   readonly sceneNodes: readonly string[];
 }
 export interface AnimationMapping {
-  readonly activity: string;
+  readonly activity: LearningActivityId;
   readonly clip: string;
 }
 export interface CameraPreset {

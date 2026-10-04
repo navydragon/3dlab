@@ -1,5 +1,6 @@
 import type { Asset3D } from '../domain/asset3d';
-import type { MachineComponentId } from '../domain/ids';
+import type { MachineComponentId, LearningActivityId } from '../domain/ids';
+import type { Visibility } from './contracts';
 export function assetUrl(uri: string, base: string) {
   return `${base.endsWith('/') ? base : base + '/'}${uri}`;
 }
@@ -27,11 +28,6 @@ export function resolveMappings(
   }
   return { components, hits };
 }
-export interface Visibility {
-  readonly hidden: readonly MachineComponentId[];
-  readonly isolated: MachineComponentId | null;
-}
-export const showAll: Visibility = { hidden: [], isolated: null };
 export function meshVisible(component: MachineComponentId, mode: Visibility) {
   return (
     !mode.hidden.includes(component) &&
@@ -41,7 +37,7 @@ export function meshVisible(component: MachineComponentId, mode: Visibility) {
 export function animationClip(
   asset: Asset3D,
   clips: readonly string[],
-  activity: string,
+  activity: LearningActivityId,
 ) {
   const mapping = asset.animationMappings.find(
     (entry) => entry.activity === activity,

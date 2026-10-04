@@ -9,8 +9,10 @@ import {
   animationClip,
   assetUrl,
   resolveMappings,
-  showAll,
 } from '../../src/visualization/viewer-logic';
+import { showAll } from '../../src/visualization/contracts';
+import { EXCAVATOR_WORKING_CYCLE } from '../../src/domain/activities';
+import { isLearningActivityId } from '../../src/domain/ids';
 const asset = asset3dSchema.parse(metadata);
 const bucket = asset.nodeMappings.find((m) => m.componentId === 'bucket')!;
 const boom = asset.nodeMappings.find((m) => m.componentId === 'boom')!;
@@ -29,7 +31,7 @@ async function runtime() {
     gltf.scene,
     asset,
     gltf.animations,
-    'excavator-working-cycle',
+    EXCAVATOR_WORKING_CYCLE,
   );
 }
 function transforms(r: SceneRuntime) {
@@ -122,18 +124,20 @@ describe('production renderer logic', () => {
     r.dispose();
   });
   it('uses explicit mapped clips and distinguishes missing mapping/actual clip', () => {
-    expect(animationClip(asset, [], 'unknown')).toEqual({
+    const unknown = 'unknown';
+    if (!isLearningActivityId(unknown)) throw new Error('Invalid test ID');
+    expect(animationClip(asset, [], unknown)).toEqual({
       status: 'unsupported',
       reason: 'unmapped',
     });
     expect(
-      animationClip(asset, ['unrelated'], 'excavator-working-cycle'),
+      animationClip(asset, ['unrelated'], EXCAVATOR_WORKING_CYCLE),
     ).toEqual({ status: 'unsupported', reason: 'missing-clip' });
     expect(
       animationClip(
         asset,
         [asset.animationMappings[0]!.clip],
-        'excavator-working-cycle',
+        EXCAVATOR_WORKING_CYCLE,
       ).status,
     ).toBe('available');
   });

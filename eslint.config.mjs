@@ -191,6 +191,12 @@ export default tseslint.config(
               message:
                 'UI must consume validated application queries, not raw content or schemas.',
             },
+            {
+              regex:
+                '(^|/)visualization/(scene-runtime|viewer-logic|camera-fit)(\\.[a-z]+)?$',
+              message:
+                'UI consumes renderer-neutral visualization/contracts, not renderer internals.',
+            },
           ],
         },
       ],
@@ -203,6 +209,28 @@ export default tseslint.config(
         'error',
         {
           patterns: [
+            layers([
+              'ui',
+              'app',
+              'application',
+              'content',
+              'navigation',
+              'simulation',
+            ]),
+          ],
+        },
+      ],
+    },
+  },
+  {
+    files: ['src/visualization/contracts.ts'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          patterns: [
+            nodeImports,
+            ...frameworkImports,
             layers([
               'ui',
               'app',

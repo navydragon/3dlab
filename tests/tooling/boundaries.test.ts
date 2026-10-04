@@ -98,6 +98,8 @@ describe('architectural import restrictions', () => {
   });
   it.each([
     ['src/domain/ids.ts', 'react'],
+    ['src/visualization/contracts.ts', 'three'],
+    ['src/visualization/contracts.ts', 'react'],
     ['src/domain/asset3d.ts', 'react'],
     ['src/domain/asset3d.ts', 'three'],
     ['src/domain/asset3d.ts', '@react-three/fiber'],
@@ -114,6 +116,18 @@ describe('architectural import restrictions', () => {
     ['src/application/page-queries.ts', 'react'],
     ['src/ui/pages/MachinePage.tsx', '../../../content/domain/machines.json'],
     ['src/ui/pages/MachinePage.tsx', 'zod'],
+    [
+      'src/ui/components/MachineViewerSection.tsx',
+      '../../visualization/scene-runtime',
+    ],
+    [
+      'src/ui/components/MachineViewerSection.tsx',
+      '../../visualization/viewer-logic',
+    ],
+    [
+      'src/ui/components/MachineViewerSection.tsx',
+      '../../visualization/camera-fit',
+    ],
     ['src/ui/pages/MachinePage.tsx', '../../content/schemas/domain'],
     ['src/ui/pages/MachinePage.tsx', '../../content/adapters/local/repository'],
     ['src/content/ingestion.ts', '../navigation/routes'],
@@ -146,6 +160,13 @@ describe('architectural import restrictions', () => {
     const results = await eslint.lintText(
       "import type { MachineId } from '../domain/ids'; export type Example = MachineId;",
       { filePath: 'src/application/page-queries.ts' },
+    );
+    expect(results.flatMap((result) => result.messages)).toEqual([]);
+  });
+  it('allows UI plain contracts and lazy viewer component', async () => {
+    const results = await eslint.lintText(
+      "import { showAll, type ViewerCommand, type Visibility } from '../../visualization/contracts'; export const value: Visibility = showAll; export type Command = ViewerCommand; export const load = () => import('../../visualization/ProductionViewer');",
+      { filePath: 'src/ui/components/BoundaryExample.tsx' },
     );
     expect(results.flatMap((result) => result.messages)).toEqual([]);
   });

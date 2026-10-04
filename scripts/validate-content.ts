@@ -3,26 +3,29 @@ import { domainFiles } from '../src/content/adapters/local/manifest.ts';
 import { validateDomainContent } from '../src/content/validation.ts';
 import { validateAsset3DCollection } from '../src/content/asset3d-validation.ts';
 import { readAssetMetadataFiles } from './asset-metadata-files.ts';
-import { simulationScenarioSchema } from '../src/content/simulation-scenario.ts';
+import { validateSimulationScenarios } from '../src/content/simulation-scenario-validation.ts';
+import { readSimulationScenarioFiles } from './simulation-scenario-files.ts';
 
 try {
-  const scenario: unknown = JSON.parse(
-    await readFile(
-      new URL(
-        '../content/simulation/base-earthworks-scenario.json',
-        import.meta.url,
-      ),
-      'utf8',
-    ),
+  const scenarioFiles = await readSimulationScenarioFiles(
+    new URL('../content/simulation/', import.meta.url),
   );
-  const scenarioValidation = simulationScenarioSchema.safeParse(scenario);
-  if (!scenarioValidation.success) {
-    for (const issue of scenarioValidation.error.issues)
-      console.error(`simulation ${issue.path.join('.')} — ${issue.message}`);
+  const scenarioValidation = validateSimulationScenarios(
+    scenarioFiles.map((file) => file.data),
+  );
+  if (scenarioValidation.status === 'invalid') {
+    for (const issue of scenarioValidation.issues) {
+      const index = issue.path[0];
+      const file =
+        typeof index === 'number' ? scenarioFiles[index]?.file : undefined;
+      console.error(
+        `simulation ${file ?? ''} ${issue.phase}:${issue.code} ${issue.path.slice(1).join('.')} — ${issue.message}`,
+      );
+    }
     process.exitCode = 1;
   } else
     console.log(
-      `Simulation content valid: ${scenarioValidation.data.scenarioId} (illustrative).`,
+      `Simulation content valid: ${scenarioValidation.scenarios.length} scenarios (${scenarioValidation.scenarios.map((record) => record.scenarioId).join(', ')}).`,
     );
   const collections = await Promise.all(
     Object.entries(domainFiles).map(async ([key, file]) => {

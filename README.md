@@ -30,6 +30,14 @@ and remains unconnected to UI. Its authoritative formulas, units and assumptions
 are in `docs/domain/simulation-model.md`. The checked-in baseline under
 `content/simulation/` is illustrative, not XE215C engineering data.
 
+`content/simulation/` is reserved for one `earthworks-deterministic-v1` scenario
+record per JSON file, including nested folders; unrelated content types belong
+outside this directory. Validation discovers every scenario deterministically,
+checks stable IDs, source text, explicit illustrative status, numerical inputs and
+duplicate IDs. The read-only scenario repository and local Vite adapter expose
+`list/get`, explicit absence and invalid-content results, without a default scenario
+or calculations. They remain unconnected to UI; the baseline stays illustrative.
+
 ## Documentation
 
 Strategic product vision:

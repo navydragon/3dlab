@@ -1,9 +1,9 @@
 import { AnimationMixer, LoopRepeat, Mesh, MeshStandardMaterial } from 'three';
 import type { AnimationClip, Material, Object3D } from 'three';
 import type { Asset3D } from '../domain/asset3d';
-import type { MachineComponentId } from '../domain/ids';
+import type { MachineComponentId, LearningActivityId } from '../domain/ids';
 import { animationClip, meshVisible, resolveMappings } from './viewer-logic';
-import type { Visibility } from './viewer-logic';
+import type { Visibility } from './contracts';
 
 export class SceneRuntime {
   readonly mappings;
@@ -20,7 +20,7 @@ export class SceneRuntime {
     readonly scene: Object3D,
     asset: Asset3D,
     clips: readonly AnimationClip[],
-    activity: string,
+    activity: LearningActivityId,
   ) {
     const objects: Object3D[] = [];
     scene.traverse((object) => {
