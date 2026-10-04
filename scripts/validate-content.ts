@@ -9,6 +9,7 @@ import { validateProductionSystems } from '../src/content/production-system-vali
 import { readSimulationScenarioFiles } from './simulation-scenario-files.ts';
 import { createFoundationRepository } from '../src/content/foundation-repository.ts';
 import { createWorkingCycleRepository } from '../src/content/working-cycle-repository.ts';
+import { createProductivityRepository } from '../src/content/productivity-repository.ts';
 
 try {
   const collections = await Promise.all(
@@ -76,6 +77,41 @@ try {
         'Production systems skipped: invalid scenario dependencies.',
       );
     } else {
+      const productivityRaw: unknown = JSON.parse(
+        await readFile(
+          new URL('../content/learning/productivity.json', import.meta.url),
+          'utf8',
+        ),
+      );
+      const productivity = createProductivityRepository(
+        productivityRaw,
+        domain.repository,
+        scenarios.repository,
+      );
+      if (productivity.status === 'invalid') {
+        productivity.issues.forEach((issue) =>
+          console.error(
+            `productivity ${issue.path.join('.')} — ${issue.message}`,
+          ),
+        );
+        process.exitCode = 1;
+      } else {
+        await Promise.all(
+          productivity.repository
+            .list()
+            .flatMap((record) =>
+              record.sources.map((source) =>
+                readFile(
+                  new URL('../' + source.location, import.meta.url),
+                  'utf8',
+                ),
+              ),
+            ),
+        );
+        console.log(
+          'S3 productivity content valid: four reviewed factors, explicit illustrative scenario/model; no numerical source duplication.',
+        );
+      }
       console.log(
         `Simulation content valid: ${scenarios.repository.list().length} scenarios (${scenarios.repository
           .list()

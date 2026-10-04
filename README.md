@@ -227,7 +227,7 @@ isolated from existing machine/process/viewer routes.
 
 ## Educational MVP readiness
 
-Both technical product slices and S1 foundational learning content are implemented; full educational readiness remains partial until S3/S4. See the [documentation index](docs/README.md) for the six current source-of-truth documents and the [MVP readiness audit](docs/quality/mvp-readiness-audit.md) for requirement evidence, learning-goal coverage and delivered S1/S2 and remaining S3/S4 slices. This audit adds no product functionality.
+Both technical product slices and S1 foundational learning content are implemented; full educational readiness remains partial until S4. See the [documentation index](docs/README.md) for the six current source-of-truth documents and the [MVP readiness audit](docs/quality/mvp-readiness-audit.md) for requirement evidence, learning-goal coverage and delivered S1/S2 and remaining S4 slice. This audit adds no product functionality.
 
 ## S1 foundational learning content
 
@@ -238,3 +238,7 @@ Excavator overview/nine functions/«Как работает», shallow truck tra
 ## S2 pedagogical working cycle
 
 The working-cycle section now teaches six reviewed phases with canonical components, phase seeking/navigation, live visual progress and 0.5×/1×/2× playback. Learning overlay/provenance live in content/learning/working-cycle.json; approved prose and anchors are in docs/product/s2-working-cycle-content-pack.md. Excavation/filling intentionally share clip zero; Reset restores static neutral outside the clip. No engineering cycle time is inferred. S3/S4 remain deferred.
+
+## S3 excavator parameters and standalone productivity
+
+Validated productivity learning adds Parameters/Productivity capability sections. Numerical source remains base-earthworks-scenario and calculation authority remains earthworks-deterministic-v1. Exactly one factor is edited; calculations rebuild from source without accumulation. Definitions/units/provenance, prediction, explicit Calculate, baseline/current comparison, stale/reset and causal outputs are visible. No practical ranges or fill<=1 constraint, no animation-derived cycle time, no system Q shown as machine Q. See docs/product/s3-productivity-content-pack.md and completed execution plan 0013. S4 remains deferred.

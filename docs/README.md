@@ -22,3 +22,5 @@ implementation evidence; they do not waive unmet full-MVP learning obligations.
 [export guide](3d/blender-export-guide.md) describe delivery responsibilities.
 
 S1 delivery: [reviewed foundation pack](product/s1-foundation-content-pack.md) and the updated [readiness audit](quality/mvp-readiness-audit.md). S2 delivery: [reviewed working-cycle pack](product/s2-working-cycle-content-pack.md); S3/S4 remain open.
+
+S3 delivery: [reviewed productivity pack](product/s3-productivity-content-pack.md), real-core standalone experiment and updated readiness audit. S4 remains open.

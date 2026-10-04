@@ -58,7 +58,7 @@ dump-truck — два текстовых sections без 3D. Applications links 
 
 Target полного учебного MVP: Обзор, Конструкция, Принцип работы, Рабочий цикл,
 Параметры, Производительность, Где применяется и machine-in-process context.
-`working-principle` реализован в S1 по learning capability; `parameters` и `productivity` из domain-model §21 пока не поддерживаются: существующая route pattern не делает их реализованными. Будущий exact URL следует существующим helpers после
+`working-principle` реализован в S1 по learning capability; `parameters` и `productivity` реализованы в S3 по validated learning/scenario/model capability; exact URL использует существующие helpers после
 добавления approved section capability; новые route shapes здесь не предлагаются.
 «Контроль знаний» не является обязательным экраном MVP (см. content spec).
 
@@ -115,4 +115,10 @@ causal explanations. Их содержание задаёт content spec, при
 
 ## S2 working-cycle section delivered
 
-Existing /machines/excavator/working-cycle route, capability and fromProcess/fromStage semantic return are unchanged. Page presents the approved visual-time notice, viewer, Play/Pause/neutral Reset, labelled 0.5×/1×/2× rate group, six equal-weight phase buttons, bounded Previous/Next, approved explanation/canonical component names and separate textual visual progress. Selection seeks and pauses at range start; excavation/filling intentionally share zero. Live playback updates the current phase; Reset clears it and labels neutral as outside the clip. Controls wrap/stack on narrow layouts; no phase control requires Canvas coordinates. Reload starts neutral and preserves validated URL return context. S3 parameters/productivity and S4 guided economics remain deferred.
+Existing /machines/excavator/working-cycle route, capability and fromProcess/fromStage semantic return are unchanged. Page presents the approved visual-time notice, viewer, Play/Pause/neutral Reset, labelled 0.5×/1×/2× rate group, six equal-weight phase buttons, bounded Previous/Next, approved explanation/canonical component names and separate textual visual progress. Selection seeks and pauses at range start; excavation/filling intentionally share zero. Live playback updates the current phase; Reset clears it and labels neutral as outside the clip. Controls wrap/stack on narrow layouts; no phase control requires Canvas coordinates. Reload starts neutral and preserves validated URL return context. S3 parameters/productivity are delivered below; S4 guided economics remains deferred.
+
+## S3 machine capability sections
+
+Validated productivity learning + explicit supported scenario/model resolve Parameters at /machines/excavator/parameters and Productivity at /machines/excavator/productivity. Section order: Обзор → Конструкция → Как работает → Рабочий цикл → Параметры → Производительность → Где применяется, derived from capabilities rather than machine-ID JSX. Dump truck does not acquire deep sections without corresponding supported learning content. Both new sections link back to working-cycle with preserved fromProcess/fromStage; Parameters links to experiment; Productivity links canonically to related systems.
+
+Experiment is local/ephemeral: exactly one parameter, one numeric field, prediction, explicit Calculate and reset. Baseline is labelled Исходный расчёт, stale comparison is hidden with text status, errors are associated with numeric field and table has row/column semantics. Real controls and formula text require no Canvas. Comparison can scroll inside its container; 390 px page has no horizontal overflow. Reload/source/section change clears candidate/latest state without losing semantic stage return.

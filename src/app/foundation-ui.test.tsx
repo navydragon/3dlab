@@ -40,9 +40,10 @@ describe('S1 approved learning presentation', () => {
     expect(
       crumbs().queryByRole('link', { name: 'Гидравлический экскаватор' }),
     ).not.toBeInTheDocument();
-    expect(
-      screen.queryByRole('link', { name: 'Параметры' }),
-    ).not.toBeInTheDocument();
+    expect(screen.getByRole('link', { name: 'Параметры' })).toHaveAttribute(
+      'href',
+      '/machines/excavator/parameters',
+    );
     view.unmount();
     open('/machines/dump-truck');
     expect(

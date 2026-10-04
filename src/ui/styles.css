@@ -450,3 +450,33 @@ summary p {
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.parameter-source {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+.parameter-source dt {
+  font-weight: 650;
+}
+.parameter-source dd {
+  margin: 0.4rem 0;
+}
+.factor-choice {
+  display: block;
+  margin-block: 0.6rem;
+}
+#machine-candidate,
+#machine-explanation {
+  display: block;
+  max-width: 100%;
+  margin-block: 0.5rem 1rem;
+}
+#machine-explanation {
+  width: 100%;
+}
+@media (max-width: 600px) {
+  .parameter-source {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

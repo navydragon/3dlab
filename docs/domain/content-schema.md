@@ -159,3 +159,9 @@ Strict Zod shape and frozen nested records, canonical machine/component ownershi
 Asset/version: excavator-main/1.0.0; activity resolves through existing Asset3D.animationMappings. excavation anchor 0; bucket-filling 0 → 1.6666666666666667; lifting 1.6666666666666667 → 3.3333333333333335; swing-to-dump 3.3333333333333335 → 5.416666666666667; unloading 5.416666666666667 → 7.916666666666667 (dump milestone 6.875); return 7.916666666666667 → 11.666666984558105 (slew-back-complete milestone 9.791666666666666).
 
 Excavation has no visual duration; filling starts at the same anchor intentionally. These are learning phases, not ProcessStage or engineering timing. No phase metadata is added to Asset3D, manifest, GLB or userData. S1 pack is unchanged.
+
+## S3 productivity learning
+
+content/learning/productivity.json stores focused reviewed records (one canonical excavator record), not numerical scenarios or a CMS. Fields: machineId, sourceScenarioId, simulationModelId, sources/sourceRefs, illustrativeNotice, four ordered parameter records, display-only relationships, four output labels/units, theoretical explanation, machine-vs-system note and learner prompts. Parameter IDs: bucket-capacity, bucket-fill-factor, cycle-time, time-utilization. Output IDs: q_eff, cycles_per_hour_60, Q_exc_60, Q_exc.
+
+Strict Zod validation rejects unknown fields/IDs, duplicates/missing parameters or records, blank prose, invalid provenance, unknown machines/scenarios and incompatible supported model/machine/scenario pairs. Sources and nested records are frozen; repository get/list are read-only. CLI checks referenced files exist. Scenario remains the sole numerical source; schema does not prove engineering truth. No manufacturer or practical range metadata. The supported-model boundary declares the canonical standalone machine capability.

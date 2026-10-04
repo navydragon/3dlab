@@ -92,6 +92,7 @@ export function getMachinePage(
   origin: OriginContext | null | undefined,
   asset: AssetResolution = { status: 'unavailable' },
   learning?: FoundationRepository,
+  productivityAvailable = false,
 ) {
   const overview = getMachineOverview(repository, machineId);
   if (!overview) return { status: 'missing-machine' } as const;
@@ -109,6 +110,12 @@ export function getMachinePage(
       (m) => m.activity === EXCAVATOR_WORKING_CYCLE,
     )
       ? [section('working-cycle', 'Рабочий цикл')]
+      : []),
+    ...(productivityAvailable
+      ? [
+          section('parameters', 'Параметры'),
+          section('productivity', 'Производительность'),
+        ]
       : []),
     machineSections[1]!,
   ];

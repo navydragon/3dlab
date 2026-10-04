@@ -14,6 +14,14 @@ import { RouteErrorPage } from './RouteErrorPage';
 import { useAssetRepository } from '../providers/asset-context';
 import { MachineViewerSection } from '../components/MachineViewerSection';
 import { useFoundationContent } from '../providers/foundation-context';
+import { useProductivityContent } from '../providers/productivity-context';
+import { useSystemsContent } from '../providers/systems-context';
+import {
+  resolveProductivity,
+  relatedMachineSystems,
+} from '../../application/machine-productivity';
+import { MachineProductivity } from '../components/MachineProductivity';
+import { systemPath } from '../../navigation/routes';
 import { Breadcrumbs } from '../components/Breadcrumbs';
 import { useWorkingCycleContent } from '../providers/working-cycle-context';
 import {
@@ -24,12 +32,22 @@ export function MachinePage() {
   const repository = useDomainRepository();
   const assets = useAssetRepository();
   const learning = useFoundationContent();
+  const productivity = useProductivityContent();
+  const systems = useSystemsContent();
   const workingCycle = useWorkingCycleContent();
   const { machineId, sectionId } = useParams();
   const { search } = useLocation();
   const route = parseMachineRoute(machineId, sectionId);
   const context = parseReturnContext(search);
   if (!route.ok) return <RouteErrorPage invalid />;
+  const productivityView =
+    productivity.learning.status === 'loaded' && productivity.scenarios
+      ? resolveProductivity(
+          productivity.learning.repository.get(route.value.machineId),
+          productivity.scenarios,
+          route.value.machineId,
+        )
+      : ({ status: 'unavailable' } as const);
   const view = getMachinePage(
     repository,
     route.value.machineId,
@@ -37,6 +55,7 @@ export function MachinePage() {
     context.ok ? context.value : null,
     assets.resolve(route.value.machineId),
     learning.status === 'loaded' ? learning.repository : undefined,
+    productivityView.status === 'ready',
   );
   if (view.status === 'missing-machine')
     return (
@@ -152,6 +171,41 @@ export function MachinePage() {
           Текстовые материалы доступны.
         </p>
       )}
+      {(view.selectedSection.id === 'parameters' ||
+        view.selectedSection.id === 'productivity') &&
+        productivityView.status === 'ready' && (
+          <MachineProductivity
+            key={view.selectedSection.id + view.machine.id}
+            source={productivityView.source}
+            experiment={view.selectedSection.id === 'productivity'}
+            cyclePath={
+              view.sections.find((s) => s.id === 'working-cycle')
+                ? machineSectionPath(
+                    view.machine.id,
+                    view.sections.find((s) => s.id === 'working-cycle')!.id,
+                    origin,
+                  )
+                : undefined
+            }
+            productivityPath={machineSectionPath(
+              view.machine.id,
+              view.sections.find((s) => s.id === 'productivity')!.id,
+              origin,
+            )}
+            systems={
+              systems.status === 'valid'
+                ? relatedMachineSystems(
+                    systems.repository,
+                    repository,
+                    view.machine.id,
+                  ).map((system) => ({
+                    name: system.name,
+                    path: systemPath(system.id),
+                  }))
+                : []
+            }
+          />
+        )}
       {view.selectedSection.id === 'overview' && (
         <>
           {view.foundation ? (
