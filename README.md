@@ -23,7 +23,12 @@
 
 Domain UI integration: accessible machine/process catalogs and pages backed by the validated local knowledge graph.
 
-Machine pages show canonical operations, components and grouped process usage. Machines with validated assets also offer Construction and Working Cycle sections with the production 3D viewer. Process pages select stages via `stageId` and open machine pages with graph-validated contextual return, preserved across all supported machine sections. Unknown entities/sections, invalid stage/context URLs and invalid content have explicit states. Full learning modules and simulation remain deferred.
+Machine pages show canonical operations, components and grouped process usage. Machines with validated assets also offer Construction and Working Cycle sections with the production 3D viewer. Process pages select stages via `stageId` and open machine pages with graph-validated contextual return, preserved across all supported machine sections. Unknown entities/sections, invalid stage/context URLs and invalid content have explicit states. Full learning modules and simulation UI remain deferred.
+
+The pure `earthworks-deterministic-v1` core is implemented in `src/simulation/`
+and remains unconnected to UI. Its authoritative formulas, units and assumptions
+are in `docs/domain/simulation-model.md`. The checked-in baseline under
+`content/simulation/` is illustrative, not XE215C engineering data.
 
 ## Documentation
 
@@ -127,6 +132,7 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 ## Foundation boundaries
 
 - `src/domain`: framework-independent IDs and minimal machine/component/operation/process/stage/role contracts.
+- `src/simulation`: explicit numerical input, structured validation/calculation failures, 18 canonical metrics and intermediate values. Loose volumes, unit-bearing inputs and a single metric-unit manifest; no presentation rounding.
 - `src/content`: Zod schemas, structured graph validation, read-only repository, and explicit local JSON adapter.
 - `src/application`: pure repository queries and page view models; grouping, supported sections, stage selection and semantic return-context validation.
 - `src/navigation`: centralized routes, builders, and structural query parsing. Selected stages and return context live in the URL.
@@ -134,7 +140,7 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 - `src/visualization`: lazy React Three Fiber viewer, renderer-owned scene mapping/materials/visibility/mixer, camera controls and plain interaction contracts. Production metadata and binaries use the content/public pipeline described below.
 - `src/test`, colocated tests, and `tests/`: component/unit, executable lint-boundary, and production-preview browser checks.
 
-ESLint protects domain/application/content/visualization dependencies and the future `src/simulation` location. Pure production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. Simulation remains documentation-only. There is no global state library, persistence, or backend.
+ESLint protects domain/application/content/visualization/simulation dependencies. Pure production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Simulation also rejects Zod: scenario shape validation belongs to content. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. There is no global state library, persistence, or backend.
 
 ## Domain content
 

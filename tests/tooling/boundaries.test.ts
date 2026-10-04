@@ -119,6 +119,11 @@ describe('architectural import restrictions', () => {
     ['src/content/ingestion.ts', '../navigation/routes'],
     ['src/simulation/future-core.ts', 'react'],
     ['src/simulation/future-core.ts', 'react-router'],
+    ['src/simulation/calculate.ts', 'zod'],
+    ['src/simulation/calculate.ts', 'three'],
+    ['src/simulation/calculate.ts', '@react-three/fiber'],
+    ['src/simulation/calculate.ts', '../content/simulation-scenario'],
+    ['src/simulation/calculate.ts', '../application/page-queries'],
     ['src/simulation/future-core.ts', '../visualization/contracts'],
   ])('rejects %s importing %s', async (filePath, source) => {
     // Lint in-memory snippets: no invalid production file or future directory.

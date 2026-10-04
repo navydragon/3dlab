@@ -150,6 +150,10 @@ export default tseslint.config(
         {
           patterns: [
             nodeImports,
+            {
+              regex: '^zod($|/)',
+              message: 'Validation schemas belong to the content boundary.',
+            },
             ...frameworkImports,
             layers([
               'ui',

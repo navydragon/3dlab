@@ -1,0 +1,25 @@
+{
+  "scenarioId": "base-earthworks-scenario",
+  "modelId": "earthworks-deterministic-v1",
+  "isIllustrative": true,
+  "source": "docs/domain/simulation-model.md#19",
+  "input": {
+    "excavator": {
+      "bucketCapacityM3Loose": 1.2,
+      "bucketFillFactor": 0.9,
+      "cycleTimeSeconds": 24,
+      "timeUtilizationFactor": 0.83,
+      "hourlyCostCU": 180
+    },
+    "truck": {
+      "capacityM3Loose": 12,
+      "haulDistanceKm": 2,
+      "loadedSpeedKmh": 24,
+      "emptySpeedKmh": 32,
+      "unloadingTimeMinutes": 1,
+      "truckCount": 1,
+      "hourlyCostCU": 70
+    },
+    "task": { "workVolumeM3Loose": 1000 }
+  }
+}
