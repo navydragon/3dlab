@@ -11,8 +11,11 @@ import {
 import { useDomainRepository } from '../providers/domain-context';
 import { EntityNotFound } from '../components/EntityNotFound';
 import { RouteErrorPage } from './RouteErrorPage';
+import { useAssetRepository } from '../providers/asset-context';
+import { MachineViewerSection } from '../components/MachineViewerSection';
 export function MachinePage() {
   const repository = useDomainRepository();
+  const assets = useAssetRepository();
   const { machineId, sectionId } = useParams();
   const { search } = useLocation();
   const route = parseMachineRoute(machineId, sectionId);
@@ -23,6 +26,7 @@ export function MachinePage() {
     route.value.machineId,
     route.value.sectionId,
     context.ok ? context.value : null,
+    assets.resolve(route.value.machineId),
   );
   if (view.status === 'missing-machine')
     return (
@@ -74,6 +78,23 @@ export function MachinePage() {
           </Link>
         ))}
       </nav>
+      {(view.selectedSection.id === 'construction' ||
+        view.selectedSection.id === 'working-cycle') &&
+        view.asset.status === 'available' && (
+          <MachineViewerSection
+            key={view.selectedSection.id + view.asset.asset.id}
+            asset={view.asset.asset}
+            components={view.components}
+            cycle={view.selectedSection.id === 'working-cycle'}
+          />
+        )}
+      {(view.asset.status === 'invalid' ||
+        view.asset.status === 'ambiguous') && (
+        <p role="alert">
+          3D-контент недоступен: требуется исправить конфигурацию asset.
+          Текстовые материалы доступны.
+        </p>
+      )}
       {view.selectedSection.id === 'overview' && (
         <>
           <h2>Операции</h2>
@@ -129,9 +150,6 @@ export function MachinePage() {
           </ul>
         )}
       </section>
-      <p className="muted">
-        3D-визуализация и полные учебные разделы будут добавлены позже.
-      </p>
     </>
   );
 }

@@ -1,6 +1,6 @@
 # Application-facing 3D asset specification
 
-Status: Current pipeline contract. XE215C Stage 09 metadata and static production asset are connected; viewer implementation remains deferred.
+Status: Current pipeline contract. XE215C Stage 09 metadata and static production asset are connected to the production React Three Fiber viewer. See the completed application viewer plan 0005 for runtime behavior and validation.
 
 ## Scope and ownership
 
@@ -170,7 +170,7 @@ Passing this command does not certify topology or binary delivery.
 manifest, complete name mappings, canonical hierarchy, clips, public copy and
 immutable authoring stages. Production static HTTP delivery has an E2E check.
 
-Later composition will supply validated metadata to the isolated viewer adapter.
+Application composition supplies validated metadata to the isolated viewer adapter.
 The viewer loads topology, resolves node mappings and emits MachineComponentId
 selection events; UI resolves descriptions from the canonical domain repository.
 Playback and loading/error events are plain data. Rendering objects stay private.

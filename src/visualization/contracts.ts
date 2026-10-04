@@ -20,7 +20,7 @@ export type ViewerAnimationState =
     }
   | { readonly status: 'available'; readonly playback: PlaybackState };
 
-// A future renderer implements this plain-data boundary. Scene objects, node
+// The renderer keeps this plain-data boundary. Scene objects, node
 // names, educational prose, and engineering times never cross it.
 export interface ViewerInteraction {
   readonly selectedComponentId: MachineComponentId | null;

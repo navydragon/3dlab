@@ -8,6 +8,7 @@ import type {
   LearningSectionId,
 } from '../domain/ids';
 import { getMachineOverview, getProcessOverview } from './domain-queries';
+import type { AssetResolution } from '../content/asset-repository';
 
 function section(id: string, name: string) {
   if (!isLearningSectionId(id))
@@ -87,10 +88,24 @@ export function getMachinePage(
   machineId: MachineId,
   sectionId: LearningSectionId | undefined,
   origin: OriginContext | null | undefined,
+  asset: AssetResolution = { status: 'unavailable' },
 ) {
   const overview = getMachineOverview(repository, machineId);
   if (!overview) return { status: 'missing-machine' } as const;
-  const selectedSection = machineSections.find(
+  const sections = [
+    machineSections[0]!,
+    ...(asset.status === 'available'
+      ? [section('construction', 'Конструкция')]
+      : []),
+    ...(asset.status === 'available' &&
+    asset.asset.animationMappings.some(
+      (m) => m.activity === 'excavator-working-cycle',
+    )
+      ? [section('working-cycle', 'Рабочий цикл')]
+      : []),
+    machineSections[1]!,
+  ];
+  const selectedSection = sections.find(
     (entry) => entry.id === (sectionId ?? 'overview'),
   );
   if (!selectedSection)
@@ -104,7 +119,8 @@ export function getMachinePage(
     status: 'ready',
     ...overview,
     operations: Object.freeze(operations),
-    sections: machineSections,
+    sections,
+    asset,
     selectedSection,
     usage: groupUsage(overview.whereUsed),
     origin: validateMachineOrigin(repository, machineId, origin),

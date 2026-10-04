@@ -9,11 +9,16 @@ import { RouteErrorPage } from '../ui/pages/RouteErrorPage';
 import { loadLocalDomainRepository } from '../content/adapters/local/repository';
 import type { RepositoryLoad } from '../content/repository';
 import { DomainContext } from '../ui/providers/domain-context';
+import { AssetContext } from '../ui/providers/asset-context';
+import { localAssetRepository } from '../content/adapters/local/assets';
+import type { AssetRepository } from '../content/asset-repository';
 
 export function App({
   content = loadLocalDomainRepository(),
+  assets = localAssetRepository,
 }: {
   readonly content?: RepositoryLoad;
+  readonly assets?: AssetRepository;
 }) {
   if (content.status === 'invalid')
     return (
@@ -36,23 +41,25 @@ export function App({
     );
   return (
     <DomainContext value={content.repository}>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path={routes.home} element={<HomePage />} />
-          <Route
-            path={routes.machines}
-            element={<CatalogPage kind="machines" />}
-          />
-          <Route path={routes.machine} element={<MachinePage />} />
-          <Route path={routes.machineSection} element={<MachinePage />} />
-          <Route
-            path={routes.processes}
-            element={<CatalogPage kind="processes" />}
-          />
-          <Route path={routes.process} element={<ProcessPage />} />
-          <Route path="*" element={<RouteErrorPage />} />
-        </Route>
-      </Routes>
+      <AssetContext value={assets}>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path={routes.home} element={<HomePage />} />
+            <Route
+              path={routes.machines}
+              element={<CatalogPage kind="machines" />}
+            />
+            <Route path={routes.machine} element={<MachinePage />} />
+            <Route path={routes.machineSection} element={<MachinePage />} />
+            <Route
+              path={routes.processes}
+              element={<CatalogPage kind="processes" />}
+            />
+            <Route path={routes.process} element={<ProcessPage />} />
+            <Route path="*" element={<RouteErrorPage />} />
+          </Route>
+        </Routes>
+      </AssetContext>
     </DomainContext>
   );
 }
