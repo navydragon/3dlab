@@ -66,10 +66,7 @@ Check for duplicate/blank names that would make a metadata lookup ambiguous.
 Select bucket meshes independently, inspect major components and play each intended
 clip. Check pivots, coordinated motion, units/up-axis, initial pose and textures.
 
-A renderer-free inspection script is deferred in this task: there is no real asset
-to inspect. In the connection task, inspect the actual file and validate topology
-before creating production mappings. Inspection must report topology/names only;
-it must never infer domain semantics.
+Renderer-free inspection now exists in `scripts/glb-inspection.ts`, with reproducible Stage 08 export/re-import checks and Stage 09 delivery validation. Run `npm run assets:validate` for actual topology/names/mapping/integrity; these tools never infer domain semantics.
 
 ## Map and validate
 
@@ -103,4 +100,4 @@ Before handing off, confirm:
 - Matching asset/metadata version and optional verified camera presets.
 - Metadata shape/domain validation passes, and actual topology/delivery is reviewed.
 
-No production asset or mapping is supplied by this preparation task.
+The current Stage 08/09 production asset and mapping are supplied and validated. The checklist continues to apply to future deliveries; accepted authoring checkpoints remain immutable.

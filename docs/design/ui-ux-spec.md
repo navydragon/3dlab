@@ -1,5 +1,7 @@
 # UI/UX Specification
 
+Implementation baseline (2026-10-04): both technical product slices are implemented at 793722754797737729bb7db1a9960c0f603477cd. Historical slice definitions below describe milestone scope, not current availability. Actual routes/contracts and unmet full-MVP learning obligations are recorded in [documentation index](../README.md) and [readiness audit](../quality/mvp-readiness-audit.md). Existing document status and accepted decisions are retained.
+
 ## Интерактивная цифровая лаборатория машин и механизированных процессов транспортного строительства
 
 **Статус:** Draft  

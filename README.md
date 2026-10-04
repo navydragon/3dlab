@@ -158,7 +158,7 @@ E2E builds the application and starts Vite preview on `127.0.0.1:4173`; that por
 - `src/visualization`: lazy React Three Fiber viewer, renderer-owned scene mapping/materials/visibility/mixer, camera controls and plain interaction contracts. Production metadata and binaries use the content/public pipeline described below.
 - `src/test`, colocated tests, and `tests/`: component/unit, executable lint-boundary, and production-preview browser checks.
 
-ESLint protects domain/application/content/visualization/simulation dependencies. Pure production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Simulation also rejects Zod: scenario shape validation belongs to content. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. There is no global state library, persistence, or backend.
+ESLint protects domain/application/content/visualization/simulation dependencies. Domain and simulation production layers reject Node imports, dynamic loading, and direct browser/runtime/clock APIs; colocated tests may use test tooling. Application/content rules restrict framework and layer imports, but do not enforce the same complete purity bans. Simulation also rejects Zod: scenario shape validation belongs to content. Official React Hooks 7.1.1 enables Rules of Hooks and dependency checks, without React Compiler tooling. Its published peer range supports ESLint 10; its mature Babel implementation has a transitive prerelease-style version, which does not make the stable plugin itself incompatible. There is no global state library, persistence, or backend.
 
 ## Domain content
 
@@ -224,3 +224,7 @@ are rounded, stored results are not. CU and loose-material volumes are explicitl
 illustrative scenario inputs, not XE215C specifications. No fleet scene, optimization
 criterion or recommended variant is implemented. Invalid system configuration is
 isolated from existing machine/process/viewer routes.
+
+## Educational MVP readiness
+
+Both technical product slices are implemented; full educational readiness remains partial. See the [documentation index](docs/README.md) for the six current source-of-truth documents and the [MVP readiness audit](docs/quality/mvp-readiness-audit.md) for requirement evidence, learning-goal coverage and four proposed remaining slices. This audit adds no product functionality.

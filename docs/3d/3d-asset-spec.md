@@ -7,7 +7,7 @@ Status: Current pipeline contract. XE215C Stage 09 metadata and static productio
 This specification implements accepted ADRs [0002](../adr/0002-content-driven-local-repository.md)
 and [0003](../adr/0003-react-three-fiber-visualization-boundary.md), domain-model
 §§25–27 and the first technical slice in UI/UX §54. It defines delivery and
-metadata, not geometry or the future viewer implementation.
+metadata, not geometry or the renderer implementation.
 
 A 3D asset visualizes an existing domain entity. Machine identity, component names
 and explanations, relationships, engineering parameters, simulation values and
@@ -28,7 +28,7 @@ The XE215C delivery uses `content/3d/xe215c.json` and the versioned public direc
 same Asset3D record, not a second mapping contract.
 
 `uri` is a base-relative web path starting with `assets/3d/` and ending in
-`.glb` or `.gltf`, matching `format`. The future asset adapter resolves it
+`.glb` or `.gltf`, matching `format`. The production viewer resolves it
 against Vite's application base URL. Do not use a developer filesystem path,
 absolute URL, leading slash, backslash, traversal segment, query or fragment.
 Use ASCII letters, digits, hyphens and underscores for asset path segments and
@@ -128,7 +128,7 @@ glTF's material model is specified in the
 [Khronos material section](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#materials).
 
 Selection highlighting must remain possible on independently mapped geometry.
-A future viewer must isolate its material changes or restore shared materials
+The current viewer isolates its material changes through viewer-owned clones; any future viewer must likewise isolate or restore shared materials
 safely; sharing an original material must not highlight unrelated components.
 No highlight implementation or arbitrary numerical polygon/texture budget is
 introduced here. Measure size, load time, memory and frame behavior on agreed
@@ -189,7 +189,7 @@ nodes/clips again and update mappings/presets if necessary. Use a versioned bina
 filename when practical to avoid stale cached geometry; keep domain IDs stable.
 Review the binary and matching metadata together without migration infrastructure.
 
-## Required before viewer implementation
+## Asset delivery prerequisites
 
 Deliver the approved GLB (or justified complete glTF package), asset provenance and
 permission/license, actual exported node/hierarchy and animation inventory, explicit
@@ -197,3 +197,5 @@ bucket/component mappings, working-cycle clip mapping or documented absence,
 verified scale/origin/initial pose, and matching metadata version. Optional camera
 presets must be measured from that asset. See the
 [Blender delivery checklist](blender-export-guide.md).
+
+Current baseline: Stage 08/09 asset delivery and production viewer are implemented. The original prerequisites above remain delivery checks for future versions. Immutable delivery-pack viewer-deferred notes describe their historical checkpoint; current coverage and device-review limits are in the [readiness audit](../quality/mvp-readiness-audit.md).

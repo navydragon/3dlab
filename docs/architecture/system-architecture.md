@@ -1,5 +1,7 @@
 # MVP System Architecture
 
+Implementation baseline (2026-10-04): both technical product slices are implemented at 793722754797737729bb7db1a9960c0f603477cd. Historical slice definitions below describe milestone scope, not current availability. Actual routes/contracts and unmet full-MVP learning obligations are recorded in [documentation index](../README.md) and [readiness audit](../quality/mvp-readiness-audit.md). Existing document status and accepted decisions are retained.
+
 **Status: Accepted**
 
 **Date:** 2026-10-02
@@ -21,7 +23,7 @@ Optimize for correctness, simplicity, modularity, extensibility, fast iteration,
 The following existing documents govern this proposal; architecture does not redefine their educational or engineering semantics:
 
 - [Project instructions](../../AGENTS.md): content-driven relationships, layer separation, tested calculations, controlled scope, and decision review.
-- [Project overview](../../README.md): multidisciplinary purpose, two learning directions, and no application implementation yet.
+- [Project overview](../../README.md): multidisciplinary purpose, two learning directions, and implemented machine/process/production-system technical slices.
 - [Strategic vision](../vision/strategic-vision.md), especially §§4–6, 9–11, 19, 22: reusable entities, progressive learning depth, connected knowledge, educational 3D, and staged delivery.
 - [MVP scope](../product/mvp-scope.md), §§2–13: excavator, dump truck, one excavation/loading/haul/unloading process, contextual return, deterministic calculations, and explicit exclusions.
 - [Learning goals](../product/learning-goals.md), §§4–10, 13: recognition, explanation, causal experiments, comparison, and justification rather than a predetermined optimal answer.
@@ -112,7 +114,7 @@ One client-side modular application with local, version-controlled content and s
 
 Use one repository and one build rather than a monorepo or separately published packages. Logical modules can later become packages if there is an actual reuse or tooling need. The MVP needs no backend service, database, authentication, container, queue, cloud infrastructure, CMS, or microservice. Static hosting is delivery infrastructure, not a new application backend; its provider is deferred.
 
-The stack and boundaries are accepted and recorded in ADRs 0001–0005. Implementation remains a separate task; explicitly deferred concerns and content details still require their own review.
+The stack and boundaries are accepted and recorded in ADRs 0001–0005. Both technical slices are implemented; explicitly deferred concerns and incomplete educational content still require their own review.
 
 ## 5. Technology recommendations
 
@@ -173,7 +175,7 @@ Enforce these boundaries later with restricted-import rules and independent test
 
 ## 7. Repository structure proposal
 
-The following is a future implementation layout, not a set of paths created by this task. Only documentation, including this architecture and accepted ADRs, exists now. Create modules when their slice needs them; do not scaffold empty future modules.
+The following preserves the proposed layout from architecture acceptance. The application now exists; [repository structure](repository-structure.md) describes actual paths and responsibilities. Proposed unused modules are not implemented merely because they appear below; do not scaffold empty future modules.
 
 ```text
 src/
@@ -344,7 +346,7 @@ Measure GLB download size, texture memory, initialization time, and frame behavi
 /processes/:processId?stageId=:stageId  selected process stage
 ```
 
-Future slice-two addresses may include `/systems/:systemId?scenario=:scenarioId`. A processes catalog route can be introduced when needed by the complete MVP; in slice one the home Process entry can point to the single content-listed process. These paths are navigation design, not domain IDs. Validate section IDs against the resolved learning module and stage IDs against the process; unknown entities get a not-found view, invalid optional selections get a visible recoverable explanation.
+Current addresses also include `/processes`, `/systems` and `/systems/:systemId?scenario=:scenarioId`. Home has three entries. These paths are navigation identity, not domain IDs. Validate sections/stages/sources against resolved content; unknown entities get not-found views and invalid optional selections get visible recovery. See [information architecture](../product/information-architecture.md) for actual query semantics.
 
 Browser-history routing requires static-host HTML fallback for valid app routes, a configured base path if hosted below the root, and correct asset paths. The host must serve missing asset files as errors, not as successful HTML fallback responses. Test direct load, reload, and a subpath before deployment; no provider is chosen here.
 
@@ -377,7 +379,7 @@ Avoid mirrored ownership: read URL-backed state from the route, derive related m
 
 ## 12. Testing strategy
 
-These are future implementation gates, not tools or workflows installed by this documentation task.
+These gates originated in the architecture task. Current installed checks and executed evidence are recorded in the readiness audit; educational requirements beyond tested technical slices remain obligations.
 
 1. **Content/domain:** validate all content and schemas, duplicate IDs, missing references, stage order, role eligibility, component ownership, provenance, learning links, and incompatible units. Use deliberately broken fixtures to prove rejection; validate every real content bundle. Assert compact and full views resolve the same machine ID/data.
 2. **Simulation unit tests:** execute under a non-DOM environment. Cover every simulation-model §35 requirement, baseline trucks 1–5, distance 4 km with 3 and 5 trucks, zero distance, invalid inputs, nonfinite values, output constraints, discrete bucket rounding, and coefficient application. Compare against §21–22 expected values with the documented relative tolerance `1e-6`; use suitable absolute tolerance for zero. Expected fixtures are test oracles, never production cached answers.
@@ -423,7 +425,7 @@ Approved content and a usable licensed/animated excavator asset are prerequisite
 
 No backend, database, authentication, containers, queues, CMS, microservices, or cloud-service design is needed for current MVP. Backend/LMS integration and authoring may later be added via repository or result-export adapters after concrete requirements and scope review. Do not build speculative adapters now.
 
-Defer hosting provider, package-manager/runtime versions, CI implementation, public SEO/SSR, offline support, cross-session/user persistence, export formats, analytics, instructor reports, machine variants, mass/density/material extensions, and discrete-event simulation. Simulation extensions require their own versioned contract and approved model changes; replacing a calculator must preserve domain entity identity.
+Package-manager/runtime versions are pinned in package.json and lockfile. Defer hosting provider, CI implementation, public SEO/SSR, offline support, cross-session/user persistence, export formats, analytics, instructor reports, machine variants, mass/density/material extensions, and discrete-event simulation. Simulation extensions require their own versioned contract and approved model changes; replacing a calculator must preserve domain entity identity.
 
 AI, LMS dashboards, authorization systems, AR/VR, normative costing, auto-optimization, and additional machines/processes remain excluded by current MVP boundaries. Localization readiness is retained while multilingual UI is deferred. A richer content renderer can evolve when actual content blocks require it; no plugin registry or generic content engine is proposed for slice one.
 
@@ -447,12 +449,12 @@ AI, LMS dashboards, authorization systems, AR/VR, normative costing, auto-optimi
 
 ## 16. Open questions for human review
 
-1. The stack, local-content strategy, viewer boundary, and URL-based contextual return are accepted in ADRs 0001–0005. Exact package versions, hosting, and optional storage restoration remain deferred.
+1. The stack, local-content strategy, viewer boundary, and URL-based contextual return are accepted in ADRs 0001–0005. Exact package versions are pinned; hosting and optional storage restoration remain deferred.
 2. Slice milestones and complete-MVP learning-depth wording are reconciled with UI/UX §§54–55. How the broader vision pilot stages map to later scope remains a product-planning question.
-3. Which excavator asset is available, licensed, optimized, and equipped with selectable bucket geometry and an approved working-cycle clip? What device/browser, asset-size, memory, and frame-quality budgets will reviewers accept?
+3. The XE215C Stage 08/09 production asset is available with mapped components and working-cycle clip; delivery review still owns provenance/redistribution permission. What device/browser, asset-size, memory, and frame-quality budgets will reviewers accept?
 4. Approve the exact domain/content schemas, source/provenance record format, primary relationship ownership, and schema-version policy. Metric IDs are now canonical under simulation-model §17. Are additional instance-level operation objects actually needed? No such new entity is assumed here.
 5. Approve the educational content and visual phase mappings. How should overlapping digging/filling terminology be presented consistently across the existing cycle descriptions without changing the aggregate calculation model?
-6. Before slice two, approve expert validation of the existing numerical model, input control ranges, optional near-balance bounds, and result interpretation. No new engineering constants are proposed.
+6. Slice two implements the documented illustrative v1 model. Still review expert validation of the existing numerical model, input control ranges, optional near-balance bounds, and result interpretation. No new engineering constants are proposed.
 7. Optional panel/camera storage restoration and persistence mechanisms remain deferred; slice one must work without them. Is cross-session scenario persistence an actual requirement for a later slice? Backend storage is not inferred from the desire to compare two scenarios.
 8. Which static hosting environment will support history fallback and any deployment base path? Are SEO or initial HTML requirements strong enough to revisit the SPA choice?
 9. Confirm the future localization representation before adding languages; current entity IDs and Russian names remain stable. Future LMS/authoring interfaces need concrete requirements before design.
